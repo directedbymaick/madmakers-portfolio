@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projet · Mad Makers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"/>
+<style>
+  :root{
+    --bg:#0a0a0a;--ink:#fff;--dim:#888;--soft:#c8c8c8;--line:#1f1f1f;
+    --green:#39ff14;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+    --display:"Archivo Black","Archivo",system-ui,sans-serif;
+    --sans:"Inter","Archivo",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  a{color:inherit;text-decoration:none}
+  img,video{display:block;max-width:100%}
+  ::selection{background:var(--green);color:#000}
+
+  /* Nav */
+  .pj-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .pj-nav .logo{font:900 13px/1 var(--display);color:#fff;letter-spacing:.04em}
+  .pj-nav .logo .g{color:var(--green)}
+  .pj-nav .back{transition:color .2s ease}
+  .pj-nav .back::before{content:"← ";color:var(--green);margin-right:2px}
+  .pj-nav .back:hover{color:var(--green)}
+
+  /* Hero */
+  .pj-hero{padding:160px 40px 80px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--line)}
+  .pj-hero .idx{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;font:500 11px/1 var(--mono);letter-spacing:.25em;color:var(--dim);text-transform:uppercase;margin-bottom:40px}
+  .pj-hero .idx .n{color:var(--green)}
+  .pj-hero .idx .status{padding:5px 9px;border:1px solid var(--green);color:var(--green);font-size:9px;letter-spacing:.3em}
+  .pj-hero h1{font:900 clamp(46px,9vw,150px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.04em;margin-bottom:26px}
+  .pj-hero h1 .dot{color:var(--green)}
+  .pj-hero .sub{font:400 clamp(17px,1.6vw,22px)/1.45 var(--sans);color:var(--soft);max-width:62ch;margin-bottom:32px}
+  .pj-hero .scope{display:flex;flex-wrap:wrap;gap:8px}
+  .pj-hero .scope span{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:8px 12px}
+
+  /* Cover */
+  .pj-cover{padding:40px;max-width:1600px;margin:0 auto}
+  .pj-cover .frame{aspect-ratio:16/9;background:#000;overflow:hidden;position:relative;border:1px solid var(--line)}
+  .pj-cover .frame img,.pj-cover .frame video{width:100%;height:100%;object-fit:cover;filter:grayscale(.06) contrast(1.04)}
+
+  /* Grid meta + body */
+  .pj-grid{max-width:1400px;margin:0 auto;padding:60px 40px 80px;display:grid;grid-template-columns:260px 1fr;gap:80px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pj-meta{position:sticky;top:96px;align-self:start}
+  .pj-meta dt{font:500 10px/1 var(--mono);letter-spacing:.25em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+  .pj-meta dd{font:400 14px/1.45 var(--sans);color:#fff;margin-bottom:22px}
+  .pj-meta dd.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+
+  .pj-body .intro{font:400 clamp(17px,1.6vw,22px)/1.55 var(--sans);color:#ddd;max-width:60ch;margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .pj-body .section{margin-bottom:48px;max-width:62ch}
+  .pj-body .section:last-child{margin-bottom:0}
+  .pj-body .section h2{font:900 clamp(28px,3vw,42px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin-bottom:18px;color:#fff}
+  .pj-body .section h2 .g{color:var(--green)}
+  .pj-body .section p{font:400 15px/1.65 var(--sans);color:#bbb;margin-bottom:14px}
+  .pj-body .section p:last-child{margin-bottom:0}
+
+  /* Gallery */
+  .pj-gallery{max-width:1600px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));gap:1px;background:var(--line)}
+  .pj-gallery .g{background:#0a0a0a;aspect-ratio:4/3;position:relative;overflow:hidden}
+  .pj-gallery .g img,.pj-gallery .g video{width:100%;height:100%;object-fit:cover;filter:grayscale(.08) contrast(1.04);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .pj-gallery .g:hover img,.pj-gallery .g:hover video{transform:scale(1.03)}
+  .pj-gallery .g .cap{position:absolute;bottom:14px;left:14px;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;backdrop-filter:blur(4px)}
+
+  /* Quote */
+  .pj-quote{max-width:980px;margin:0 auto;padding:80px 40px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pj-quote blockquote{font:500 clamp(22px,2.6vw,36px)/1.35 var(--sans);color:#fff;margin-bottom:22px;font-style:italic}
+  .pj-quote blockquote::before{content:"« ";color:var(--green);font-style:normal}
+  .pj-quote blockquote::after{content:" »";color:var(--green);font-style:normal}
+  .pj-quote .author{font:500 11px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+  .pj-quote .author::before{content:"— ";color:var(--green)}
+
+  /* Next */
+  .pj-next{padding:80px 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .pj-next .lbl{font:500 11px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
+  .pj-next .t{font:900 clamp(36px,5.5vw,76px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.03em;color:#fff;transition:color .2s ease}
+  .pj-next a:hover .t{color:var(--green)}
+  .pj-next .arr{display:inline-block;margin-left:12px;color:var(--green);transition:transform .3s ease}
+  .pj-next a:hover .arr{transform:translateX(10px)}
+
+  /* Footer */
+  .pj-foot{padding:30px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font:500 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .pj-foot b{color:#fff;font-weight:500}
+  .pj-foot a{transition:color .2s ease;margin-left:18px}
+  .pj-foot a:hover{color:var(--green)}
+
+  /* 404 */
+  .pj-error{padding:180px 40px 120px;text-align:center;max-width:620px;margin:0 auto}
+  .pj-error h1{font:900 clamp(80px,14vw,160px)/.9 var(--display);margin-bottom:20px;color:var(--green);letter-spacing:-.04em}
+  .pj-error p{font:400 16px/1.55 var(--sans);color:var(--dim);margin-bottom:26px}
+  .pj-error a{color:var(--green);border-bottom:1px solid var(--green);padding-bottom:2px}
+
+  @media (max-width:820px){
+    .pj-grid{grid-template-columns:1fr;gap:48px;padding:48px 24px 60px}
+    .pj-meta{position:static}
+    .pj-hero{padding:130px 24px 60px}
+    .pj-cover{padding:24px}
+    .pj-gallery{padding:40px 24px;grid-template-columns:1fr}
+    .pj-quote{padding:60px 24px}
+    .pj-next{padding:60px 24px}
+    .pj-foot{padding:24px;flex-direction:column;align-items:flex-start}
+    .pj-foot a{margin-left:0;margin-right:18px}
+    .pj-nav{padding:14px 20px}
+  }
+</style>
+</head>
+<body>
+<nav class="pj-nav">
+  <a class="logo" href="Mad Makers.html">MAD<span class="g">.</span>MAKERS</a>
+  <a class="back" href="Mad Makers.html#realisations">Retour aux réalisations</a>
+</nav>
+
+<main id="pjRoot"></main>
+
+<script src="projects.js"></script>
+<script>
+(() => {
+  const esc = (s) => String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const data = (window.MM_PROJECTS || {})[id];
+  const root = document.getElementById('pjRoot');
+
+  if(!data){
+    root.innerHTML = `
+      <section class="pj-error">
+        <h1>404</h1>
+        <p>Ce projet n'existe pas ou n'a pas encore été publié.</p>
+        <a href="Mad Makers.html#realisations">← Retour aux réalisations</a>
+      </section>`;
+    document.title = '404 — Mad Makers';
+    return;
+  }
+
+  document.title = `${data.title} — Mad Makers`;
+
+  const coverHtml = data.cover.type === 'video'
+    ? `<video src="${esc(data.cover.src)}" muted loop playsinline autoplay preload="metadata"${data.cover.poster ? ` poster="${esc(data.cover.poster)}"` : ''}></video>`
+    : `<img src="${esc(data.cover.src)}" alt="${esc(data.title)}"/>`;
+
+  const scopeHtml = (data.scope || []).map(s => `<span>${esc(s)}</span>`).join('');
+
+  const sectionsHtml = (data.sections || []).map(s => `
+    <div class="section">
+      <h2>${esc(s.title)}<span class="g">.</span></h2>
+      <p>${esc(s.body)}</p>
+    </div>`).join('');
+
+  const galleryHtml = (data.gallery || []).map(g => `
+    <div class="g">
+      ${g.type === 'video'
+        ? `<video src="${esc(g.src)}" muted loop playsinline autoplay preload="metadata"></video>`
+        : `<img src="${esc(g.src)}" alt="${esc(g.caption || '')}" loading="lazy"/>`}
+      ${g.caption ? `<div class="cap">${esc(g.caption)}</div>` : ''}
+    </div>`).join('');
+
+  const quoteHtml = data.quote ? `
+    <section class="pj-quote">
+      <blockquote>${esc(data.quote.text)}</blockquote>
+      <div class="author">${esc(data.quote.author)}</div>
+    </section>` : '';
+
+  const nextProj = data.next ? (window.MM_PROJECTS || {})[data.next] : null;
+  const nextHtml = nextProj ? `
+    <section class="pj-next">
+      <div class="lbl">Projet suivant</div>
+      <a href="project.html?id=${esc(data.next)}">
+        <span class="t">${esc(nextProj.title)}</span><span class="arr">→</span>
+      </a>
+    </section>` : '';
+
+  const statusBadge = data.status ? `<span class="status">${esc(data.status)}</span>` : '';
+
+  root.innerHTML = `
+    <section class="pj-hero">
+      <div class="idx">
+        <span class="n">${esc(data.num)}</span>
+        <span>· ${esc(data.year)}</span>
+        <span>· ${esc(data.client)}</span>
+        ${statusBadge}
+      </div>
+      <h1>${esc(data.title)}<span class="dot">.</span></h1>
+      <p class="sub">${esc(data.subtitle)}</p>
+      <div class="scope">${scopeHtml}</div>
+    </section>
+
+    <section class="pj-cover">
+      <div class="frame">${coverHtml}</div>
+    </section>
+
+    <section class="pj-grid">
+      <dl class="pj-meta">
+        <dt>Client</dt><dd>${esc(data.client)}</dd>
+        <dt>Année</dt><dd class="mono">${esc(data.year)}</dd>
+        <dt>Rôle</dt><dd>${esc(data.role)}</dd>
+        <dt>Durée</dt><dd>${esc(data.duration)}</dd>
+        <dt>Stack</dt><dd class="mono">${(data.stack || []).map(esc).join(' · ')}</dd>
+      </dl>
+      <div class="pj-body">
+        <p class="intro">${esc(data.intro)}</p>
+        ${sectionsHtml}
+      </div>
+    </section>
+
+    ${galleryHtml ? `<section class="pj-gallery">${galleryHtml}</section>` : ''}
+
+    ${quoteHtml}
+    ${nextHtml}
+
+    <footer class="pj-foot">
+      <span>© Mad Makers — <b>Dream it. We make it.</b></span>
+      <span>
+        <a href="Mad Makers.html">↑ Accueil</a>
+        <a href="Mad Makers.html#contact">Brief →</a>
+      </span>
+    </footer>
+  `;
+})();
+</script>
+</body>
+</html>
