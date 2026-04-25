@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Ignorer les URL techniques / versionnées des assets
+Disallow: /*?v=
+Disallow: /uploads/
+
+# Sitemap
+Sitemap: https://madmakers.fr/sitemap.xml
