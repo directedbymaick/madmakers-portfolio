@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
 <!-- === SEO CORE ===
-     NOTE: remplacer https://madmakers.fr/ par le domaine final avant mise en prod.
-     Les URLs absolues doivent matcher le domaine réel sinon OG / canonical plantent. -->
-<title>Mad Makers — Agence digitale hybride · Web, DA, SEO · Paris</title>
-<meta name="description" content="Mad Makers — agence digitale hybride à Paris. Sites web sur-mesure, direction artistique, vidéo et SEO pour les entreprises qui refusent le générique." />
+     NOTE: remplacer https://madmakers.fr/ par le domaine final si différent. -->
+<title>Agence Web Créative Paris | Web · DA · SEO · Vidéo — Mad Makers</title>
+<meta name="description" content="Agence web créative à Paris, à la croisée du digital et de l'art. Sites web, SEO, direction artistique, vidéo — pour les entreprises qui refusent de ressembler à leurs concurrents." />
+<meta name="keywords" content="agence web créative Paris, création de site web Paris, agence digitale hybride Paris, agence SEO Paris, direction artistique web Paris, refonte site internet Paris" />
 <meta name="author" content="Mad Makers" />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0a" />
@@ -17,22 +17,22 @@
 <!-- === OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Slack) === -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Mad Makers" />
-<meta property="og:title" content="Mad Makers — Agence digitale hybride" />
-<meta property="og:description" content="Sites web sur-mesure, direction artistique, vidéo et SEO. Paris · France." />
+<meta property="og:title" content="Mad Makers — Agence Web Créative Paris" />
+<meta property="og:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
 <meta property="og:url" content="https://madmakers.fr/" />
 <meta property="og:image" content="https://madmakers.fr/assets/hero-bg.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Mad Makers — agence digitale hybride, Paris" />
+<meta property="og:image:alt" content="Mad Makers — agence web créative Paris" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:locale:alternate" content="en_US" />
 
 <!-- === TWITTER CARDS === -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mad Makers — Agence digitale hybride" />
-<meta name="twitter:description" content="Sites web sur-mesure, direction artistique, vidéo et SEO. Paris · France." />
+<meta name="twitter:title" content="Mad Makers — Agence Web Créative Paris" />
+<meta name="twitter:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
 <meta name="twitter:image" content="https://madmakers.fr/assets/hero-bg.png" />
-<meta name="twitter:image:alt" content="Mad Makers — agence digitale hybride" />
+<meta name="twitter:image:alt" content="Mad Makers — agence web créative Paris" />
 
 <!-- === FAVICONS (à générer depuis le logo : favicon.svg + PNG 32/180/192/512) === -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -506,31 +506,49 @@ section{position:relative}
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://madmakers.fr/#organization",
       "name": "Mad Makers",
-      "alternateName": "Mad Makers Agency",
+      "alternateName": "Mad Makers Agence Web Paris",
       "url": "https://madmakers.fr/",
       "logo": "https://madmakers.fr/assets/hero-bg.png",
-      "description": "Agence digitale hybride — à la croisée du monde artistique et entrepreneurial. Web sur-mesure, direction artistique, vidéo et SEO pour les entreprises qui refusent le générique.",
+      "image": "https://madmakers.fr/assets/hero-bg.png",
+      "description": "Agence web créative à Paris. Création de sites web, SEO, direction artistique et production vidéo pour TPE, PME et grands groupes qui refusent le générique.",
       "foundingDate": "2025",
       "slogan": "Dream it. We make it.",
-      "areaServed": {"@type": "Country", "name": "France"},
-      "knowsLanguage": ["fr", "en"],
-      "founder": [
-        {"@id": "https://madmakers.fr/#shayne"},
-        {"@id": "https://madmakers.fr/#maick"}
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressRegion": "Île-de-France",
+        "addressCountry": "FR"
+      },
+      "areaServed": ["Paris", "Île-de-France", "France", "Belgique", "Suisse"],
+      "serviceType": [
+        "Création de sites web",
+        "Référencement naturel SEO",
+        "Direction artistique web",
+        "Production vidéo",
+        "Google My Business",
+        "Growth hacking",
+        "Gestion réseaux sociaux"
       ],
-      "member": [{"@id": "https://madmakers.fr/#goudet"}],
-      "sameAs": [
-        "https://soundcloud.com/maickdufutur"
+      "knowsLanguage": ["fr", "en"],
+      "priceRange": "€€",
+      "founder": [
+        {"@id": "https://madmakers.fr/#maick"},
+        {"@id": "https://madmakers.fr/#goudet"}
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Commercial",
+        "email": "hello@madmakers.fr",
         "availableLanguage": ["French", "English"],
         "url": "https://calendly.com/directedbymaick/30min"
-      }
+      },
+      "sameAs": [
+        "https://www.instagram.com/madmakers",
+        "https://www.linkedin.com/company/madmakers"
+      ]
     },
     {
       "@type": "WebSite",
@@ -542,33 +560,26 @@ section{position:relative}
     },
     {
       "@type": "Person",
-      "@id": "https://madmakers.fr/#shayne",
-      "name": "Shayne",
-      "alternateName": "Steven Zoanet",
-      "birthDate": "1998-11-30",
-      "jobTitle": "Cofondateur · Représentant · Vision Artistique",
-      "worksFor": {"@id": "https://madmakers.fr/#organization"},
-      "knowsAbout": ["Direction artistique", "Musique", "Rap", "Clip"]
-    },
-    {
-      "@type": "Person",
       "@id": "https://madmakers.fr/#maick",
-      "name": "Maick",
+      "name": "Maïck",
       "jobTitle": "Cofondateur · Directeur Artistique",
       "worksFor": {"@id": "https://madmakers.fr/#organization"},
-      "knowsAbout": ["Marketing digital", "Direction artistique", "SEO", "Musique"],
-      "sameAs": ["https://soundcloud.com/maickdufutur"]
+      "knowsAbout": ["Marketing digital", "Direction artistique web", "SEO", "Création de sites web"],
+      "alumniOf": [
+        {"@type": "Organization", "name": "Orange"},
+        {"@type": "Organization", "name": "Vinci Construction"}
+      ]
     },
     {
       "@type": "Person",
       "@id": "https://madmakers.fr/#goudet",
       "name": "Goudet Abalé",
-      "jobTitle": "Sparring Partner · Stratégie · CEO ARMD Group",
+      "jobTitle": "Cofondateur · Stratégie & Développement",
+      "worksFor": {"@id": "https://madmakers.fr/#organization"},
       "alumniOf": [
         {"@type": "CollegeOrUniversity", "name": "Sciences Po Lille"},
         {"@type": "CollegeOrUniversity", "name": "Johns Hopkins SAIS"}
       ],
-      "worksFor": {"@id": "https://madmakers.fr/#organization"},
       "sameAs": ["https://www.linkedin.com/in/goudet-abalé-329909104/"]
     }
   ]
@@ -617,7 +628,7 @@ section{position:relative}
     <span class="sw"><span class="knob"></span></span>
     <span class="lbl en">EN</span>
   </div>
-  <a class="menu" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><span data-i18n="nav.menu">Réserver · 30 min</span><span class="ar">↗</span></a>
+  <a class="menu" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><span data-i18n="nav.menu">Parler de votre projet · 30 min</span><span class="ar">↗</span></a>
 </nav>
 
 <main>
@@ -640,14 +651,14 @@ section{position:relative}
       </h1>
     </div>
     <div class="cta" data-i18n="hero.scroll">SCROLL · EXPERIENCE ↓</div>
-    <div class="disc"><div data-i18n="hero.disc">AGENCE<br>DIGITALE<br>HYBRIDE<br>——<br>PARIS · FR</div></div>
+    <div class="disc"><div data-i18n="hero.disc">AGENCE<br>WEB<br>CRÉATIVE<br>——<br>PARIS · FR</div></div>
     <div class="meta">
       <div class="lbl" data-i18n="hero.meta.lbl">[ 01 / INTRO ]</div>
-      <span data-i18n="hero.meta.body">Agence digitale hybride — à la croisée du monde artistique et entrepreneurial. Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent le générique.</span>
+      <span data-i18n="hero.meta.body">Votre prochain client vous cherche sur Google. On s'assure qu'il vous trouve — et qu'il reste. Agence web créative à Paris. Sites sur-mesure, SEO, direction artistique, vidéo. Livraison en 10 jours. Pour les entreprises qui refusent de ressembler à leurs concurrents.</span>
     </div>
   </div>
   <div class="ticker">
-    <span>© MAD MAKERS — <b>DREAM IT. WE MAKE IT.</b></span>
+    <span>© MAD MAKERS — <b>AGENCE WEB CRÉATIVE PARIS</b></span>
     <span>EST. <b>2025</b></span>
     <span>PARIS · FR</span>
     <span>INDEX / <b>001</b> / 010</span>
@@ -658,14 +669,14 @@ section{position:relative}
 <section id="manifesto" class="manifesto" data-screen-label="02 Manifeste">
   <div class="sh"><span data-i18n="manifesto.sh.a"><span class="num">02</span> / MANIFESTE</span><span class="dim" data-i18n="manifesto.sh.b">[ NOS CONVICTIONS ]</span></div>
   <div class="wrap">
-    <h2 class="reveal" data-i18n="manifesto.h2">ON NE LIVRE<br>PAS DES SITES.<br>ON LIVRE DU<br><span class="g">CONCRET.</span></h2>
+    <h2 class="reveal" data-i18n="manifesto.h2">ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS<br>DE <span class="g">VENTE.</span></h2>
     <div class="body reveal">
-      <div class="conv"><h3 data-i18n="manifesto.c1.h">Le générique, c'est <span class="g">l'ennemi.</span></h3><p data-i18n="manifesto.c1.p">Pas de templates interchangeables. Pas de slogans creux. Un site Mad Makers doit être reconnaissable sans le logo.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c2.h">Chaque ligne de code est pensée pour <span class="g">convertir.</span></h3><p data-i18n="manifesto.c2.p">Un site qui ne génère pas de demandes, pas d'appels, pas de CA n'est pas un livrable réussi — c'est un joli objet.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c3.h">L'IA accélère. <span class="g">L'humain décide.</span></h3><p data-i18n="manifesto.c3.p">L'intelligence artificielle nous permet de livrer en jours ce qui prendrait des semaines. Mais la direction artistique, le ton, la stratégie — ça reste humain.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c4.h">La scène nous a appris la <span class="g">discipline.</span></h3><p data-i18n="manifesto.c4.p">Dix secondes pour accrocher, trois minutes pour convaincre. Rien de brouillon, rien de "à peu près", rien qui ne tient pas la route en public.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c5.h">Local <span class="g">d'abord.</span></h3><p data-i18n="manifesto.c5.p">Notre cœur de cible : les PME de proximité. Artisans, commerces, professions libérales, entrepreneurs de terrain. Nous parlons leur langue.</p></div>
-      <div class="sig"><span>MAD MAKERS — SHAYNE · MAICK · GOUDET</span></div>
+      <div class="conv"><h3 data-i18n="manifesto.c1.h">Un site doit vous <span class="g">rapporter.</span></h3><p data-i18n="manifesto.c1.p">La plupart des sites coûtent de l'argent sans jamais en rapporter. C'est parce qu'ils sont pensés pour plaire et non pour vendre. Nous ? Nous partons de votre objectif commercial, et le design en découle. Vous obtenez un site qui génère des demandes, des appels et des ventes.</p></div>
+      <div class="conv"><h3 data-i18n="manifesto.c2.h">Une méthode <span class="g">claire.</span></h3><p data-i18n="manifesto.c2.p">Trop d'agences vous laissent dans le flou pendant des semaines. Nous procédons autrement : chaque étape est cadrée, chaque livrable est daté. Du brief à la mise en ligne, vous savez toujours où en est votre projet.</p></div>
+      <div class="conv"><h3 data-i18n="manifesto.c3.h">Livré en <span class="g">10 jours.</span></h3><p data-i18n="manifesto.c3.p">Une agence classique met deux à trois mois pour livrer un site. Nos outils nous permettent d'aller cinq fois plus vite. Vous gagnez du temps, vous économisez du budget — sans rien perdre en qualité ni en finition.</p></div>
+      <div class="conv"><h3 data-i18n="manifesto.c4.h">Adapté à votre <span class="g">marché.</span></h3><p data-i18n="manifesto.c4.p">Un site qui parle à un client de restaurant ne parle pas aux cibles d'un cabinet de conseil. Avant la première maquette, nous étudions donc votre secteur, vos clients et vos concurrents. Avec cette préparation : votre site parle vraiment à vos prospects, dans leurs mots, sur leurs leviers de décision.</p></div>
+      <div class="conv"><h3 data-i18n="manifesto.c5.h">Paris, France, <span class="g">Europe.</span></h3><p data-i18n="manifesto.c5.p">Nous accompagnons des PME, des ETI et des directions marketing de grands groupes — à Paris, en province et ailleurs en Europe. Les projets sont livrés en français ou en anglais, selon votre marché. Confidentialité garantie par contrat.</p></div>
+      <div class="sig"><span>MAD MAKERS — MAÏCK · GOUDET</span></div>
     </div>
   </div>
 </section>
@@ -673,82 +684,63 @@ section{position:relative}
 <!-- 03 SERVICES -->
 <section id="services" class="services" data-screen-label="03 Services">
   <div class="sec-head"><span data-i18n="services.sh.a"><span class="num">03</span> / SERVICES</span><span class="dim" data-i18n="services.sh.b">[ L'OFFRE STRUCTURÉE ]</span></div>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.01</div><div><div class="tit" data-i18n="services.s1.tit">Site one-page</div></div><div class="desc" data-i18n="services.s1.desc">L'entrée de gamme pensée pour convertir. Vitrine éditoriale, performances, SEO technique de base.</div><div class="pr">600 — 1 200 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.02</div><div><div class="tit" data-i18n="services.s2.tit">Site multipage</div></div><div class="desc" data-i18n="services.s2.desc">Présence digitale complète pour PME ambitieuse. 5 à 8 pages, CMS léger, stratégie éditoriale.</div><div class="pr">1 200 — 2 800 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.03</div><div><div class="tit" data-i18n="services.s3.tit">Site complexe / Framer</div></div><div class="desc" data-i18n="services.s3.desc">Expérience premium. Animations, CMS avancé, e-commerce léger. Le niveau Awwwards.</div><div class="pr">3 000 — 8 000 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.04</div><div><div class="tit" data-i18n="services.s4.tit">Vidéo institutionnelle</div></div><div class="desc" data-i18n="services.s4.desc">1 à 3 minutes. Scripts, tournage, montage. Sensibilité issue du clip et de la scène.</div><div class="pr">800 — 2 500 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.05</div><div><div class="tit" data-i18n="services.s5.tit">Audit SEO</div></div><div class="desc" data-i18n="services.s5.desc">Rapport technique et éditorial complet. Plan d'action priorisé, chiffré, actionnable.</div><div class="pr">400 — 900 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.06</div><div><div class="tit" data-i18n="services.s6.tit">Accompagnement SEO</div></div><div class="desc" data-i18n="services.s6.desc">Suivi mensuel, 2 articles rédigés par mois, rapports clairs. Référencement local inclus.</div><div class="pr" data-i18n="services.s6.pr">350 — 700 € / mois</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.07</div><div><div class="tit" data-i18n="services.s7.tit">Gestion réseaux sociaux</div></div><div class="desc" data-i18n="services.s7.desc">8 à 16 publications / mois. Stratégie éditoriale, création visuelle, animation communautaire.</div><div class="pr" data-i18n="services.s7.pr">300 — 600 € / mois</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.08</div><div><div class="tit" data-i18n="services.s8.tit">Pack démarrage</div></div><div class="desc" data-i18n="services.s8.desc">Site + identité visuelle + SEO de base. Le bundle complet pour partir sur de bonnes bases.</div><div class="pr">2 000 — 4 500 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.01</div><div><div class="tit" data-i18n="services.s1.tit">Site one-page</div></div><div class="desc" data-i18n="services.s1.desc">Pour lancer un produit, un service ou une activité en quelques jours. Une seule page, pensée pour une seule action : convertir vos visiteurs en contacts qualifiés.</div><div class="pr">700 — 1 200 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.02</div><div><div class="tit" data-i18n="services.s2.tit">Site vitrine</div></div><div class="desc" data-i18n="services.s2.desc">Pour les entreprises qui veulent une présence digitale complète et professionnelle. 5 à 8 pages, structure éditoriale claire, optimisation SEO incluse dès la mise en ligne.</div><div class="pr">1 200 — 2 800 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.03</div><div><div class="tit" data-i18n="services.s3.tit">Site sur-mesure</div></div><div class="desc" data-i18n="services.s3.desc">Pour les marques haut de gamme qui doivent le démontrer dès la première seconde : animations avancées, design entièrement sur-mesure, e-commerce intégré si besoin.</div><div class="pr">3 000 — 8 000 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.04</div><div><div class="tit" data-i18n="services.s4.tit">Vidéo institutionnelle</div></div><div class="desc" data-i18n="services.s4.desc">Pour raconter votre entreprise avec impact, en 1 à 3 minutes. Script, tournage, montage — livrés en formats adaptés à votre site et à vos réseaux sociaux.</div><div class="pr">800 — 3 500 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.05</div><div><div class="tit" data-i18n="services.s5.tit">Audit SEO</div></div><div class="desc" data-i18n="services.s5.desc">Votre site est en ligne mais ne génère pas de trafic qualifié. Nous identifions les blocages techniques et éditoriaux, puis vous remettons un plan d'action concret, priorisé et chiffré.</div><div class="pr">400 — 900 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.06</div><div><div class="tit" data-i18n="services.s6.tit">Accompagnement SEO</div></div><div class="desc" data-i18n="services.s6.desc">Pour être trouvé sur Google sans avoir à vous en occuper. 4 à 8 articles optimisés par mois, suivi des positions, et gestion complète de votre fiche Google My Business.</div><div class="pr" data-i18n="services.s6.pr">500 — 1 000 € / mois</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.07</div><div><div class="tit" data-i18n="services.s7.tit">Gestion réseaux sociaux</div></div><div class="desc" data-i18n="services.s7.desc">Pour transformer vos comptes en véritable canal d'acquisition. 8 à 16 publications par mois — stratégie éditoriale, création visuelle et animation comprises.</div><div class="pr" data-i18n="services.s7.pr">1 000 — 2 000 € / mois</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
+  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.08</div><div><div class="tit" data-i18n="services.s8.tit">Pack démarrage</div></div><div class="desc" data-i18n="services.s8.desc">Pour lancer votre activité avec une présence digitale complète et cohérente. Site web, identité visuelle et fondations SEO — l'ensemble livré sous 2 semaines, prêt à convertir vos cibles.</div><div class="pr">3 000 — 5 000 €</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
 </section>
 
 <!-- 04 FOUNDERS -->
 <section id="founders" class="founders" data-screen-label="04 Founders">
-  <div class="sec-head sh"><span data-i18n="founders.sh.a"><span class="num">04</span> / LE TRIO</span><span class="dim" data-i18n="founders.sh.b">[ TROIS PROFILS · TROIS MONDES ]</span></div>
+  <div class="sec-head sh"><span data-i18n="founders.sh.a"><span class="num">04</span> / LE DUO</span><span class="dim" data-i18n="founders.sh.b">[ DEUX PROFILS · DEUX MONDES ]</span></div>
   <div class="intro reveal">
-    <h2 data-i18n="founders.intro.h2">DEUX ARTISTES,<br>UN <span class="g">STRATÈGE.</span></h2>
+    <h2 data-i18n="founders.intro.h2">UN <span class="g">CRÉATIF.</span><br>UN <span class="g">STRATÈGE.</span></h2>
     <div>
-      <p data-i18n="founders.intro.p1">Mad Makers ne naît pas d'un business plan. Mad Makers naît d'une amitié artistique — celle de deux artistes qui ont grandi ensemble dans la scène rap française, avant de transposer leur exigence scénique au digital.</p>
-      <p data-i18n="founders.intro.p2">Autour du duo fondateur, un mentor stratégique : Goudet Abalé, bâtisseur international. Trois profils. Trois mondes. Une seule obsession : <b style="color:#fff">faire ce que les autres ne font pas.</b></p>
+      <p data-i18n="founders.intro.p1">Mad Makers est née de la rencontre de deux profils complémentaires. D'un côté, un créatif hybride formé aux codes du web, du marketing et de l'image — habitué à concevoir des contenus qui tiennent la route face à des audiences exigeantes.</p>
+      <p data-i18n="founders.intro.p2">De l'autre, un stratège passé par le conseil international auprès de grands groupes et institutions françaises ou internationales. Avec cette combinaison, vous bénéficiez d'une exigence de finition créative, doublée d'une rigueur de méthode issue du conseil. <b style="color:#fff">Ni atelier déconnecté du business, ni cabinet sans âme.</b></p>
     </div>
   </div>
 
   <div class="fd reveal">
-    <div class="img"><img src="assets/artist-shayne-show.png" alt="Shayne"><span class="tag" data-i18n="founders.f1.tag">F.01 / ACTIONNAIRE</span><span class="code">STEVEN ZOANET · 30 / 11 / 1998</span></div>
+    <div class="img"><img src="assets/artist-maick.png?v=2" alt="Maïck — Cofondateur Mad Makers, agence web créative Paris"><span class="tag" data-i18n="founders.f2.tag">F.02 / COFONDATEUR</span><span class="code" data-i18n="founders.f2.code">DIRECTEUR ARTISTIQUE · PARIS</span></div>
     <div class="body">
-      <div class="role" data-i18n="founders.f1.role">Représentant · Vision Artistique</div>
-      <div class="nm">SHAYNE<span style="color:var(--green)">.</span></div>
-      <div class="sub" data-i18n="founders.f1.sub">COSHCO RECORDS · NEUVIÈME TOIT · NOUVELLE ÉCOLE S.4</div>
+      <div class="role" data-i18n="founders.f2.role">Cofondateur · Directeur Artistique</div>
+      <div class="nm">MAÏCK<span style="color:var(--green)">.</span></div>
+      <div class="sub" data-i18n="founders.f2.sub">MARKETING DIGITAL · ORANGE · VINCI CONSTRUCTION</div>
       <div class="txt">
-        <p data-i18n="founders.f1.p1">Vainqueur de la saison 4 de <b style="color:#fff">Nouvelle École</b> sur Netflix aux côtés du jury Shay, SCH et Niska. Signé chez COSHCO, figure montante du rap alternatif français. Univers : fusion trap saturée, cloud rap et rock alternatif.</p>
-        <p data-i18n="founders.f1.p2">Son rôle : exigence artistique sans filtre. Chaque choix de direction artistique passe par son regard. <b style="color:#fff">Pas de plan B, juste la quête.</b></p>
+        <p data-i18n="founders.f2.p1">Profil hybride formé au marketing digital chez <b style="color:#fff">Orange</b> et <b style="color:#fff">Vinci Construction</b>, où il a piloté des projets pour des audiences exigeantes. Il sait parler à un dirigeant de PME comme à un directeur marketing de grand groupe — sans changer d'exigence de qualité.</p>
+        <p data-i18n="founders.f2.p2">Chez Mad Makers, c'est lui qui prend les briefs, conçoit les directions créatives et pilote la production jusqu'à la livraison. <b style="color:#fff">Votre interlocuteur unique, du premier appel au site mis en ligne.</b></p>
       </div>
-      <div class="quote" data-i18n="founders.f1.quote">Pas de plan B, juste la quête.</div>
+      <div class="quote" data-i18n="founders.f2.quote">Ma mission, c'est de vous aider à obtenir plus que ce que vous avez investi, grâce à une meilleure traction commerciale.</div>
       <div class="stats">
-        <div class="s"><b data-i18n="founders.f1.s1.v">S.<span class="g">04</span></b><span data-i18n="founders.f1.s1.t">Nouvelle École<br>Netflix · 2025</span></div>
-        <div class="s"><b data-i18n="founders.f1.s2.v">2023</b><span data-i18n="founders.f1.s2.t">Signature<br>COSHCO</span></div>
-        <div class="s"><b data-i18n="founders.f1.s3.v">CONTROL</b><span data-i18n="founders.f1.s3.t">Premier projet<br>2024</span></div>
+        <div class="s"><b data-i18n="founders.f2.s1.v"><span class="g">2×</span></b><span data-i18n="founders.f2.s1.t">Grands groupes<br>Orange · Vinci</span></div>
+        <div class="s"><b data-i18n="founders.f2.s2.v">7+</b><span data-i18n="founders.f2.s2.t">Années<br>Marketing digital</span></div>
+        <div class="s"><b data-i18n="founders.f2.s3.v">100%</b><span data-i18n="founders.f2.s3.t">Interlocuteur<br>unique</span></div>
       </div>
     </div>
   </div>
 
   <div class="fd flip reveal">
     <div class="body">
-      <div class="role" data-i18n="founders.f2.role">Cofondateur · Directeur Artistique</div>
-      <div class="nm">MAICK<span style="color:var(--green)">.</span></div>
-      <div class="sub" data-i18n="founders.f2.sub">MASTER MARKETING DIGITAL · ORANGE B.S. · VINCI CONSTRUCTION</div>
-      <div class="txt">
-        <p data-i18n="founders.f2.p1">Artiste, marketeur, bâtisseur. <b style="color:#fff">628 656 écoutes cumulées</b> sur SoundCloud (@maickdufutur). Master en marketing digital, expériences en grands groupes et PME — il sait parler à un dirigeant d'artisan comme à un directeur marketing.</p>
-        <p data-i18n="founders.f2.p2">Il est le cerveau opérationnel : audit, propositions, pilotage production, livraison. Celui qui prend les briefs et qui livre.</p>
-      </div>
-      <div class="quote" data-i18n="founders.f2.quote">La créativité sans exécution, c'est du vent.</div>
-      <div class="stats">
-        <div class="s"><b data-i18n="founders.f2.s1.v"><span class="g">628K</span></b><span data-i18n="founders.f2.s1.t">Écoutes<br>SoundCloud</span></div>
-        <div class="s"><b data-i18n="founders.f2.s2.v">MSc</b><span data-i18n="founders.f2.s2.t">Marketing<br>Digital</span></div>
-        <div class="s"><b data-i18n="founders.f2.s3.v">2×</b><span data-i18n="founders.f2.s3.t">Grands Groupes<br>Orange · Vinci</span></div>
-      </div>
-    </div>
-    <div class="img"><img src="assets/artist-maick.png?v=2" alt="Maick"><span class="tag" data-i18n="founders.f2.tag">F.02 / COFONDATEUR</span><span class="code" data-i18n="founders.f2.code">OPÉRATIONNEL · PARIS</span></div>
-  </div>
-
-  <div class="fd reveal">
-    <div class="img"><img src="assets/artist-goudet.png?v=2" alt="Goudet Abalé"><span class="tag" data-i18n="founders.f3.tag">F.03 / MENTOR</span><span class="code" data-i18n="founders.f3.code">ARMD GROUP · CEO</span></div>
-    <div class="body">
-      <div class="role" data-i18n="founders.f3.role">Sparring Partner · Stratégie</div>
+      <div class="role" data-i18n="founders.f3.role">Cofondateur · Stratégie & Développement</div>
       <div class="nm">GOUDET<br>ABALÉ<span style="color:var(--green)">.</span></div>
-      <div class="sub" data-i18n="founders.f3.sub">SCIENCES PO LILLE · JOHNS HOPKINS SAIS · ARMD GROUP</div>
+      <div class="sub" data-i18n="founders.f3.sub">SCIENCES PO LILLE · JOHNS HOPKINS SAIS · CONSEIL INTERNATIONAL</div>
       <div class="txt">
-        <p data-i18n="founders.f3.p1">Fondateur & CEO d'<b style="color:#fff">ARMD Group</b>. Diplômé de Sciences Po Lille, master à Johns Hopkins (SAIS). Vice-président Model UN — primé aux MUN de Harvard 2016 & 2017.</p>
-        <p data-i18n="founders.f3.p2">Expériences en affaires publiques (Assemblée nationale, Ministère de la Justice CI), communication stratégique, actifs numériques. Le regard d'un bâtisseur qui voit plus loin.</p>
+        <p data-i18n="founders.f3.p1">Diplômé de <b style="color:#fff">Sciences Po Lille</b> et titulaire d'un master à <b style="color:#fff">Johns Hopkins (SAIS)</b>, Goudet a piloté des missions de stratégie et de communication pour des institutions et des grands groupes en Europe et en Afrique francophone — Assemblée nationale, ministère de la Justice, dirigeants d'entreprise.</p>
+        <p data-i18n="founders.f3.p2">Chez Mad Makers, il co-dirige le développement commercial et la stratégie.</p>
       </div>
-      <div class="quote" data-i18n="founders.f3.quote">Mad Makers n'est pas une agence de plus — c'est une proposition de valeur différente.</div>
+      <div class="quote" data-i18n="founders.f3.quote">Trop d'entreprises courent après la visibilité. Ce qui compte, c'est un positionnement clair et une croissance qui s'installe dans la durée.</div>
       <div class="stats">
-        <div class="s"><b data-i18n="founders.f3.s1.v">CEO</b><span data-i18n="founders.f3.s1.t">ARMD<br>Group</span></div>
+        <div class="s"><b data-i18n="founders.f3.s1.v">10+</b><span data-i18n="founders.f3.s1.t">Années<br>Conseil stratégique</span></div>
         <div class="s"><b data-i18n="founders.f3.s2.v">SAIS</b><span data-i18n="founders.f3.s2.t">Johns<br>Hopkins</span></div>
         <div class="s"><b data-i18n="founders.f3.s3.v"><span class="g">2×</span></b><span data-i18n="founders.f3.s3.t">Prix MUN<br>Harvard</span></div>
       </div>
     </div>
+    <div class="img"><img src="assets/artist-goudet.png?v=2" alt="Goudet Abalé — Cofondateur Mad Makers, stratégie et développement"><span class="tag" data-i18n="founders.f3.tag">F.03 / COFONDATEUR</span><span class="code" data-i18n="founders.f3.code">STRATÉGIE · DÉVELOPPEMENT</span></div>
   </div>
 </section>
 
@@ -756,58 +748,58 @@ section{position:relative}
 <section id="process" class="process" data-screen-label="05 Process">
   <div class="sec-head"><span data-i18n="process.sh.a"><span class="num">05</span> / PROCESS</span><span class="dim" data-i18n="process.sh.b">[ 12 ÉTAPES · 2 GATES ]</span></div>
   <div class="head reveal">
-    <h2 data-i18n="process.h2">RIEN N'EST<br>SAUTÉ. RIEN<br>N'EST LAISSÉ AU<br><span class="g">HASARD.</span></h2>
-    <p data-i18n="process.p">Un projet Mad Makers suit 12 étapes documentées, de la prise de brief à la clôture. Chaque étape a ses preuves de complétion. Deux moments bloquants garantissent qu'on livre ce qui a été validé.</p>
+    <h2 data-i18n="process.h2">RIEN N'EST<br>IMPROVISÉ. TOUT<br>EST <span class="g">CADRÉ.</span></h2>
+    <p data-i18n="process.p">Chaque projet Mad Makers suit un déroulé en 12 étapes, du brief initial à la mise en ligne. Vous savez à chaque instant où en est votre projet, ce qui a été validé, et ce qui reste à faire. Deux points de validation formelle ponctuent le processus : sans votre accord écrit, on ne passe pas à l'étape suivante. Vous gardez le contrôle. On garde la cadence.</p>
   </div>
   <div class="track">
     <div class="ph reveal">
-      <span class="tag" data-i18n="process.ph1.tag">Phase 01 — Commerciale</span>
-      <h3 data-i18n="process.ph1.h">Prendre<br>le brief.</h3>
+      <span class="tag" data-i18n="process.ph1.tag">Phase 01 — Stratégie</span>
+      <h3 data-i18n="process.ph1.h">Comprendre<br>votre projet.</h3>
       <ol>
         <li data-n="01" data-i18n="process.ph1.1">Brief initial</li>
-        <li data-n="02" data-i18n="process.ph1.2">Analyse marché</li>
-        <li data-n="03" data-i18n="process.ph1.3">Dossier projet</li>
-        <li data-n="04" data-i18n="process.ph1.4">Proposition</li>
-        <li data-n="05" data-i18n="process.ph1.5">Signature · 40%</li>
+        <li data-n="02" data-i18n="process.ph1.2">Étude de votre marché</li>
+        <li data-n="03" data-i18n="process.ph1.3">Cadrage du projet</li>
+        <li data-n="04" data-i18n="process.ph1.4">Proposition commerciale</li>
+        <li data-n="05" data-i18n="process.ph1.5">Signature · acompte 40 %</li>
       </ol>
     </div>
     <div class="ph reveal">
       <span class="tag" data-i18n="process.ph2.tag">Phase 02 — Production</span>
-      <h3 data-i18n="process.ph2.h">Construire<br>l'outil.</h3>
+      <h3 data-i18n="process.ph2.h">Concevoir<br>le site.</h3>
       <ol>
-        <li data-n="06" data-i18n="process.ph2.1">Collecte matière</li>
-        <li data-n="07" data-i18n="process.ph2.2">Design / maquettes</li>
+        <li data-n="06" data-i18n="process.ph2.1">Collecte des contenus</li>
+        <li data-n="07" data-i18n="process.ph2.2">Maquettes design</li>
         <li data-n="08" data-i18n="process.ph2.3">Direction artistique</li>
         <li data-n="09" data-i18n="process.ph2.4">Développement</li>
-        <li data-n="10" data-i18n="process.ph2.5">SEO · Tests</li>
+        <li data-n="10" data-i18n="process.ph2.5">Optimisation SEO · tests</li>
       </ol>
     </div>
     <div class="ph reveal">
       <span class="tag" data-i18n="process.ph3.tag">Phase 03 — Livraison</span>
-      <h3 data-i18n="process.ph3.h">Livrer<br>le concret.</h3>
+      <h3 data-i18n="process.ph3.h">Mettre<br>en ligne.</h3>
       <ol>
-        <li data-n="11" data-i18n="process.ph3.1">Corrections (2 A/R)</li>
-        <li data-n="12" data-i18n="process.ph3.2">Mise en ligne · Clôture</li>
+        <li data-n="11" data-i18n="process.ph3.1">Corrections (2 séries incluses)</li>
+        <li data-n="12" data-i18n="process.ph3.2">Mise en ligne · clôture</li>
       </ol>
     </div>
     <div class="ph reveal" style="background:#000;color:#fff">
       <span class="tag" data-i18n="process.ph4.tag">Modalités</span>
       <h3 style="color:#fff" data-i18n="process.ph4.h">Les règles<br>du jeu.</h3>
       <ol style="color:#bbb">
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.1">40% à la signature</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.2">60% à la livraison</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.3">2 A/R révisions inclus</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.4">GA4 + Search Console livrés</li>
+        <li data-n="→" style="color:#fff" data-i18n="process.ph4.1">40 % à la signature</li>
+        <li data-n="→" style="color:#fff" data-i18n="process.ph4.2">60 % à la livraison</li>
+        <li data-n="→" style="color:#fff" data-i18n="process.ph4.3">2 séries de corrections incluses</li>
+        <li data-n="→" style="color:#fff" data-i18n="process.ph4.4">Outils de suivi installés et configurés</li>
       </ol>
     </div>
   </div>
   <div class="gate">
-    <span data-i18n="process.gate1.a">GATE 01 · <b>Validation écrite des maquettes avant tout développement</b></span>
-    <span class="g" data-i18n="process.gate1.b">→ BLOQUANT</span>
+    <span data-i18n="process.gate1.a">VALIDATION 01 · <b>Accord écrit sur les maquettes avant développement</b></span>
+    <span class="g" data-i18n="process.gate1.b">→ ÉTAPE CLÉ</span>
   </div>
   <div class="gate">
-    <span data-i18n="process.gate2.a">GATE 02 · <b>Validation finale + paiement du solde avant mise en ligne</b></span>
-    <span class="g" data-i18n="process.gate2.b">→ BLOQUANT</span>
+    <span data-i18n="process.gate2.a">VALIDATION 02 · <b>Accord final et solde avant mise en ligne</b></span>
+    <span class="g" data-i18n="process.gate2.b">→ ÉTAPE CLÉ</span>
   </div>
 </section>
 
@@ -958,17 +950,17 @@ section{position:relative}
   <div class="sec-head" style="max-width:1400px;margin:0 auto 50px;padding:18px 0;border-bottom:1px solid #000"><span data-i18n="refuse.sh.a"><span class="num">09</span> / CE QU'ON REFUSE</span><span class="dim" data-i18n="refuse.sh.b">[ NO-LIST ]</span></div>
   <div class="wrap">
     <div>
-      <h2 class="reveal" data-i18n="refuse.h2">POUR BIEN<br>SAVOIR QUI<br>ON EST —<br>VOYEZ CE<br>QU'ON<br><span class="g">NE FERA PAS.</span></h2>
-      <div class="hint" data-i18n="refuse.hint"><span class="dot"></span>Cliquez sur une croix → révélez ce qu'on fait à la place</div>
+      <h2 class="reveal" data-i18n="refuse.h2">POUR BIEN SAVOIR<br>QUI ON EST —<br>VOYEZ CE QU'ON<br><span class="g">NE FERA PAS.</span></h2>
+      <div class="hint" data-i18n="refuse.hint"><span class="dot"></span>Cliquez sur une croix → découvrez notre promesse</div>
     </div>
     <ul class="reveal" id="refuseList">
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l1.no">Copier un template WordPress qu'on vend trois fois plus cher.</span><span class="yes" data-i18n="refuse.l1.yes">Coder sur-mesure, design unique, pensé pour votre métier.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l2.no">Écrire « Bienvenue sur notre site, nous sommes passionnés par notre métier ».</span><span class="yes" data-i18n="refuse.l2.yes">Écrire des accroches qui parlent à vos clients, pas à votre ego.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l3.no">Utiliser des photos de stock qui apparaissent sur 4 000 autres sites.</span><span class="yes" data-i18n="refuse.l3.yes">Shooter, illustrer, modéliser — des visuels qui n'existent qu'ici.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l4.no">Livrer un site sans GA4, sans Search Console, sans schema.org.</span><span class="yes" data-i18n="refuse.l4.yes">Livrer tout mesuré, tout indexé, tout documenté. Clefs en main.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l5.no">Facturer un « site vitrine » sans stratégie de conversion.</span><span class="yes" data-i18n="refuse.l5.yes">Chaque page a un objectif — leads, RDV, ventes. Jamais décoratif.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l6.no">Travailler avec un client qu'on ne comprend pas.</span><span class="yes" data-i18n="refuse.l6.yes">Plonger dans votre métier avant d'ouvrir Figma. Immersion d'abord.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l7.no">Dire oui à tout — on sait dire non quand un projet ne nous ressemble pas.</span><span class="yes" data-i18n="refuse.l7.yes">Dire oui quand on peut dire oui à 100%. Sinon on vous oriente.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l1.no">Recycler un template qu'on revend trois fois plus cher.</span><span class="yes" data-i18n="refuse.l1.yes">Concevoir un design unique, pensé pour votre marché.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l2.no">Écrire « Bienvenue sur notre site, nous sommes passionnés par notre métier ».</span><span class="yes" data-i18n="refuse.l2.yes">Écrire des textes qui parlent à vos clients, dans leurs mots, sur leurs leviers de décision.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l3.no">Utiliser des photos de stock qu’on retrouve sur 4 000 autres sites.</span><span class="yes" data-i18n="refuse.l3.yes">Produire des visuels originaux — photos, illustrations, animations — qui n’existent que chez vous.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l4.no">Livrer un site sans outils de mesure, sans suivi, sans données.</span><span class="yes" data-i18n="refuse.l4.yes">Installer et configurer tous les outils de suivi. Vous savez exactement ce que rapporte votre site.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l5.no">Facturer un site « joli » sans stratégie pour générer des contacts.</span><span class="yes" data-i18n="refuse.l5.yes">Concevoir chaque page avec un objectif clair : demande de devis, prise de rendez-vous, vente.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l6.no">Nous lancer sans connaître votre métier ni vos clients.</span><span class="yes" data-i18n="refuse.l6.yes">Étudier votre marché et vos concurrents avant la première maquette.</span></span></li>
+      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l7.no">Accepter un projet pour le facturer, en sachant qu’on n’est pas les bons.</span><span class="yes" data-i18n="refuse.l7.yes">Vous orienter vers d’autres si votre besoin sort de notre expertise. Notre temps et le vôtre comptent.</span></span></li>
     </ul>
   </div>
 </section>
@@ -981,40 +973,38 @@ section{position:relative}
     <div>
       <div class="lbl" data-i18n="contact.col1.lbl">Projets · Brief</div>
       <a href="mailto:hello@madmakers.fr" class="mail">HELLO@MADMAKERS.FR</a>
-      <a href="#" style="margin-top:14px" data-i18n="contact.col1.a">Interlocuteur · Maick (fondateur opérationnel)</a>
+      <a href="#" style="margin-top:14px" data-i18n="contact.col1.a">Votre interlocuteur direct : Maïck, cofondateur</a>
     </div>
     <div>
       <div class="lbl" data-i18n="contact.col2.lbl">Studio</div>
       <a href="#" data-i18n="contact.col2.a1">Paris · France</a>
-      <a href="#" data-i18n="contact.col2.a2">Zone : PME de proximité</a>
+      <a href="#" data-i18n="contact.col2.a2">Clients : France, Europe, francophonie</a>
       <a href="#" data-i18n="contact.col2.a3">FR · EN</a>
     </div>
     <div>
       <div class="lbl" data-i18n="contact.col3.lbl">Social</div>
-      <a href="https://fr.wikipedia.org/wiki/Shayne_(rappeur)" target="_blank" rel="noopener" data-i18n="contact.col3.a1">Shayne · Wikipédia ↗</a>
-      <a href="https://soundcloud.com/maickdufutur" target="_blank" rel="noopener" data-i18n="contact.col3.a2">Maick · SoundCloud ↗</a>
-      <a href="https://www.linkedin.com/in/goudet-abalé-329909104/" target="_blank" rel="noopener" data-i18n="contact.col3.a3">Goudet · LinkedIn ↗</a>
-      <a href="#" data-i18n="contact.col3.a4">Instagram ↗</a>
+      <a href="https://www.instagram.com/madmakers" target="_blank" rel="noopener" data-i18n="contact.col3.a1">Mad Makers · Instagram ↗</a>
+      <a href="https://www.linkedin.com/company/madmakers" target="_blank" rel="noopener" data-i18n="contact.col3.a2">Mad Makers · LinkedIn ↗</a>
     </div>
     <div>
       <div class="lbl" data-i18n="contact.col4.lbl">Modalités</div>
-      <a href="#" data-i18n="contact.col4.a1">40% signature · 60% livraison</a>
-      <a href="#" data-i18n="contact.col4.a2">2 A/R de révisions inclus</a>
-      <a href="#" data-i18n="contact.col4.a3">GA4 + Search Console livrés</a>
-      <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener" data-i18n="contact.col4.a4">Brief gratuit · 30 min ↗</a>
+      <a href="#" data-i18n="contact.col4.a1">40 % à la signature · 60 % à la livraison</a>
+      <a href="#" data-i18n="contact.col4.a2">2 séries de corrections incluses</a>
+      <a href="#" data-i18n="contact.col4.a3">Outils de suivi installés et configurés</a>
+      <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener" data-i18n="contact.col4.a4">Premier échange gratuit · 30 min ↗</a>
     </div>
   </div>
   <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener" class="book reveal">
     <div class="txt">
-      <span class="kk" data-i18n="contact.book.kk">[ 30 min · Gratuit · Sans engagement ]</span>
-      <div class="ll" data-i18n="contact.book.ll">Réserver un brief —<br>choisir un créneau.</div>
-      <div class="sub" data-i18n="contact.book.sub">On cale 30 minutes sur Google Meet. Vous présentez le projet, on pose les bonnes questions, on repart avec un plan clair.</div>
+      <span class="kk" data-i18n="contact.book.kk">[ 30 MIN · GRATUIT · SANS ENGAGEMENT ]</span>
+      <div class="ll" data-i18n="contact.book.ll">Parlons de<br>votre projet.</div>
+      <div class="sub" data-i18n="contact.book.sub">Trente minutes en visio pour comprendre vos enjeux, vous donner un retour direct sur votre projet, et voir si nous sommes les bons pour vous accompagner. Pas de commercial, pas de script — juste une conversation utile.</div>
     </div>
-    <span class="btn"><span data-i18n="contact.book.btn">Voir les créneaux</span><span class="ar">↗</span></span>
+    <span class="btn"><span data-i18n="contact.book.btn">Réserver un créneau</span><span class="ar">↗</span></span>
   </a>
   <footer class="foot">
     <span>© 2026 — <b>MAD MAKERS</b></span>
-    <span data-i18n="contact.foot.slogan">DREAM IT · WE MAKE IT</span>
+    <span data-i18n="contact.foot.slogan">AGENCE WEB CRÉATIVE PARIS</span>
     <span>PARIS · FR</span>
     <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></span>
   </footer>
