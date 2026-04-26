@@ -67,6 +67,10 @@
   .pj-hero .sub{font:400 clamp(17px,1.6vw,22px)/1.45 var(--sans);color:var(--soft);max-width:62ch;margin-bottom:32px}
   .pj-hero .scope{display:flex;flex-wrap:wrap;gap:8px}
   .pj-hero .scope span{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:8px 12px}
+  .pj-hero .live-cta{display:inline-flex;align-items:center;gap:14px;margin-top:38px;padding:16px 26px;background:var(--green);color:#000;font:500 11px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;border:1px solid var(--green);transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .3s ease}
+  .pj-hero .live-cta:hover{background:#fff;border-color:#fff;color:#000;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--green)}
+  .pj-hero .live-cta .arr{font:500 13px/1 var(--mono);transition:transform .3s ease}
+  .pj-hero .live-cta:hover .arr{transform:translate(4px,-4px)}
 
   /* Cover */
   .pj-cover{padding:40px;max-width:1600px;margin:0 auto}
@@ -302,6 +306,9 @@
     </section>` : '';
 
   const statusBadge = data.status ? `<span class="status">${esc(data.status)}</span>` : '';
+  const liveCta = data.liveUrl
+    ? `<a class="live-cta" href="${esc(data.liveUrl)}" target="_blank" rel="noopener">Voir le site live <span class="arr">↗</span></a>`
+    : '';
 
   root.innerHTML = `
     <section class="pj-hero">
@@ -314,6 +321,7 @@
       <h1>${esc(data.title)}<span class="dot">.</span></h1>
       <p class="sub">${esc(data.subtitle)}</p>
       <div class="scope">${scopeHtml}</div>
+      ${liveCta}
     </section>
 
     <section class="pj-cover">
