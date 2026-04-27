@@ -23,3 +23,17 @@ uploads/
 
 # Large media files — deferred until Git LFS / paid GitHub plan is set up
 assets/shayne - plus rien.mp4
+
+# Copyright-restricted media — not deployed
+assets/SHAYNE - Libre (Clip Officiel)   Nouvelle École saison 4 (5).mp4
+assets/Shayne - Plus Rien (Clip Officiel) - Nouvelle École (2).mp3
+assets/shayne-libre.mp3
+assets/artist-shayne-show.png
+assets/artist-shayne-scream.png
+assets/artist-shayne-sing.png
+assets/Savarabia.mp4
+assets/WUSYANAME.mp4
+
+# Files exceeding GitHub 100MB hard limit — to be added later via Git LFS
+assets/AMV decoratif video.mp4
+assets/KURI - why am i so hard to love, part 2 (Official Video).mp4
