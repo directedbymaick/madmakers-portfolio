@@ -6,7 +6,7 @@ window.MM_PROJECTS = {
     num: 'R.01',
     title: 'Riot MMO — Cinematic Web Experience',
     subtitle: 'Site cinématique concept pour le futur MMO de Riot Games — explorant l\'univers de Runeterra avec un niveau Awwwards.',
-    liveUrl: 'https://mad-makers-x-riot-mmo.netlify.app',
+    liveUrl: 'https://riot-mmo.mad-makers.fr',
     client: 'Riot Games · Concept',
     year: '2025',
     scope: ['Direction artistique', 'WebGL · Three.js', 'Motion design', 'Front-end'],

@@ -6,4 +6,4 @@ Disallow: /*?v=
 Disallow: /uploads/
 
 # Sitemap
-Sitemap: https://madmakers.fr/sitemap.xml
+Sitemap: https://www.mad-makers.fr/sitemap.xml
