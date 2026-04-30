@@ -142,17 +142,7 @@ if (existsSync(FAV_SRC)) {
   console.log('  ✓ apple-touch-icon.png  (180x180)');
 }
 
-// ── 4. favicon.svg — clean vector, brand colors ────────────────────────────
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
-  <path d="M14 48V16h5l9 18 9-18h5v32h-4V24l-8 16h-4l-8-16v24z" fill="#fff"/>
-  <circle cx="50" cy="48" r="3.5" fill="#39ff14"/>
-</svg>
-`;
-await writeFile(join(ROOT, 'favicon.svg'), faviconSvg, 'utf8');
-console.log('  ✓ favicon.svg           (handcrafted "M" + accent dot)');
-
-// ── 5. og-home.jpg — programmatic 1200x630 social card ─────────────────────
+// ── 4. og-home.jpg — programmatic 1200x630 social card ─────────────────────
 const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
