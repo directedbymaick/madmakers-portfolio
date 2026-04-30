@@ -1,69 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://www.mad-makers.fr/</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.mad-makers.fr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.mad-makers.fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mad-makers.fr/"/>
   </url>
 
   <url>
     <loc>https://www.mad-makers.fr/project.html?id=01</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=02</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=03</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=04</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=05</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=06</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mad-makers.fr/project.html?id=07</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.mad-makers.fr/mentions-legales.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.mad-makers.fr/politique-confidentialite.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
