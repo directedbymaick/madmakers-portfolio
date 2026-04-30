@@ -213,7 +213,15 @@
         <a href="index.html#realisations">← Retour aux réalisations</a>
       </section>`;
     document.title = '404 — Mad Makers';
+    const r = document.querySelector('meta[name="robots"]');
+    if (r) r.setAttribute('content', 'noindex,follow');
     return;
+  }
+
+  // Placeholder projects: do not index (thin content, hurts overall site quality signal).
+  if (data.status === 'Placeholder') {
+    const r = document.querySelector('meta[name="robots"]');
+    if (r) r.setAttribute('content', 'noindex,follow,max-image-preview:large');
   }
 
   // === SEO META INJECTION (per project) ===
