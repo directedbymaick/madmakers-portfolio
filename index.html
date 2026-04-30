@@ -598,6 +598,21 @@ section{position:relative}
   body{cursor:auto}
   .cursor{display:none}
 }
+
+/* a11y — WCAG 2.3.3: respect users who reduce motion in their OS preferences */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  body{cursor:auto !important}
+  .cursor{display:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .tile-preview{display:none !important}
+  .hero-display .row span{transform:translateY(0) !important}
+}
 </style>
 
 <!-- === STRUCTURED DATA (JSON-LD) ===
@@ -655,7 +670,8 @@ section{position:relative}
       },
       "sameAs": [
         "https://www.instagram.com/madmakers",
-        "https://www.linkedin.com/company/madmakers"
+        "https://www.linkedin.com/company/madmakers",
+        "https://share.google/PSeyhdo7m6e7L82Om"
       ]
     },
     {
@@ -1115,7 +1131,7 @@ section{position:relative}
     <span>© 2026 — <b>MAD MAKERS</b></span>
     <span data-i18n="contact.foot.slogan">AGENCE WEB CRÉATIVE PARIS</span>
     <span>PARIS · FR</span>
-    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></span>
+    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="https://share.google/PSeyhdo7m6e7L82Om" target="_blank" rel="noopener">Google Business</a></span>
   </footer>
 </section>
 
@@ -1585,8 +1601,14 @@ section{position:relative}
   });
 })();
 
-// hero play
-requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('hero').classList.add('play')));
+// hero play — skip the deferred animation frames when the user reduces motion (a11y)
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion){
+  document.getElementById('hero').classList.add('play');
+  document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+} else {
+  requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('hero').classList.add('play')));
+}
 
 // cursor
 (() => {
