@@ -1,5 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/build-projects.mjs",
+  "redirects": [
+    {
+      "source": "/project.html",
+      "has": [{ "type": "query", "key": "id", "value": "(?<pid>\\d+)" }],
+      "destination": "/project-:pid.html",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
