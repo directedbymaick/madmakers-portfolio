@@ -12,6 +12,8 @@
     'nav.menu':           { fr:'Parler de votre projet · 30 min', en:'Talk about your project · 30 min' },
 
     /* ——— HERO ——— */
+    'hero.h1.sr':         { fr:'Mad Makers — agence web créative à Paris : création de sites web, SEO, direction artistique et production vidéo.',
+                            en:'Mad Makers — creative web agency in Paris: web design, SEO, art direction and video production.' },
     'hero.scroll':        { fr:'SCROLL · EXPERIENCE ↓', en:'SCROLL · EXPERIENCE ↓' },
     'hero.disc':          { fr:'AGENCE<br>WEB<br>CRÉATIVE<br>——<br>PARIS · FR',
                             en:'CREATIVE<br>WEB<br>AGENCY<br>——<br>PARIS · FR' },
