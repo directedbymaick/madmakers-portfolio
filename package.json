@@ -1,0 +1,14 @@
+{
+  "name": "mad-makers-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mad Makers — agence web créative · portfolio site (vanilla JS, no runtime build step)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-projects.mjs",
+    "optimize": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

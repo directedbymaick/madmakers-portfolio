@@ -42,7 +42,7 @@ for (const id of ids) {
   const desc = (data.subtitle || data.intro || '').slice(0, 160);
 
   // Cover/OG image: use poster for video covers, src for image covers
-  let ogImage = `${SITE_ORIGIN}/assets/hero-bg.png`;
+  let ogImage = `${SITE_ORIGIN}/assets/og-home.jpg`;
   if (data.cover) {
     if (data.cover.type === 'video' && data.cover.poster) {
       ogImage = `${SITE_ORIGIN}/${data.cover.poster}`;
