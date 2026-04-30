@@ -20,7 +20,7 @@
 <meta property="og:title" content="Mad Makers — Agence Web Créative Paris" />
 <meta property="og:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
 <meta property="og:url" content="https://www.mad-makers.fr/" />
-<meta property="og:image" content="https://www.mad-makers.fr/assets/hero-bg.png" />
+<meta property="og:image" content="https://www.mad-makers.fr/assets/og-home.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Mad Makers — agence web créative Paris" />
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Mad Makers — Agence Web Créative Paris" />
 <meta name="twitter:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
-<meta name="twitter:image" content="https://www.mad-makers.fr/assets/hero-bg.png" />
+<meta name="twitter:image" content="https://www.mad-makers.fr/assets/og-home.jpg" />
 <meta name="twitter:image:alt" content="Mad Makers — agence web créative Paris" />
 
 <!-- === FAVICONS (à générer depuis le logo : favicon.svg + PNG 32/180) === -->
@@ -136,7 +136,7 @@ section{position:relative}
 .hero{height:100vh;min-height:780px;background:#000;color:#fff;overflow:hidden;display:flex;flex-direction:column}
 .hero .stage{position:relative;flex:1;display:grid;align-items:center;padding-top:140px}
 .hero .bg{position:absolute;inset:0;overflow:hidden}
-.hero .bg .photo{position:absolute;inset:0;background:url("assets/hero-bg.png") center/cover no-repeat;filter:contrast(1.05) saturate(1.05)}
+.hero .bg .photo{position:absolute;inset:0;background:image-set(url("assets/hero-bg.webp") type("image/webp"), url("assets/hero-bg.png") type("image/png")) center/cover no-repeat;background-size:cover;filter:contrast(1.05) saturate(1.05)}
 .hero .bg .photo::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15) 30%, rgba(0,0,0,.55)),
   linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.1) 40%, transparent 65%)}
@@ -628,8 +628,8 @@ section{position:relative}
       "legalName": "Sara Cankaya",
       "alternateName": "Mad Makers Agence Web Paris",
       "url": "https://www.mad-makers.fr/",
-      "logo": "https://www.mad-makers.fr/assets/hero-bg.png",
-      "image": "https://www.mad-makers.fr/assets/hero-bg.png",
+      "logo": "https://www.mad-makers.fr/assets/og-home.jpg",
+      "image": "https://www.mad-makers.fr/assets/og-home.jpg",
       "description": "Agence web créative à Paris. Création de sites web, SEO, direction artistique et production vidéo pour TPE, PME et grands groupes qui refusent le générique.",
       "foundingDate": "2025",
       "slogan": "Dream it. We make it.",
@@ -831,7 +831,7 @@ section{position:relative}
   </div>
 
   <div class="fd reveal">
-    <div class="img"><img src="assets/artist-maick.png?v=2" alt="Maïck — Cofondateur Mad Makers, agence web créative Paris"><span class="tag" data-i18n="founders.f2.tag">F.02 / COFONDATEUR</span><span class="code" data-i18n="founders.f2.code">DIRECTEUR ARTISTIQUE · PARIS</span></div>
+    <div class="img"><picture><source srcset="assets/artist-maick.webp" type="image/webp"><img src="assets/artist-maick.png?v=2" alt="Maïck — Cofondateur Mad Makers, agence web créative Paris" width="1023" height="1537" loading="eager" decoding="async" fetchpriority="high"></picture><span class="tag" data-i18n="founders.f2.tag">F.02 / COFONDATEUR</span><span class="code" data-i18n="founders.f2.code">DIRECTEUR ARTISTIQUE · PARIS</span></div>
     <div class="body">
       <div class="role" data-i18n="founders.f2.role">Cofondateur · Directeur Artistique</div>
       <div class="nm">MAÏCK<span style="color:var(--green)">.</span></div>
@@ -865,7 +865,7 @@ section{position:relative}
         <div class="s"><b data-i18n="founders.f3.s3.v"><span class="g">2×</span></b><span data-i18n="founders.f3.s3.t">Prix MUN<br>Harvard</span></div>
       </div>
     </div>
-    <div class="img"><img src="assets/artist-goudet.png?v=2" alt="Goudet Abalé — Cofondateur Mad Makers, stratégie et développement"><span class="tag" data-i18n="founders.f3.tag">F.03 / COFONDATEUR</span><span class="code" data-i18n="founders.f3.code">STRATÉGIE · DÉVELOPPEMENT</span></div>
+    <div class="img"><picture><source srcset="assets/artist-goudet.webp" type="image/webp"><img src="assets/artist-goudet.png?v=2" alt="Goudet Abalé — Cofondateur Mad Makers, stratégie et développement" width="1122" height="1402" loading="lazy" decoding="async"></picture><span class="tag" data-i18n="founders.f3.tag">F.03 / COFONDATEUR</span><span class="code" data-i18n="founders.f3.code">STRATÉGIE · DÉVELOPPEMENT</span></div>
   </div>
 </section>
 
@@ -932,12 +932,12 @@ section{position:relative}
 <section id="talents" class="talents" data-screen-label="06 Talents">
   <div class="sec-head sh"><span data-i18n="talents.sh.a"><span class="num">06</span> / TALENTS</span><span class="dim" data-i18n="talents.sh.b">[ CE QU'ON SAIT FAIRE ]</span></div>
   <div class="grid">
-    <div class="card reveal"><img src="assets/direction%20artistique%20t.01.png" alt="Direction artistique"><span class="tag">T.01</span><div class="tit" data-i18n="talents.t1.tit">Direction<br>Artistique<small>Identité · univers · impact</small></div></div>
-    <div class="card reveal"><img src="assets/creation%20web%20t.02.png" alt="Création web"><span class="tag">T.02</span><div class="tit" data-i18n="talents.t2.tit">Création<br>Web<small>Framer · Vercel · Figma</small></div></div>
+    <div class="card reveal"><picture><source srcset="assets/direction-artistique.webp" type="image/webp"><img src="assets/direction-artistique.png" alt="Direction artistique" width="1672" height="941" loading="lazy" decoding="async"></picture><span class="tag">T.01</span><div class="tit" data-i18n="talents.t1.tit">Direction<br>Artistique<small>Identité · univers · impact</small></div></div>
+    <div class="card reveal"><picture><source srcset="assets/creation-web.webp" type="image/webp"><img src="assets/creation-web.png" alt="Création web" width="4096" height="2728" loading="lazy" decoding="async"></picture><span class="tag">T.02</span><div class="tit" data-i18n="talents.t2.tit">Création<br>Web<small>Framer · Vercel · Figma</small></div></div>
     <div class="card reveal"><video src="assets/waitinforyou.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tag">T.03</span><div class="tit" data-i18n="talents.t3.tit">Vidéo<br>Institutionnelle<small>Davinci · Runway · Clip</small></div></div>
-    <div class="card reveal"><img src="assets/seo%20marketing%20t.04.png" alt="SEO marketing"><span class="tag">T.04</span><div class="tit" data-i18n="talents.t4.tit">SEO<br>Marketing<small>Audit · local · contenus</small></div></div>
-    <div class="card reveal"><img src="assets/reseaux%20sociaux%20t.05.png" alt="Réseaux sociaux"><span class="tag">T.05</span><div class="tit" data-i18n="talents.t5.tit">Réseaux<br>Sociaux<small>Strat · visuel · anim</small></div></div>
-    <div class="card reveal"><img src="assets/copstrytelling%20t.06.png" alt="Copywriting et storytelling"><span class="tag">T.06</span><div class="tit" data-i18n="talents.t6.tit">Copywriting<br>Storytelling<small>AIDA · scripts · SEO</small></div></div>
+    <div class="card reveal"><picture><source srcset="assets/seo-marketing.webp" type="image/webp"><img src="assets/seo-marketing.png" alt="SEO marketing" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.04</span><div class="tit" data-i18n="talents.t4.tit">SEO<br>Marketing<small>Audit · local · contenus</small></div></div>
+    <div class="card reveal"><picture><source srcset="assets/reseaux-sociaux.webp" type="image/webp"><img src="assets/reseaux-sociaux.png" alt="Réseaux sociaux" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.05</span><div class="tit" data-i18n="talents.t5.tit">Réseaux<br>Sociaux<small>Strat · visuel · anim</small></div></div>
+    <div class="card reveal"><picture><source srcset="assets/copywriting-storytelling.webp" type="image/webp"><img src="assets/copywriting-storytelling.png" alt="Copywriting et storytelling" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.06</span><div class="tit" data-i18n="talents.t6.tit">Copywriting<br>Storytelling<small>AIDA · scripts · SEO</small></div></div>
   </div>
 </section>
 
@@ -964,13 +964,13 @@ section{position:relative}
       <div class="lbl"><span data-i18n="toolkit.e2.lbl">ÉLÉMENTS GRAPHIQUES</span><span class="code">E.02</span></div>
       <div class="graphics">
         <div class="g"><span class="num">G.01</span>
-          <img src="assets/mockup-box.png" alt="Mad Makers — packaging 3D" loading="lazy">
+          <picture><source srcset="assets/mockup-box.webp" type="image/webp"><img src="assets/mockup-box.png" alt="Mad Makers — packaging 3D" width="1024" height="1536" loading="lazy" decoding="async"></picture>
         </div>
         <div class="g"><span class="num">G.02</span>
-          <img src="assets/mockup-poster.png" alt="Mad Makers — poster Make It Mad" loading="lazy">
+          <picture><source srcset="assets/mockup-poster.webp" type="image/webp"><img src="assets/mockup-poster.png" alt="Mad Makers — poster Make It Mad" width="1024" height="1536" loading="lazy" decoding="async"></picture>
         </div>
         <div class="g"><span class="num">G.03</span>
-          <img src="assets/mockup-phone.png" alt="Mad Makers — mobile Crafting Brands" loading="lazy">
+          <picture><source srcset="assets/mockup-phone.webp" type="image/webp"><img src="assets/mockup-phone.png" alt="Mad Makers — mobile Crafting Brands" width="1024" height="1536" loading="lazy" decoding="async"></picture>
         </div>
       </div>
     </div>
@@ -990,9 +990,9 @@ section{position:relative}
     <a class="tile video-tile" target="_blank" rel="noopener" href="project-01.html"><span class="num">R.01</span><video src="assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/fight%20epic%20battles.mp4" muted loop playsinline autoplay preload="metadata" poster="assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero.png"></video><div class="cap"><h4 data-i18n="real.r1.h">Riot MMO</h4><div class="meta" data-i18n="real.r1.meta"><span>RIOT GAMES · CINEMATIC WEB</span><b>2025</b></div></div></a>
     <a class="tile video-tile" target="_blank" rel="noopener" href="project-02.html"><span class="num">R.02</span><video src="assets/Amv%20made%20by%20maick.mp4" muted loop playsinline autoplay preload="metadata"></video><div class="cap"><h4 data-i18n="real.r2.h">AMV · Atmosphère</h4><div class="meta" data-i18n="real.r2.meta"><span>MONTAGE · MAÏCK</span><b>2025</b></div></div></a>
     <a class="tile video-tile" target="_blank" rel="noopener" href="project-03.html"><span class="num">R.03</span><video src="assets/amv%20made%20by%20maick%20(id%C3%A9e%20noire%20prod).mp4" muted loop playsinline autoplay preload="metadata"></video><div class="cap"><h4 data-i18n="real.r3.h">Idée Noire</h4><div class="meta" data-i18n="real.r3.meta"><span>MONTAGE · MAÏCK</span><b>2025</b></div></div></a>
-    <a class="tile" target="_blank" rel="noopener" href="project-04.html"><span class="num">R.04</span><img src="assets/artist-maick.png" alt="Maick — Portrait"><div class="cap"><h4 data-i18n="real.r4.h">Studio · Off-Stage</h4><div class="meta" data-i18n="real.r4.meta"><span>MAICK · EDITORIAL</span><b>FR</b></div></div></a>
-    <a class="tile" target="_blank" rel="noopener" href="project-05.html"><span class="num">R.05</span><img src="assets/artist-goudet.png" alt="Goudet — ARMD"><div class="cap"><h4 data-i18n="real.r5.h">Stratégie · Altitude</h4><div class="meta" data-i18n="real.r5.meta"><span>GOUDET · ARMD</span><b>INT.</b></div></div></a>
-    <a class="tile" target="_blank" rel="noopener" href="project-06.html"><span class="num">R.06</span><img src="assets/asset-05.png" alt=""><div class="cap"><h4 data-i18n="real.r6.h">Brand System</h4><div class="meta" data-i18n="real.r6.meta"><span>IDENTITÉ · PHASE 01</span><b>MAD</b></div></div></a>
+    <a class="tile" target="_blank" rel="noopener" href="project-04.html"><span class="num">R.04</span><picture><source srcset="assets/artist-maick.webp" type="image/webp"><img src="assets/artist-maick.png" alt="Maick — Portrait" width="1023" height="1537" loading="lazy" decoding="async"></picture><div class="cap"><h4 data-i18n="real.r4.h">Studio · Off-Stage</h4><div class="meta" data-i18n="real.r4.meta"><span>MAICK · EDITORIAL</span><b>FR</b></div></div></a>
+    <a class="tile" target="_blank" rel="noopener" href="project-05.html"><span class="num">R.05</span><picture><source srcset="assets/artist-goudet.webp" type="image/webp"><img src="assets/artist-goudet.png" alt="Goudet — ARMD" width="1122" height="1402" loading="lazy" decoding="async"></picture><div class="cap"><h4 data-i18n="real.r5.h">Stratégie · Altitude</h4><div class="meta" data-i18n="real.r5.meta"><span>GOUDET · ARMD</span><b>INT.</b></div></div></a>
+    <a class="tile" target="_blank" rel="noopener" href="project-06.html"><span class="num">R.06</span><picture><source srcset="assets/asset-05.webp" type="image/webp"><img src="assets/asset-05.png" alt="" width="941" height="1672" loading="lazy" decoding="async"></picture><div class="cap"><h4 data-i18n="real.r6.h">Brand System</h4><div class="meta" data-i18n="real.r6.meta"><span>IDENTITÉ · PHASE 01</span><b>MAD</b></div></div></a>
     <a class="tile video-tile" target="_blank" rel="noopener" href="project-07.html"><span class="num">R.07</span><video src="assets/amv%20realis%C3%A9%20par%20maick%20anime.mp4" muted loop playsinline autoplay preload="metadata"></video><div class="cap"><h4 data-i18n="real.r7.h">Anime · AMV</h4><div class="meta" data-i18n="real.r7.meta"><span>ANIMATION · MAÏCK</span><b>2025</b></div></div></a>
   </div>
 </section>

@@ -18,14 +18,14 @@
 <meta property="og:title" content="Idée Noire — Mad Makers"/>
 <meta property="og:description" content="AMV produit par Idée Noire — montage rythmique sur prod sombre."/>
 <meta property="og:url" content="https://www.mad-makers.fr/project-03.html"/>
-<meta property="og:image" content="https://www.mad-makers.fr/assets/hero-bg.png"/>
+<meta property="og:image" content="https://www.mad-makers.fr/assets/og-home.jpg"/>
 <meta property="og:locale" content="fr_FR"/>
 
 <!-- TWITTER (remplacé en JS) -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Idée Noire — Mad Makers"/>
 <meta name="twitter:description" content="AMV produit par Idée Noire — montage rythmique sur prod sombre."/>
-<meta name="twitter:image" content="https://www.mad-makers.fr/assets/hero-bg.png"/>
+<meta name="twitter:image" content="https://www.mad-makers.fr/assets/og-home.jpg"/>
 
 <!-- FAVICONS -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -233,10 +233,10 @@
   const pageDesc  = (data.subtitle || data.intro || '').slice(0, 160);
   const coverSrc  = data.cover && data.cover.src
     ? (/^https?:/i.test(data.cover.src) ? data.cover.src : `${SITE_ORIGIN}/${data.cover.src}`)
-    : `${SITE_ORIGIN}/assets/hero-bg.png`;
+    : `${SITE_ORIGIN}/assets/og-home.jpg`;
   const ogImage = data.cover && data.cover.type === 'video' && data.cover.poster
     ? `${SITE_ORIGIN}/${data.cover.poster}`
-    : (data.cover && data.cover.type === 'image' ? coverSrc : `${SITE_ORIGIN}/assets/hero-bg.png`);
+    : (data.cover && data.cover.type === 'image' ? coverSrc : `${SITE_ORIGIN}/assets/og-home.jpg`);
 
   document.title = pageTitle;
   const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };

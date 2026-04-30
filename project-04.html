@@ -233,10 +233,10 @@
   const pageDesc  = (data.subtitle || data.intro || '').slice(0, 160);
   const coverSrc  = data.cover && data.cover.src
     ? (/^https?:/i.test(data.cover.src) ? data.cover.src : `${SITE_ORIGIN}/${data.cover.src}`)
-    : `${SITE_ORIGIN}/assets/hero-bg.png`;
+    : `${SITE_ORIGIN}/assets/og-home.jpg`;
   const ogImage = data.cover && data.cover.type === 'video' && data.cover.poster
     ? `${SITE_ORIGIN}/${data.cover.poster}`
-    : (data.cover && data.cover.type === 'image' ? coverSrc : `${SITE_ORIGIN}/assets/hero-bg.png`);
+    : (data.cover && data.cover.type === 'image' ? coverSrc : `${SITE_ORIGIN}/assets/og-home.jpg`);
 
   document.title = pageTitle;
   const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };

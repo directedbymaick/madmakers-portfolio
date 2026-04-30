@@ -1,0 +1,128 @@
+{
+  "artist-goudet.png": {
+    "newBase": "artist-goudet",
+    "webp": "assets/artist-goudet.webp",
+    "png": "assets/artist-goudet.png",
+    "width": 1122,
+    "height": 1402
+  },
+  "artist-maick.png": {
+    "newBase": "artist-maick",
+    "webp": "assets/artist-maick.webp",
+    "png": "assets/artist-maick.png",
+    "width": 1023,
+    "height": 1537
+  },
+  "asset-01.png": {
+    "newBase": "asset-01",
+    "webp": "assets/asset-01.webp",
+    "png": "assets/asset-01.png",
+    "width": 941,
+    "height": 1672
+  },
+  "asset-02.png": {
+    "newBase": "asset-02",
+    "webp": "assets/asset-02.webp",
+    "png": "assets/asset-02.png",
+    "width": 941,
+    "height": 1672
+  },
+  "asset-03.png": {
+    "newBase": "asset-03",
+    "webp": "assets/asset-03.webp",
+    "png": "assets/asset-03.png",
+    "width": 941,
+    "height": 1672
+  },
+  "asset-04.png": {
+    "newBase": "asset-04",
+    "webp": "assets/asset-04.webp",
+    "png": "assets/asset-04.png",
+    "width": 941,
+    "height": 1672
+  },
+  "asset-05.png": {
+    "newBase": "asset-05",
+    "webp": "assets/asset-05.webp",
+    "png": "assets/asset-05.png",
+    "width": 941,
+    "height": 1672
+  },
+  "asset-06.png": {
+    "newBase": "asset-06",
+    "webp": "assets/asset-06.webp",
+    "png": "assets/asset-06.png",
+    "width": 941,
+    "height": 1672
+  },
+  "copstrytelling t.06.png": {
+    "newBase": "copywriting-storytelling",
+    "webp": "assets/copywriting-storytelling.webp",
+    "png": "assets/copywriting-storytelling.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "creation web t.02.png": {
+    "newBase": "creation-web",
+    "webp": "assets/creation-web.webp",
+    "png": "assets/creation-web.png",
+    "width": 4096,
+    "height": 2728
+  },
+  "direction artistique t.01.png": {
+    "newBase": "direction-artistique",
+    "webp": "assets/direction-artistique.webp",
+    "png": "assets/direction-artistique.png",
+    "width": 1672,
+    "height": 941
+  },
+  "glass texture.jpg": {
+    "newBase": "glass-texture",
+    "webp": "assets/glass-texture.webp",
+    "png": null,
+    "width": 2000,
+    "height": 1333
+  },
+  "hero-bg.png": {
+    "newBase": "hero-bg",
+    "webp": "assets/hero-bg.webp",
+    "png": "assets/hero-bg.png",
+    "width": 2400,
+    "height": 1600
+  },
+  "mockup-box.png": {
+    "newBase": "mockup-box",
+    "webp": "assets/mockup-box.webp",
+    "png": "assets/mockup-box.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "mockup-phone.png": {
+    "newBase": "mockup-phone",
+    "webp": "assets/mockup-phone.webp",
+    "png": "assets/mockup-phone.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "mockup-poster.png": {
+    "newBase": "mockup-poster",
+    "webp": "assets/mockup-poster.webp",
+    "png": "assets/mockup-poster.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "reseaux sociaux t.05.png": {
+    "newBase": "reseaux-sociaux",
+    "webp": "assets/reseaux-sociaux.webp",
+    "png": "assets/reseaux-sociaux.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "seo marketing t.04.png": {
+    "newBase": "seo-marketing",
+    "webp": "assets/seo-marketing.webp",
+    "png": "assets/seo-marketing.png",
+    "width": 1024,
+    "height": 1024
+  }
+}
