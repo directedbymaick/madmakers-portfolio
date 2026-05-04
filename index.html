@@ -599,7 +599,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
   .services .row .desc,.services .row .cta{display:none}
   .fd,.fd.flip,.founders .intro,.process .head,.refuse .wrap{grid-template-columns:1fr}
   .fd .body,.fd.flip .body{border-left:none;border-top:1px solid #1f1f1f;padding:32px 24px}
-  .fd.flip .body{order:0;border-right:none}
+  .fd.flip .body{order:2;border-right:none}
   .fd .img{min-height:440px}
   .talents .grid{grid-template-columns:repeat(3,1fr)}
   .process .track{grid-template-columns:1fr 1fr}
@@ -608,6 +608,127 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
   .contact .cols{grid-template-columns:1fr 1fr}
   body{cursor:auto}
   .cursor{display:none}
+}
+
+/* === MOBILE - tablet & large phones === */
+@media (max-width:720px){
+  /* HERO - hide decorative absolutes that overlap title at narrow widths */
+  .hero{height:auto;min-height:560px}
+  .hero .stage{padding-top:90px;padding-bottom:24px}
+  .hero .title{padding:0 22px}
+  .hero .hero-display{font-size:clamp(46px,12vw,84px);line-height:.9}
+  .hero .meta{display:none}
+  .hero .disc{display:none}
+  .hero .target{display:none}
+  .hero .cta{display:none}
+  .hero .ticker{padding:12px 18px;font-size:8px;letter-spacing:.14em;gap:10px}
+  .hero .ticker > span:nth-child(2),.hero .ticker > span:nth-child(3){display:none}
+
+  /* MANIFESTO */
+  .manifesto{padding:60px 22px}
+  .manifesto .wrap{grid-template-columns:1fr;gap:36px}
+  .manifesto h2{font-size:clamp(34px,9vw,52px)}
+
+  /* FOUNDERS */
+  .founders .intro{padding:40px 22px 32px;gap:28px}
+  .founders .intro h2{font-size:clamp(30px,8.5vw,52px)}
+  .fd .body,.fd.flip .body{padding:28px 22px;gap:14px}
+  .fd.flip .body{align-items:flex-start;text-align:left}
+  .fd.flip .body .quote{border-right:none;border-left:2px solid var(--green);padding-left:14px;padding-right:0}
+  .fd.flip .body .stats{flex-direction:row}
+  .fd .img,.fd.flip .img{min-height:340px}
+  .fd .nm{font-size:clamp(40px,11vw,64px)}
+  .fd .stats{gap:18px;padding-top:18px;margin-top:18px;flex-wrap:wrap}
+  .fd .stats .s b{font-size:18px}
+
+  /* PROCESS */
+  .process .head{padding:40px 22px 24px;gap:20px}
+  .process h2{font-size:clamp(32px,9vw,52px)}
+  .process .track .ph{padding:22px 20px;min-height:auto;gap:10px}
+  .process .track .ph h3{font-size:22px}
+
+  /* TALENTS - 3 cols stays at 1000 breakpoint, drop to 2 here */
+  .talents .grid{grid-template-columns:repeat(2,1fr)}
+
+  /* TOOLKIT */
+  .toolkit .cell{padding:24px 22px}
+  .toolkit .icons{grid-template-columns:repeat(4,1fr)}
+
+  /* REALISATIONS - CRITICAL fix: tile clamp(400px,...) overflows iPhone SE */
+  .real .head{padding:36px 22px;gap:16px}
+  .real h3{font-size:clamp(26px,7vw,38px)}
+  .real .scroller{padding:0 22px 30px}
+  .real .tile{width:clamp(260px,82vw,400px)}
+  .real .tile .cap h4{font-size:22px}
+
+  /* PLAYER */
+  .player{padding:60px 22px}
+  .player .ctrl{padding:28px 22px;gap:18px}
+  .player h3{font-size:clamp(34px,8vw,54px)}
+  .player .byline{flex-wrap:wrap;gap:8px 14px;font-size:10px}
+
+  /* REFUSE */
+  .refuse{padding:60px 22px}
+  .refuse h2{font-size:clamp(30px,9vw,52px)}
+  .refuse ul li{padding:16px 0;grid-template-columns:36px 1fr;gap:14px}
+  .refuse ul li .icon{width:30px;height:30px}
+  .refuse ul li .txt{font-size:14px;line-height:1.4}
+
+  /* CONTACT */
+  .contact{padding:60px 22px 30px}
+  .contact .sh{margin:0 auto 28px;font-size:9px;letter-spacing:.14em}
+  .contact h2{font-size:clamp(40px,13vw,90px)}
+  .contact .cols{gap:22px}
+  .contact .book{flex-direction:column;align-items:flex-start;padding:26px 22px;gap:22px}
+  .contact .book .ll{font-size:clamp(26px,8vw,40px)}
+  .contact .book .btn{width:100%;justify-content:center}
+  .contact .foot{flex-direction:column;align-items:flex-start;gap:6px;padding:24px 22px;font-size:9px;letter-spacing:.14em}
+}
+
+/* === PHONE - iPhone SE class & narrow phones === */
+@media (max-width:480px){
+  .hero .title{padding:0 18px}
+  .hero .hero-display{font-size:clamp(40px,13vw,68px)}
+
+  .manifesto{padding:50px 18px}
+  .manifesto h2{font-size:clamp(28px,9vw,42px)}
+
+  .founders .intro{padding:36px 18px 28px}
+  .founders .intro h2{font-size:clamp(26px,9vw,40px)}
+  .fd .body,.fd.flip .body{padding:24px 18px}
+  .fd .img,.fd.flip .img{min-height:280px}
+  .fd .stats .s{flex:1 1 calc(50% - 9px)}
+
+  .process .head{padding:36px 18px}
+  .process .track{grid-template-columns:1fr}
+  .process .track .ph{border-right:none;border-bottom:1px solid #000}
+  .process .track .ph:last-child{border-bottom:none}
+
+  .talents .grid{grid-template-columns:repeat(2,1fr)}
+  .talents .card{aspect-ratio:3/4}
+
+  .toolkit .cell{padding:22px 18px}
+  .toolkit .icons{grid-template-columns:repeat(3,1fr)}
+  .toolkit .graphics{grid-template-columns:repeat(2,1fr)}
+
+  .real .head{padding:32px 18px}
+  .real .scroller{padding:0 18px 30px}
+  .real .tile{width:clamp(240px,86vw,360px)}
+
+  .player{padding:50px 18px}
+  .player .ctrl{padding:24px 18px}
+  .player .viz{height:60px}
+  .player .trans{flex-wrap:wrap;justify-content:center;gap:8px}
+  .player .vol{order:99;flex:1 1 100%}
+
+  .refuse{padding:50px 18px}
+  .refuse h2{font-size:clamp(26px,9vw,38px)}
+
+  .contact{padding:50px 18px 24px}
+  .contact h2{font-size:clamp(36px,13vw,72px)}
+  .contact .cols{grid-template-columns:1fr;gap:18px}
+  .contact .book{padding:22px 18px}
+  .contact .foot{padding:22px 18px}
 }
 
 /* a11y - WCAG 2.3.3: respect users who reduce motion in their OS preferences */
@@ -764,7 +885,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
     <span class="sw"><span class="knob"></span></span>
     <span class="lbl en">EN</span>
   </div>
-  <a class="menu" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><span data-i18n="nav.menu">Parler de votre projet · 30 min</span><span class="ar">↗</span></a>
+  <a class="menu" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><span data-i18n="nav.menu">Contact</span><span class="ar">↗</span></a>
 </nav>
 
 <main>
@@ -806,7 +927,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
 <section id="manifesto" class="manifesto" data-screen-label="02 Manifeste">
   <div class="sh"><span data-i18n="manifesto.sh.a"><span class="num">02</span> / MANIFESTE</span><span class="dim" data-i18n="manifesto.sh.b">[ NOS CONVICTIONS ]</span></div>
   <div class="wrap">
-    <h2 class="reveal" data-i18n="manifesto.h2">ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS<br>DE <span class="g">VENTE.</span></h2>
+    <h2 class="reveal" data-i18n="manifesto.h2">ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS DE <span class="g">VENTE.</span></h2>
     <div class="body reveal">
       <div class="conv"><h3 data-i18n="manifesto.c1.h">Un site doit vous <span class="g">rapporter.</span></h3><p data-i18n="manifesto.c1.p">La plupart des sites coûtent de l'argent sans jamais en rapporter. C'est parce qu'ils sont pensés pour plaire et non pour vendre. Nous ? Nous partons de votre objectif commercial, et le design en découle. Vous obtenez un site qui génère des demandes, des appels et des ventes.</p></div>
       <div class="conv"><h3 data-i18n="manifesto.c2.h">Une méthode <span class="g">claire.</span></h3><p data-i18n="manifesto.c2.p">Trop d'agences vous laissent dans le flou pendant des semaines. Nous procédons autrement : chaque étape est cadrée, chaque livrable est daté. Du brief à la mise en ligne, vous savez toujours où en est votre projet.</p></div>

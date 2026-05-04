@@ -9,7 +9,7 @@
     'nav.services':       { fr:'Services',              en:'Services' },
     'nav.process':        { fr:'Process',               en:'Process' },
     'nav.contact':        { fr:'Contact',               en:'Contact' },
-    'nav.menu':           { fr:'Parler de votre projet · 30 min', en:'Talk about your project · 30 min' },
+    'nav.menu':           { fr:'Contact',                 en:'Contact' },
 
     /* --- HERO --- */
     'hero.h1.sr':         { fr:'Mad Makers - agence web créative à Paris : création de sites web, SEO, direction artistique et production vidéo.',
@@ -24,8 +24,8 @@
     /* --- MANIFESTO --- */
     'manifesto.sh.a':     { fr:'<span class="num">02</span> / MANIFESTE', en:'<span class="num">02</span> / MANIFESTO' },
     'manifesto.sh.b':     { fr:'[ NOS CONVICTIONS ]',   en:'[ WHAT WE BELIEVE ]' },
-    'manifesto.h2':       { fr:'ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS<br>DE <span class="g">VENTE.</span>',
-                            en:'WE DON’T DELIVER<br>WEBSITES.<br>WE DELIVER SALES<br><span class="g">TOOLS.</span>' },
+    'manifesto.h2':       { fr:'ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS DE <span class="g">VENTE.</span>',
+                            en:'WE DON’T DELIVER<br>WEBSITES.<br>WE DELIVER SALES <span class="g">TOOLS.</span>' },
     'manifesto.c1.h':     { fr:'Un site doit vous <span class="g">rapporter.</span>', en:'A website must <span class="g">pay back.</span>' },
     'manifesto.c1.p':     { fr:"La plupart des sites coûtent de l'argent sans jamais en rapporter. C'est parce qu'ils sont pensés pour plaire et non pour vendre. Nous ? Nous partons de votre objectif commercial, et le design en découle. Vous obtenez un site qui génère des demandes, des appels et des ventes.",
                             en:"Most websites cost money without ever earning any back. That's because they are designed to please rather than to sell. Us? We start from your commercial goal, and the design follows. You get a site that generates leads, calls and sales." },
