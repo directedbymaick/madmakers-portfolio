@@ -112,7 +112,7 @@
     'founders.f3.quote':  { fr:'Trop d’entreprises courent après la visibilité. Ce qui compte, c’est un positionnement clair et une croissance qui s’installe dans la durée.',
                             en:'Too many companies chase visibility. What matters is a clear positioning and growth that lasts.' },
     'founders.f3.s1.v':   { fr:'10ans+', en:'10yrs+' },
-    'founders.f3.s1.t':   { fr:'Conseil stratégique', en:'Strategic consulting' },
+    'founders.f3.s1.t':   { fr:'Conseil<br>stratégique', en:'Strategic<br>consulting' },
     'founders.f3.s2.v':   { fr:'SAIS', en:'SAIS' },
     'founders.f3.s2.t':   { fr:'Johns<br>Hopkins', en:'Johns<br>Hopkins' },
     'founders.f3.s3.v':   { fr:'<span class="g">2×</span>', en:'<span class="g">2×</span>' },
