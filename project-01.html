@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<!-- === SEO CORE (valeurs par défaut — écrasées par JS au chargement de la fiche projet) === -->
+<!-- === SEO CORE (valeurs par défaut - écrasées par JS au chargement de la fiche projet) === -->
 <title>Riot MMO — Cinematic Web Experience — Mad Makers</title>
 <meta name="description" content="Site cinématique concept pour le futur MMO de Riot Games — explorant l&#39;univers de Runeterra avec un niveau Awwwards."/>
 <meta name="author" content="Mad Makers"/>
@@ -137,7 +137,7 @@
   .pj-quote blockquote::before{content:"« ";color:var(--green);font-style:normal}
   .pj-quote blockquote::after{content:" »";color:var(--green);font-style:normal}
   .pj-quote .author{font:500 11px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
-  .pj-quote .author::before{content:"— ";color:var(--green)}
+  .pj-quote .author::before{content:"- ";color:var(--green)}
 
   /* Next */
   .pj-next{padding:80px 40px;text-align:center;border-bottom:1px solid var(--line)}
@@ -214,7 +214,7 @@
         <p>Ce projet n'existe pas ou n'a pas encore été publié.</p>
         <a href="index.html#realisations">← Retour aux réalisations</a>
       </section>`;
-    document.title = '404 — Mad Makers';
+    document.title = '404 - Mad Makers';
     const r = document.querySelector('meta[name="robots"]');
     if (r) r.setAttribute('content', 'noindex,follow');
     return;
@@ -229,7 +229,7 @@
   // === SEO META INJECTION (per project) ===
   const SITE_ORIGIN = 'https://www.mad-makers.fr';
   const pageUrl  = `${SITE_ORIGIN}/project-${encodeURIComponent(id)}.html`;
-  const pageTitle = `${data.title} — Mad Makers`;
+  const pageTitle = `${data.title} - Mad Makers`;
   const pageDesc  = (data.subtitle || data.intro || '').slice(0, 160);
   const coverSrc  = data.cover && data.cover.src
     ? (/^https?:/i.test(data.cover.src) ? data.cover.src : `${SITE_ORIGIN}/${data.cover.src}`)
@@ -358,7 +358,7 @@
     ${nextHtml}
 
     <footer class="pj-foot">
-      <span>© Mad Makers — <b>Dream it. We make it.</b></span>
+      <span>© Mad Makers - <b>Dream it. We make it.</b></span>
       <span>
         <a href="index.html">↑ Accueil</a>
         <a href="index.html#contact">Brief →</a>
