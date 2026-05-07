@@ -53,9 +53,59 @@ window.MM_PROJECTS = {
       { type: 'video', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/vastayan%20race%20lol.mp4', caption: 'Race · Vastaya (clip page race)' }
     ],
     quote: {
-      text: 'Built with care by Mad Makers — no framework, just the platform.',
+      text: 'Built with care by Mad Makers - no framework, just the platform.',
       author: 'Note d\'auteur · Mad Makers'
     },
-    next: null
+    next: '02'
+  },
+  '02': {
+    num: 'R.02',
+    title: 'La Papiche - Bistrot de Saint-Avit',
+    subtitle: 'Refonte complète de l\'identité éditoriale et site web pour un bistrot de campagne en Charente. Une adresse qui assume son caractère, sans pastiche rustique.',
+    liveUrl: 'https://lapapiche.mad-makers.fr',
+    client: 'La Papiche · Saint-Avit (16210)',
+    year: '2026',
+    scope: ['Direction artistique', 'Site web', 'Identité éditoriale', 'Photo & vidéo'],
+    role: 'Concept · Design · Front-end · Production',
+    duration: '3 semaines',
+    stack: ['HTML/CSS vanilla', 'GSAP + ScrollTrigger', 'IntersectionObserver', 'Cormorant Garamond', 'Caveat', 'Archivo Narrow'],
+    cover: {
+      type: 'video',
+      src: 'assets/papiche-concept/region.mp4',
+      poster: 'assets/papiche-concept/hero.png'
+    },
+    intro: 'Une vraie adresse de village en Charente, avec une identité plus nette : graphique, chaleureuse, un peu brute, jamais copiée-collée. La Papiche garde l\'esprit simple d\'une auberge mais assume une personnalité visuelle affirmée - moins de beige convenu, plus de contraste, de matière et de rythme.',
+    sections: [
+      {
+        title: 'Concept',
+        body: 'Refuser le folklore bistrot. La direction artistique mise sur quatre familles typographiques complémentaires (Cormorant Garamond, Caveat, Archivo Narrow, Newsreader), une palette terre/vin/porcelaine inspirée du lieu, et un grain photographique constant qui unifie assiettes et architecture. Chaque image traverse le même filtre - sépia mat, contraste maîtrisé, légère désaturation - pour créer une série cohérente où les plats et la salle racontent la même maison.'
+      },
+      {
+        title: 'Architecture',
+        body: 'Un parcours linéaire en six chapitres : hero immersif avec vidéo aérienne de la Charente et carrousel maison, présentation éditoriale du lieu, mur photographique des plats signatures, formules tarifaires lisibles, mise en valeur de la salle bleu profond et de la terrasse sous les arbres, avis clients avec score 4,6/5 animé. Pas de page intermédiaire, pas de menu déroulant - le scroll fait tout le travail.'
+      },
+      {
+        title: 'Stack technique',
+        body: 'HTML/CSS vanilla, GSAP + ScrollTrigger pour les animations scroll-driven (timeline du hero, mur photographique, parallaxe douce sur les images). IntersectionObserver en fallback léger. Reveal progressif respectant prefers-reduced-motion. Aucun framework UI, aucun build runtime côté client, 100% responsive avec breakpoints 980px et 640px.'
+      },
+      {
+        title: 'Livrables',
+        body: 'Site one-page complet, 14 photographies retraitées et harmonisées, vidéo aérienne de la Charente, copywriting éditorial complet, charte typographique et chromatique. Le tout livré prêt à mettre en ligne avec configuration SEO de base et installation des outils de mesure.'
+      }
+    ],
+    gallery: [
+      { type: 'image', src: 'assets/papiche-concept/hero.png',          caption: '01 - Hero · La Papiche · 4,6/5' },
+      { type: 'image', src: 'assets/papiche-concept/section-01.png',    caption: '02 - La maison · Une cuisine honnête, sans artifice' },
+      { type: 'image', src: 'assets/papiche-concept/section-02.png',    caption: '03 - À la carte · Les plats de la maison' },
+      { type: 'image', src: 'assets/papiche-concept/section-03.png',    caption: '04 - Nos formules · Des prix honnêtes, comme le reste' },
+      { type: 'image', src: 'assets/papiche-concept/section-04.png',    caption: '05 - L\'adresse · Entre les murs bleus et le jardin' },
+      { type: 'image', src: 'assets/papiche-concept/section-05.png',    caption: '06 - Avis clients · Une adresse qu\'on recommande' },
+      { type: 'image', src: 'assets/papiche-concept/section-footer.png',caption: '07 - Footer · Contact, horaires, adresse' }
+    ],
+    quote: {
+      text: 'Une adresse qu\'on recommande sans hésiter. Très bon accueil, restaurant chaleureux, produits frais et bien présentés.',
+      author: 'Laure D. · TripAdvisor'
+    },
+    next: '01'
   }
 };
