@@ -106,6 +106,58 @@ window.MM_PROJECTS = {
       text: 'Une adresse qu\'on recommande sans hésiter. Très bon accueil, restaurant chaleureux, produits frais et bien présentés.',
       author: 'Laure D. · TripAdvisor'
     },
+    next: '03'
+  },
+  '03': {
+    num: 'R.03',
+    title: 'Dr. Sophie Marchand - Cabinet médical à Nantes',
+    subtitle: 'Site multi-pages pour un médecin généraliste à Nantes. Une présence digitale claire, rassurante et conforme aux exigences éthiques de l\'Ordre des médecins.',
+    liveUrl: 'https://sophiemarchand.mad-makers.fr',
+    client: 'Dr. Sophie Marchand · Nantes (44000)',
+    year: '2026',
+    scope: ['Direction artistique', 'Site multi-pages', 'SEO local', 'Conformité Ordre des médecins'],
+    role: 'Concept · Design · Front-end · Architecture éditoriale',
+    duration: '2 semaines',
+    stack: ['HTML/CSS vanilla', 'JavaScript ESM', 'DM Serif Display', 'DM Sans', 'Schema.org Physician + MedicalClinic'],
+    cover: {
+      type: 'image',
+      src: 'assets/sophie-marchand/hero.png'
+    },
+    intro: 'Médecin généraliste secteur 1 à Nantes, accepte de nouveaux patients, téléconsultation jusqu\'à 20h. Le site devait répondre à un cahier des charges délicat : se faire trouver sur Google sans franchir la ligne déontologique. Pas de promesse, pas de mise en avant comparative, juste de l\'information utile au patient.',
+    sections: [
+      {
+        title: 'Concept',
+        body: 'Une typographie classique mais moderne (DM Serif Display + DM Sans), une palette neutre vert sapin / crème, des photographies de cabinet apaisantes. Toute la mise en scène fuit le ton commercial - pas de superlatif, pas de témoignage hyperbolique. Le ton reste celui d\'un cabinet médical : factuel, rassurant, lisible.'
+      },
+      {
+        title: 'Architecture',
+        body: '5 pages thématiques : accueil, le cabinet, consultations, infos pratiques, contact. Chacune répond à une question concrète qu\'un patient se pose avant de prendre rendez-vous : comment trouver le cabinet ? quels actes pratiqués ? quels horaires ? que prévoir pour la première consultation ? Le bouton Doctolib est présent partout, le numéro d\'urgence aussi (bandeau permanent).'
+      },
+      {
+        title: 'SEO local & conformité',
+        body: 'Schema.org typé Physician + MedicalClinic avec adresse, téléphone, géolocalisation, horaires structurés et aggregateRating. Mentions légales et politique de confidentialité conformes au RGPD et au code de déontologie médicale (article R.4127-13). Pas de tracking, pas de bouton de paiement, mention explicite du secteur 1 et de l\'absence de dépassement.'
+      },
+      {
+        title: 'Stack technique',
+        body: 'HTML/CSS vanilla, JavaScript ESM léger pour la navigation mobile et les interactions. DM Serif Display pour les titres (le sérieux institutionnel), DM Sans pour le corps (la lisibilité moderne). Bandeau d\'urgence permanent en haut de page. 100% responsive, accessibilité ARIA labellée, pas de framework UI.'
+      }
+    ],
+    gallery: [
+      { type: 'image', src: 'assets/sophie-marchand/hero.png',                caption: '01 - Accueil · Médecin généraliste à Nantes' },
+      { type: 'image', src: 'assets/sophie-marchand/section-01.png',         caption: '02 - Services · Consultations adaptées' },
+      { type: 'image', src: 'assets/sophie-marchand/section-02.png',         caption: '03 - Témoignages patients' },
+      { type: 'image', src: 'assets/sophie-marchand/section-03.png',         caption: '04 - Infos pratiques' },
+      { type: 'image', src: 'assets/sophie-marchand/section-04.png',         caption: '05 - CTA · Médecin traitant' },
+      { type: 'image', src: 'assets/sophie-marchand/page01-section01.png',   caption: '06 - Le cabinet · Présentation' },
+      { type: 'image', src: 'assets/sophie-marchand/page01-section02.png',   caption: '07 - Le cabinet · Détail' },
+      { type: 'image', src: 'assets/sophie-marchand/numeros-utiles.png',     caption: '08 - Numéros utiles · Urgences et garde' },
+      { type: 'image', src: 'assets/sophie-marchand/contact.png',            caption: '09 - Contact · Plan d\'accès et coordonnées' },
+      { type: 'image', src: 'assets/sophie-marchand/footer.png',             caption: '10 - Footer · Navigation et mentions' }
+    ],
+    quote: {
+      text: 'Médecin à l\'écoute, prend le temps d\'expliquer, cabinet propre et accueil chaleureux. Le site Doctolib est très clair, on trouve ce qu\'on cherche en deux clics.',
+      author: 'Avis patient · Doctolib'
+    },
     next: '01'
   }
 };
