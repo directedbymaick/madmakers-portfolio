@@ -37,3 +37,7 @@ assets/WUSYANAME.mp4
 # Files exceeding GitHub 100MB hard limit — to be added later via Git LFS
 assets/AMV decoratif video.mp4
 assets/KURI - why am i so hard to love, part 2 (Official Video).mp4
+
+# Nested repo — Mad Makers Pro lives in its own GitHub repo (madmakers-pro)
+# deploying to pro.mad-makers.fr. Do not commit it from the parent.
+Mad Makers Pro/

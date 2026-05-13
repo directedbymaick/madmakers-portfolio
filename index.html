@@ -1,754 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- === SEO CORE ===
-     NOTE: remplacer https://www.mad-makers.fr/ par le domaine final si différent. -->
-<title>Agence Web Créative Paris | Web · DA · SEO · Vidéo - Mad Makers</title>
-<meta name="description" content="Agence web créative à Paris, à la croisée du digital et de l'art. Sites web, SEO, direction artistique, vidéo - pour les entreprises qui refusent de ressembler à leurs concurrents." />
-<meta name="keywords" content="agence web créative Paris, création de site web Paris, agence digitale hybride Paris, agence SEO Paris, direction artistique web Paris, refonte site internet Paris" />
+<!-- Core SEO -->
+<title>Mad Makers — Agence Web Créative Paris · Sites web · SEO · DA · Vidéo</title>
+<meta name="description" content="Mad Makers — agence web créative à Paris. Sites web sur-mesure, SEO, direction artistique, production vidéo. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
+<meta name="keywords" content="agence web créative Paris, création de site web Paris, agence digitale hybride Paris, agence SEO Paris, direction artistique web Paris, refonte site internet Paris, production vidéo Paris" />
 <meta name="author" content="Mad Makers" />
 <meta name="robots" content="index,follow,max-image-preview:large" />
-<meta name="theme-color" content="#0a0a0a" />
+<meta name="theme-color" content="#0c0d0a" />
 <link rel="canonical" href="https://www.mad-makers.fr/" />
 
-<!-- === OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Slack) === -->
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+<!-- Open Graph (LinkedIn, WhatsApp, Slack, Facebook) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Mad Makers" />
-<meta property="og:title" content="Mad Makers - Agence Web Créative Paris" />
-<meta property="og:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
+<meta property="og:title" content="Mad Makers — Agence Web Créative Paris" />
+<meta property="og:description" content="Sites web, SEO, direction artistique, vidéo. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
 <meta property="og:url" content="https://www.mad-makers.fr/" />
 <meta property="og:image" content="https://www.mad-makers.fr/assets/og-home.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Mad Makers - agence web créative Paris" />
+<meta property="og:image:alt" content="Mad Makers — agence web créative Paris" />
 <meta property="og:locale" content="fr_FR" />
-<meta property="og:locale:alternate" content="en_US" />
 
-<!-- === TWITTER CARDS === -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mad Makers - Agence Web Créative Paris" />
-<meta name="twitter:description" content="Web, direction artistique, vidéo, SEO. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
+<meta name="twitter:title" content="Mad Makers — Agence Web Créative Paris" />
+<meta name="twitter:description" content="Sites web, SEO, direction artistique, vidéo. Pour les entreprises qui refusent de ressembler à leurs concurrents." />
 <meta name="twitter:image" content="https://www.mad-makers.fr/assets/og-home.jpg" />
-<meta name="twitter:image:alt" content="Mad Makers - agence web créative Paris" />
+<meta name="twitter:image:alt" content="Mad Makers — agence web créative Paris" />
 
-<!-- === FAVICONS === -->
-
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<!-- <link rel="manifest" href="/site.webmanifest" /> - décommente quand le manifest est généré -->
-
-<!-- === FONTS - Bunny Fonts (drop-in Google Fonts, EU-hosted, RGPD-compliant, no IP logging) === -->
-<link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Archivo+Black&family=Archivo:wght@400;500;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" />
-<style>
-:root{
-  --black:#000;--ink:#0a0a0a;--jet:#111;--dark:#1a1a1a;--grey:#333;
-  --mid:#808085;--soft:#c8c8c8;--bone:#ededed;--paper:#f3f2ee;--white:#fff;
-  --green:#39ff14;
-  --mono:"JetBrains Mono",ui-monospace,monospace;
-  --display:"Archivo Black","Archivo",system-ui,sans-serif;
-  --sans:"Inter","Archivo",system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-html{scroll-behavior:smooth}
-body{overflow-x:hidden;cursor:none}
-a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
-::selection{background:var(--green);color:#000}
-
-/* cursor */
-.cursor{position:fixed;top:0;left:0;width:36px;height:36px;pointer-events:none;z-index:9999;mix-blend-mode:difference;transform:translate(-50%,-50%)}
-.cursor::before,.cursor::after{content:"";position:absolute;background:var(--green)}
-.cursor::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
-.cursor::after{top:50%;left:0;right:0;height:1px;transform:translateY(-50%)}
-.cursor .dot{position:absolute;inset:0;border:1px solid var(--green);border-radius:50%;opacity:.7}
-.cursor .rd{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);font:500 10px/1 var(--mono);color:var(--green);white-space:nowrap;letter-spacing:.1em}
-.cursor.hover{width:72px;height:72px}
-.cursor.hover .dot{background:var(--green);opacity:.15}
-
-/* HUD */
-.hud{position:fixed;inset:0;pointer-events:none;z-index:50;font:500 10px/1 var(--mono);letter-spacing:.12em;color:var(--mid);text-transform:uppercase}
-.hud .corner{position:absolute;width:14px;height:14px;border:1px solid currentColor}
-.hud .c-tl{top:18px;left:18px;border-right:none;border-bottom:none}
-.hud .c-tr{top:18px;right:18px;border-left:none;border-bottom:none}
-.hud .c-bl{bottom:12px;left:18px;border-right:none;border-top:none}
-.hud .c-br{bottom:12px;right:18px;border-left:none;border-top:none}
-.hud .rail{position:fixed;left:50%;bottom:60px;top:auto;transform:translateX(-50%) translateY(10px);display:flex;flex-direction:row;align-items:center;gap:18px;padding:8px 14px;color:var(--mid);font:500 10px/1 var(--mono);letter-spacing:.18em;opacity:0;pointer-events:none;transition:opacity .4s ease,transform .4s cubic-bezier(.2,.8,.2,1);z-index:5}
-.hud .rail.is-active{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
-.hud .rail a{display:flex;flex-direction:column;align-items:center;gap:6px;color:currentColor;transition:color .2s;padding:2px 4px}
-.hud .rail a::before{content:"";display:block;width:1px;height:6px;background:currentColor;opacity:.35;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),background .25s,opacity .25s}
-.hud .rail a.on{color:var(--green)}
-.hud .rail a.on::before{width:22px;height:1px;background:var(--green);opacity:1}
-@media (max-width:600px){.hud .rail{gap:12px;padding:6px 10px;letter-spacing:.14em;bottom:56px}}
-@media (prefers-reduced-motion:reduce){.hud .rail{transition:opacity .15s linear}}
-
-body.on-dark .hud .rail{color:#888}
-body.on-dark .hud .rail a.on{color:var(--green)}
-body.on-light .hud .rail{color:#666}
-
-/* UI hide toggle - top-right arrow */
-.ui-toggle{position:fixed;top:82px;right:40px;width:42px;height:42px;z-index:100;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s,border-color .25s,color .25s,box-shadow .3s}
-.ui-toggle::before{content:attr(data-lbl);position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);font:500 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green);white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
-.ui-toggle:hover{background:var(--green);color:#000;border-color:var(--green);box-shadow:0 0 0 3px rgba(57,255,20,.18),0 0 22px rgba(57,255,20,.28)}
-.ui-toggle:hover::before{opacity:1}
-.ui-toggle svg{width:18px;height:18px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-body.ui-hidden .ui-toggle svg{transform:rotate(180deg)}
-body.ui-hidden .nav,
-body.ui-hidden .hud{opacity:0;pointer-events:none;transition:opacity .35s ease}
-.nav,.hud{transition:opacity .35s ease}
-
-/* Nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:80;padding:36px 40px 18px;display:flex;align-items:flex-start;justify-content:space-between;mix-blend-mode:difference;color:#fff}
-.nav .logo{font:900 13px/1.05 var(--display);letter-spacing:.04em}
-.nav .links{display:flex;gap:28px;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;align-self:center;padding-top:8px}
-.nav .links a{position:relative;padding:4px 0}
-.nav .links a::before{content:"→ ";opacity:0;margin-right:4px;color:var(--green);transition:opacity .2s}
-.nav .links a:hover::before{opacity:1}
-.nav .menu{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;font:700 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:#000;background:var(--green);border:1px solid var(--green);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.nav .menu .ar{display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-.nav .menu:hover{transform:translateY(-2px);box-shadow:0 0 0 3px rgba(57,255,20,.18),0 0 30px rgba(57,255,20,.25)}
-.nav .menu:hover .ar{transform:translate(2px,-2px)}
-
-/* 3D Lang switch */
-.nav .lang{align-self:center;margin-right:18px;display:inline-flex;align-items:center;gap:10px;font:700 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:#fff;user-select:none}
-.nav .lang .lbl{color:#666;transition:color .25s}
-.nav .lang.en .lbl.fr{color:#666}.nav .lang.en .lbl.en{color:var(--green)}
-.nav .lang:not(.en) .lbl.fr{color:var(--green)} .nav .lang:not(.en) .lbl.en{color:#666}
-.nav .lang .sw{position:relative;width:56px;height:28px;border-radius:999px;background:linear-gradient(180deg,#0a0a0a,#1a1a1a);border:1px solid #2a2a2a;cursor:none;box-shadow:inset 0 2px 5px rgba(0,0,0,.9),inset 0 -1px 0 rgba(255,255,255,.06),0 1px 0 rgba(255,255,255,.04);transition:background .25s}
-.nav .lang .sw::before{content:"";position:absolute;inset:2px;border-radius:999px;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.05),transparent 60%);pointer-events:none}
-.nav .lang .sw .knob{position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;background:linear-gradient(180deg,#fafafa,#bfbfbf 45%,#888);box-shadow:0 2px 4px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 2px rgba(0,0,0,.3);transition:transform .35s cubic-bezier(.6,-.28,.2,1.3),background .3s,box-shadow .3s}
-.nav .lang .sw .knob::after{content:"";position:absolute;inset:5px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ccc 45%,#777);box-shadow:inset 0 0 3px rgba(0,0,0,.3)}
-.nav .lang.en .sw{background:linear-gradient(180deg,#0a2a05,#103e08);border-color:#2c5a18;box-shadow:inset 0 2px 5px rgba(0,0,0,.7),0 0 0 1px rgba(57,255,20,.15),0 0 14px rgba(57,255,20,.25)}
-.nav .lang.en .sw .knob{transform:translateX(28px);background:linear-gradient(180deg,#d5ffb8,#7fe22d 50%,#2ea405);box-shadow:0 2px 6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.7),inset 0 -2px 3px rgba(0,0,0,.25),0 0 10px rgba(57,255,20,.5)}
-.nav .lang:hover .sw{box-shadow:inset 0 2px 5px rgba(0,0,0,.9),0 0 0 3px rgba(57,255,20,.12)}
-.nav .lang.en:hover .sw{box-shadow:inset 0 2px 5px rgba(0,0,0,.7),0 0 0 3px rgba(57,255,20,.25),0 0 20px rgba(57,255,20,.4)}
-
-section{position:relative}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;padding:18px 40px;border-bottom:1px solid currentColor;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
-.sec-head .num{color:var(--green)}
-.sec-head .dim{opacity:.5}
-
-/* HERO */
-.hero{height:100vh;min-height:780px;background:#000;color:#fff;overflow:hidden;display:flex;flex-direction:column}
-.hero .stage{position:relative;flex:1;display:grid;align-items:center;padding-top:140px}
-.hero .bg{position:absolute;inset:0;overflow:hidden}
-.hero .bg .photo{position:absolute;inset:0;background:image-set(url("assets/hero-bg.webp") type("image/webp"), url("assets/hero-bg.png") type("image/png")) center/cover no-repeat;background-size:cover;filter:contrast(1.05) saturate(1.05)}
-.hero .bg .photo::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15) 30%, rgba(0,0,0,.55)),
-  linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.1) 40%, transparent 65%)}
-.hero .bg .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 72% 55%, transparent 25%, rgba(0,0,0,.45) 75%)}
-.hero .bg .grain{position:absolute;inset:0;opacity:.4;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-
-.hero .title{position:relative;padding:0 40px 0 90px;z-index:3;max-width:min(100%, 1200px)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.hero .hero-display{font:900 clamp(52px,10vw,168px)/.86 var(--display);letter-spacing:-.04em;text-transform:uppercase}
-.hero .hero-display .dot{color:var(--green)}
-.hero .hero-display .row{overflow:hidden;display:block}
-.hero .hero-display .row span{display:inline-block;white-space:nowrap;transform:translateY(110%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.hero .hero-display .row:nth-child(2) span{transition-delay:.12s}
-.hero .hero-display .row:nth-child(3) span{transition-delay:.22s}
-.hero.play .hero-display .row span{transform:translateY(0)}
-
-.hero .meta{position:absolute;bottom:84px;right:40px;z-index:3;max-width:280px;font:400 12px/1.55 var(--soft);color:var(--soft)}
-.hero .meta .lbl{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.hero .cta{position:absolute;left:40px;top:50%;transform:translateY(-50%);z-index:3;writing-mode:vertical-rl;font:500 10px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:#777}
-.hero .disc{position:absolute;right:8%;top:14%;width:124px;height:124px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;text-align:center;font:500 9px/1.3 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#fff;z-index:3;animation:spin 32s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hero .target{position:absolute;width:22px;height:22px;z-index:3;color:var(--green)}
-.hero .target::before,.hero .target::after{content:"";position:absolute;background:currentColor}
-.hero .target::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
-.hero .target::after{top:50%;left:0;right:0;height:1px;transform:translateY(-50%)}
-.hero .t1{top:18%;right:28%}
-.hero .t2{top:36%;left:52%}
-.hero .ticker{position:relative;border-top:1px solid rgba(255,255,255,.12);padding:14px 40px;display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#888}
-.hero .ticker b{color:#fff;font-weight:500}
-
-/* MANIFESTO */
-.manifesto{padding:120px 40px;background:var(--paper);color:var(--ink);border-top:1px solid #000}
-.manifesto .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;max-width:1400px;margin:0 auto;align-items:start}
-.manifesto .sh{border-bottom:1px solid #000;padding:18px 0;max-width:1400px;margin:0 auto 60px;display:flex;justify-content:space-between;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
-.manifesto .sh .num{color:var(--green)}
-.manifesto .sh .dim{color:var(--grey)}
-.manifesto h2,.founders .intro h2,.process .head h2,.refuse h2,.contact h2{overflow-wrap:break-word;hyphens:auto}
-.manifesto h2{font:900 clamp(44px,6.4vw,100px)/.9 var(--display);letter-spacing:-.03em;text-transform:uppercase}
-.manifesto h2 .g{color:var(--green)}
-.manifesto .body{padding-top:20px}
-.manifesto .body .conv{margin-bottom:34px;padding-top:20px;border-top:1px solid #000}
-.manifesto .body .conv:first-child{border-top:none;padding-top:0}
-.manifesto .body .conv h3{font:900 18px/1.15 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:10px}
-.manifesto .body .conv h3 .g{color:var(--green)}
-.manifesto .body .conv p{font:400 15px/1.55 var(--sans);color:var(--grey);max-width:48ch}
-.manifesto .sig{margin-top:40px;display:flex;align-items:center;gap:12px;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
-
-/* SERVICES (03) */
-.services{background:#fff;color:#000;border-top:1px solid #000}
-.services a.row{text-decoration:none;color:inherit}
-.services .row{display:grid;grid-template-columns:80px 1.6fr 2fr 0.9fr 140px;gap:1px;background:#000;border-bottom:1px solid #000;align-items:stretch}
-.services .row:hover .cta{color:var(--green)}
-.services .row > div{background:#fff;padding:28px 22px;display:flex;flex-direction:column;justify-content:center}
-.services .row:hover > div{background:#000;color:#fff;transition:background .25s,color .25s}
-.services .row:hover .tit{color:var(--green)}
-.services .row > div{transition:background .25s,color .25s}
-.services .idx{font:500 11px/1 var(--mono);letter-spacing:.2em;color:var(--grey)}
-.services .row:hover .idx{color:var(--green)}
-.services .tit{font:900 22px/1 var(--display);letter-spacing:-.01em;text-transform:uppercase}
-.services .desc{font:400 13px/1.55 var(--sans);color:var(--grey)}
-.services .row:hover .desc{color:#ccc}
-.services .pr{font:900 18px/1 var(--display);letter-spacing:-.01em;text-align:right}
-.services .cta{display:flex;align-items:center;justify-content:flex-end;gap:6px;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
-
-/* FOUNDERS (04) */
-.founders{background:#0a0a0a;color:#fff;border-top:1px solid #000}
-.founders .sh{border-bottom:1px solid #1f1f1f;color:#888}
-.founders .sh .num{color:var(--green)}
-.founders .intro{padding:60px 40px 40px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;border-bottom:1px solid #1f1f1f}
-.founders .intro h2{font:900 clamp(36px,5.2vw,76px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.03em}
-.founders .intro h2 .g{color:var(--green)}
-.founders .intro p{font:400 16px/1.6 var(--sans);color:#bbb;max-width:52ch}
-.founders .intro p + p{margin-top:14px}
-
-.fd{display:grid;grid-template-columns:1fr 1.3fr;border-bottom:1px solid #1f1f1f;align-items:stretch}
-.fd.flip{grid-template-columns:1.3fr 1fr}
-.fd .img{background:#000;position:relative;overflow:hidden;min-height:620px}
-.fd .img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.1) contrast(1.05)}
-.fd .img .tag{position:absolute;top:20px;left:20px;font:500 10px/1 var(--mono);letter-spacing:.25em;text-transform:uppercase;color:var(--green)}
-.fd .img .code{position:absolute;bottom:20px;right:20px;font:500 10px/1 var(--mono);color:#888;letter-spacing:.2em}
-.fd .body{padding:50px 44px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #1f1f1f}
-.fd.flip .body{border-left:none;border-right:1px solid #1f1f1f;order:-1;align-items:flex-end;text-align:right}
-.fd.flip .body .quote{border-left:none;border-right:2px solid var(--green)}
-.fd.flip .body .stats{flex-direction:row-reverse}
-.fd .role{font:500 10px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
-.fd .nm{font:900 clamp(44px,5.4vw,84px)/.88 var(--display);letter-spacing:-.03em;text-transform:uppercase;margin-bottom:18px}
-.fd .sub{font:500 11px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:24px}
-.fd .txt p{font:400 15px/1.6 var(--sans);color:#bbb;max-width:52ch;margin-bottom:14px}
-.fd .quote{margin-top:26px;padding:22px 24px;border-left:2px solid var(--green);font:500 15px/1.5 var(--sans);color:#fff;font-style:italic}
-.fd .quote::before{content:"« ";color:var(--green);font-style:normal}
-.fd .quote::after{content:" »";color:var(--green);font-style:normal}
-.fd .stats{display:flex;gap:32px;margin-top:28px;padding-top:22px;border-top:1px solid #1f1f1f}
-.fd .stats .s{font:500 10px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#888}
-.fd .stats .s b{display:block;font:900 22px/1 var(--display);color:#fff;letter-spacing:-.01em;margin-bottom:4px}
-.fd .stats .s b .g{color:var(--green)}
-
-/* PROCESS (05) */
-.process{background:#fff;color:#000;border-top:1px solid #000}
-.process .head{padding:60px 40px 30px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
-.process .head h2{font:900 clamp(44px,6vw,92px)/.9 var(--display);letter-spacing:-.03em;text-transform:uppercase}
-.process .head h2 .g{color:var(--green)}
-.process .head p{font:400 15px/1.55 var(--sans);color:var(--grey);max-width:46ch;padding-bottom:10px}
-.process .track{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000;border-bottom:1px solid #000}
-.process .track .ph{padding:30px 26px;border-right:1px solid #000;display:flex;flex-direction:column;gap:14px;min-height:360px}
-.process .track .ph:last-child{border-right:none}
-.process .track .ph .tag{font:500 10px/1 var(--mono);letter-spacing:.25em;text-transform:uppercase;color:var(--green)}
-.process .track .ph h3{font:900 26px/.95 var(--display);text-transform:uppercase;letter-spacing:-.02em}
-.process .track .ph ol{list-style:none;margin-top:8px;display:grid;gap:8px}
-.process .track .ph ol li{font:400 13px/1.4 var(--sans);color:var(--grey);padding-left:22px;position:relative}
-.process .track .ph ol li::before{content:attr(data-n);position:absolute;left:0;top:2px;font:500 10px/1 var(--mono);color:#000;letter-spacing:.1em}
-.process .gate{padding:18px 40px;display:flex;justify-content:space-between;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid #000}
-.process .gate b{color:#000;font-weight:500}
-.process .gate .g{color:var(--green);font-weight:500}
-
-/* TALENTS / ASSETS (06) */
-.talents{background:#0a0a0a;color:#fff;border-top:1px solid #000}
-.talents .sh{color:#888;border-bottom:1px solid #1f1f1f}
-.talents .sh .num{color:var(--green)}
-.talents .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#1f1f1f;border-bottom:1px solid #1f1f1f}
-.talents .card{background:#0a0a0a;aspect-ratio:3/4.5;position:relative;overflow:hidden;cursor:none}
-
-/* Image / video - at z-index 0, will be blurred by the glass pane's backdrop-filter */
-.talents .card img,.talents .card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.talents .card:hover img,.talents .card:hover video{transform:scale(1.06)}
-
-/* THE GLASS PANE - true glassmorphism with backdrop-filter blurring the image below */
-.talents .card::before{
-  content:"";
-  position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:rgba(57,255,20,.04);
-  backdrop-filter:blur(6px) saturate(1.3);
-  -webkit-backdrop-filter:blur(6px) saturate(1.3);
-  border-radius:0;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.28),       /* top edge - light catching */
-    inset 1px 0 0 rgba(255,255,255,.18),       /* left edge - light catching */
-    inset 0 -1px 0 rgba(57,255,20,.18),        /* bottom edge - green glow */
-    inset -1px 0 0 rgba(57,255,20,.12),        /* right edge - green */
-    inset 0 0 32px 8px rgba(57,255,20,.06);    /* inner ambient glow */
-  transition:backdrop-filter .55s cubic-bezier(.2,.8,.2,1),background .45s ease,box-shadow .45s ease,opacity .45s ease;
-}
-
-/* Top horizontal shimmer (like example's ::before) - bright crystal line */
-.talents .card::after{
-  content:"";
-  position:absolute;top:0;left:0;right:0;height:1px;z-index:2;pointer-events:none;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85) 30%,rgba(57,255,20,.65) 70%,transparent);
-  opacity:.7;
-  transition:opacity .55s ease;
-}
-
-/* Hover - glass DISAPPEARS completely : image fully sharp, no tint, only edges remain */
-.talents .card:hover::before{
-  backdrop-filter:blur(0) saturate(1);
-  -webkit-backdrop-filter:blur(0) saturate(1);
-  background:transparent;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.4),
-    inset 1px 0 0 rgba(255,255,255,.25),
-    inset 0 -1px 0 rgba(57,255,20,.35),
-    inset -1px 0 0 rgba(57,255,20,.2),
-    inset 0 0 40px 10px rgba(57,255,20,.06);
-}
-.talents .card:hover::after{opacity:1}
-
-/* Text on top of all glass layers */
-.talents .card .tag{position:absolute;top:14px;left:14px;font:500 10px/1 var(--mono);letter-spacing:.2em;color:var(--green);z-index:3;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-.talents .card .tit{position:absolute;bottom:16px;left:14px;right:14px;font:900 15px/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;color:#fff;z-index:3;text-shadow:0 2px 14px rgba(0,0,0,.85)}
-.talents .card .tit small{display:block;font:500 9px/1.4 var(--mono);letter-spacing:.2em;color:var(--green);margin-top:6px;text-transform:uppercase}
-
-/* TOOLKIT (07) */
-.toolkit{background:#0a0a0a;color:#fff;border-top:1px solid #1f1f1f}
-.toolkit .sh{color:#888;border-bottom:1px solid #1f1f1f}
-.toolkit .sh .num{color:var(--green)}
-.toolkit .board{display:grid;grid-template-columns:1.1fr 1.3fr;border-bottom:1px solid #1f1f1f}
-.toolkit .cell{padding:34px 32px;border-right:1px solid #1f1f1f}
-.toolkit .cell:last-child{border-right:none}
-.toolkit .lbl{display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#888;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid #1f1f1f}
-.toolkit .lbl .code{color:var(--green)}
-.toolkit .icons{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#1f1f1f}
-.toolkit .ic{aspect-ratio:1;background:#0a0a0a;display:grid;place-items:center;color:#c8c8c8;transition:color .25s,background .25s;position:relative;cursor:none}
-.toolkit .ic svg{width:38%;height:38%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.toolkit .ic:hover{background:#000;color:var(--green)}
-.toolkit .ic:hover svg{transform:rotate(45deg) scale(1.1)}
-.toolkit .ic::before{content:attr(data-k);position:absolute;top:6px;left:8px;font:500 8px/1 var(--mono);color:#444;letter-spacing:.2em}
-.toolkit .graphics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1f1f1f}
-.toolkit .g{aspect-ratio:1;background:#0a0a0a;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:background .3s;padding:18px}
-.toolkit .g picture{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
-.toolkit .g::before{content:"";position:absolute;inset:10%;background:radial-gradient(circle at 50% 55%, rgba(57,255,20,.28), rgba(57,255,20,.06) 45%, transparent 72%);filter:blur(20px);opacity:.7;transition:opacity .4s,transform .6s cubic-bezier(.2,.8,.2,1);pointer-events:none;z-index:0}
-.toolkit .g:hover{background:#000}
-.toolkit .g:hover::before{opacity:1;transform:scale(1.05)}
-.toolkit .g img{position:relative;z-index:1;max-width:92%;max-height:92%;width:auto;height:auto;object-fit:contain;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.toolkit .g:hover img{transform:scale(1.04)}
-.toolkit .g .num{z-index:2}
-.toolkit .g .num{position:absolute;top:8px;left:10px;font:500 8px/1 var(--mono);letter-spacing:.2em;color:#555;z-index:2}
-.toolkit .g svg{width:78%;height:78%}
-.toolkit .g.k{background:#141414}
-.toolkit .ui{border-top:1px solid #1f1f1f;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #1f1f1f}
-.toolkit .ui .cell{border-right:1px solid #1f1f1f}
-.toolkit .ui .cell:last-child{border-right:none}
-.toolkit .ui-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
-.toolkit .btn{height:44px;padding:0 22px;border:1px solid #fff;background:transparent;color:#fff;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;cursor:none;transition:background .2s,color .2s,border-color .2s}
-.toolkit .btn.green{background:var(--green);color:#000;border-color:var(--green)}
-.toolkit .btn.green:hover{background:#fff;border-color:#fff;color:#000}
-.toolkit .btn.ghost:hover{background:#fff;color:#000}
-.toolkit .btn .arr{width:14px;height:1px;background:currentColor;position:relative}
-.toolkit .btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-right:1px solid currentColor;border-top:1px solid currentColor;transform:rotate(45deg)}
-.toolkit .player{display:flex;align-items:center;gap:14px;height:44px;padding:0 18px;border:1px solid #1f1f1f;background:#111;min-width:320px}
-.toolkit .player .play{width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:0 0 auto;position:relative}
-.toolkit .player .play::after{content:"";width:0;height:0;border-left:6px solid #000;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
-.toolkit .player .bar{flex:1;height:2px;background:#333;position:relative}
-.toolkit .player .bar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:42%;background:var(--green)}
-.toolkit .player .t{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#888}
-.toolkit .swatch-row{display:flex;gap:10px;margin-top:20px}
-.toolkit .swatch-row .sw{width:40px;height:40px;position:relative;border:1px solid #222}
-.toolkit .swatch-row .sw span{position:absolute;bottom:-18px;left:0;font:500 8px/1 var(--mono);letter-spacing:.1em;color:#888}
-.toolkit .stack{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1f1f1f;margin-top:4px}
-.toolkit .stack .s{background:#0a0a0a;padding:18px 16px}
-.toolkit .stack .s .t{font:500 10px/1 var(--mono);letter-spacing:.2em;color:#666;text-transform:uppercase;margin-bottom:8px}
-.toolkit .stack .s .v{font:900 15px/1 var(--display);letter-spacing:-.01em}
-.toolkit .stack .s .v .g{color:var(--green)}
-
-/* MUSIC PLAYER (08B) */
-.player{background:#050505;color:#fff;border-top:1px solid #1f1f1f;padding:80px 40px;position:relative;overflow:hidden}
-.player::before{content:"";position:absolute;inset:-40%;background:radial-gradient(ellipse at 70% 30%,rgba(57,255,20,.08),transparent 55%);pointer-events:none;opacity:0;transition:opacity 1.2s ease}
-.player.live::before{opacity:1}
-.player .sh{max-width:1400px;margin:0 auto 36px;padding:18px 0;border-bottom:1px solid #1f1f1f;display:flex;justify-content:space-between;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#666}
-.player .sh .num{color:var(--green)}
-.player .wrap{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.4fr;gap:1px;background:#1f1f1f;border:1px solid #1f1f1f;position:relative;z-index:1}
-.player .cover,.player .ctrl{background:#0a0a0a;position:relative}
-
-/* Cover panel - video placeholder */
-.player .cover{aspect-ratio:1/1.05;overflow:hidden}
-.player .cover .stack{position:absolute;inset:0}
-.player .cover .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
-.player .cover .still{position:absolute;inset:0;background:#0a0a0a;filter:grayscale(.1) contrast(1.05);transition:opacity .6s ease,transform 8s linear}
-.player.live .cover .still{transform:scale(1.05)}
-.player .cover .scrim{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 35%,transparent 30%,rgba(0,0,0,.55) 75%,rgba(0,0,0,.92));z-index:2}
-.player .cover .scan{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.15;background:repeating-linear-gradient(180deg,transparent 0 2px,rgba(255,255,255,.08) 2px 3px)}
-.player .cover .meta{position:absolute;top:18px;left:20px;right:20px;z-index:4;display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.25em;text-transform:uppercase;color:#bbb}
-.player .cover .meta .rec{color:var(--green);display:inline-flex;align-items:center;gap:7px}
-.player .cover .meta .rec::before{content:"";width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--green);transition:opacity .2s ease;animation:recPulse 1.4s ease-in-out infinite}
-body.player-paused .player .cover .meta .rec::before{animation:none;opacity:.4}
-@keyframes recPulse{0%,100%{opacity:1}50%{opacity:.3}}
-.player .cover .tag{position:absolute;bottom:22px;left:22px;z-index:4;font:500 10px/1 var(--mono);letter-spacing:.25em;text-transform:uppercase;color:#888}
-.player .cover .tag b{color:#fff;font-weight:500}
-.player .cover .cdot{position:absolute;right:22px;bottom:36px;width:64px;height:64px;border-radius:50%;border:1px solid rgba(255,255,255,.2);z-index:4;display:grid;place-items:center;font:500 9px/1.2 var(--mono);letter-spacing:.2em;text-align:center;color:#888;text-transform:uppercase;animation:spin 18s linear infinite}
-body.player-paused .player .cover .cdot{animation-play-state:paused}
-.player .swap-target{transition:opacity .28s ease,transform .38s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
-.player .swap-target.is-swap{opacity:0;transform:translateY(-6px)}
-@media (prefers-reduced-motion:reduce){.player .swap-target{transition:opacity .15s linear;transform:none !important}}
-.player.live .cover .cdot{border-color:var(--green);color:var(--green);animation-duration:3s}
-.player .cover .vidoff{position:absolute;inset:auto 0 0 0;z-index:4;padding:10px 22px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));font:500 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#666;display:flex;justify-content:space-between}
-.player .cover .vidoff span.g{color:var(--green)}
-
-/* Controls panel */
-.player .ctrl{padding:34px 36px;display:grid;grid-template-rows:auto auto 1fr auto;gap:22px;min-height:520px}
-.player .ctrl .ltag{display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#666;padding-bottom:14px;border-bottom:1px solid #1f1f1f}
-.player .ctrl .ltag .g{color:var(--green)}
-.player .ctrl h3{font:900 clamp(44px,4.8vw,80px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.03em;color:#fff}
-.player .ctrl h3 .g{color:var(--green)}
-.player .ctrl .byline{font:500 11px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#888;margin-top:10px;display:flex;gap:18px;flex-wrap:wrap}
-.player .ctrl .byline b{color:#fff;font-weight:500}
-
-/* Waveform visualizer */
-.player .viz{display:flex;align-items:flex-end;gap:3px;height:80px;margin-top:4px}
-.player .viz .bar{flex:1;background:linear-gradient(180deg,var(--green),#1a7a04);height:20%;transform-origin:bottom;transition:background .3s}
-.player:not(.live) .viz .bar{background:linear-gradient(180deg,#333,#111)}
-
-/* Scrubber row */
-.player .bar-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;font:500 10px/1 var(--mono);letter-spacing:.15em;color:#888}
-.player .track{position:relative;height:3px;background:#1f1f1f;cursor:none}
-.player .track .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--green)}
-.player .track .knob{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:var(--green);transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(57,255,20,.18),0 0 14px rgba(57,255,20,.4);transition:opacity .2s;opacity:0}
-.player.live .track .knob{opacity:1}
-
-/* Transport */
-.player .trans{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.player .btn{width:46px;height:46px;border:1px solid #2a2a2a;background:transparent;color:#ccc;display:grid;place-items:center;cursor:none;transition:background .2s,color .2s,border-color .2s,box-shadow .3s}
-.player .btn:hover{background:#fff;color:#000;border-color:#fff}
-.player .btn svg{width:16px;height:16px}
-.player .btn.play{width:68px;height:68px;background:var(--green);color:#000;border-color:var(--green);box-shadow:0 0 0 3px rgba(57,255,20,.12),0 0 22px rgba(57,255,20,.22)}
-.player .btn.play:hover{transform:scale(1.04);box-shadow:0 0 0 5px rgba(57,255,20,.2),0 0 30px rgba(57,255,20,.4)}
-.player .btn.play svg{width:22px;height:22px;margin-left:3px}
-.player.live .btn.play svg{margin-left:0}
-.player .vol{display:inline-flex;align-items:center;gap:10px;margin-left:auto;color:#666;font:500 9px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
-.player .vol input[type=range]{-webkit-appearance:none;appearance:none;width:92px;height:3px;background:#1f1f1f;outline:none;cursor:none}
-.player .vol input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px rgba(57,255,20,.2)}
-.player .vol input[type=range]::-moz-range-thumb{width:10px;height:10px;border:none;border-radius:50%;background:var(--green)}
-
-/* Footer strip */
-.player .ftr{max-width:1400px;margin:30px auto 0;display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#666;border-top:1px solid #1f1f1f;padding-top:18px}
-.player .ftr b{color:#fff;font-weight:500}
-.player .ftr .links a{color:#888;margin-left:18px;transition:color .2s}
-.player .ftr .links a:hover{color:var(--green)}
-
-@media (max-width:900px){
-  .player{padding:60px 22px}
-  .player .wrap{grid-template-columns:1fr}
-  .player .ctrl{padding:26px 22px;min-height:auto}
-}
-
-/* REALISATIONS (08) - artists */
-.real{background:#0a0a0a;color:#fff;border-top:1px solid #1f1f1f;overflow:hidden}
-.real .head{padding:22px 40px;border-bottom:1px solid #1f1f1f;display:flex;justify-content:space-between;align-items:flex-end;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#888}
-.real .head h3{font:900 clamp(28px,4vw,60px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.03em;color:#fff}
-.real .head .num{color:var(--green)}
-.real .scroller{display:flex;gap:1px;overflow-x:auto;background:#1f1f1f;scrollbar-width:thin;scrollbar-color:var(--green) #111}
-.real .scroller::-webkit-scrollbar{height:6px}
-.real .scroller::-webkit-scrollbar-track{background:#111}
-.real .scroller::-webkit-scrollbar-thumb{background:var(--green)}
-.real .tile{flex:0 0 auto;width:clamp(400px,40vw,560px);aspect-ratio:3/4;position:relative;background:#0a0a0a;overflow:hidden}
-.real .tile img,.real .tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1);filter:grayscale(.1) contrast(1.05)}
-.real .tile:hover img,.real .tile:hover video{transform:scale(1.03)}
-.real .tile.video-tile::after{content:"▶ CLIP";position:absolute;top:18px;right:20px;z-index:2;font:500 9px/1 var(--mono);letter-spacing:.25em;color:var(--green);padding:6px 10px;border:1px solid var(--green);background:rgba(0,0,0,.5)}
-.real .tile .num{position:absolute;top:18px;left:20px;font:500 10px/1 var(--mono);letter-spacing:.25em;color:var(--green);z-index:2}
-.real .tile .cap{position:absolute;bottom:0;left:0;right:0;padding:22px 20px;z-index:2;background:linear-gradient(180deg,transparent,rgba(0,0,0,.85))}
-.real .tile .cap h4{font:900 28px/.9 var(--display);text-transform:uppercase;letter-spacing:-.02em;color:#fff;margin-bottom:6px;position:relative;padding-right:26px}
-.real .tile .cap h4::after{content:"↗";position:absolute;right:0;top:2px;font:500 18px/1 var(--mono);color:var(--green);opacity:.55;transition:opacity .3s ease,transform .3s ease}
-.real .tile:hover .cap h4::after{opacity:1;transform:translate(3px,-3px)}
-.real .tile .cap .meta{display:flex;justify-content:space-between;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#aaa}
-.real .tile .cap .meta b{color:var(--green);font-weight:500}
-.real .tile-empty{background:#0a0a0a;border:1px dashed rgba(255,255,255,.08);display:grid;place-items:center}
-.real .tile-empty .num{color:#444}
-.real .tile-empty .empty-mark{display:flex;align-items:center;gap:14px;font:500 11px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:#666}
-.real .tile-empty .empty-mark .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:emptyPulse 2.4s ease-in-out infinite}
-@keyframes emptyPulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
-@media (prefers-reduced-motion:reduce){.real .tile-empty .empty-mark .dot{animation:none;opacity:.85}}
-
-/* HOVER PREVIEW - Holographic info card (08 tiles) */
-.tile-preview{position:fixed;top:0;left:0;width:clamp(320px,28vw,420px);pointer-events:none;z-index:200;will-change:transform}
-.tile-preview .tp-inner{
-  position:relative;
-  background:linear-gradient(155deg, rgba(15,18,15,.92) 0%, rgba(8,10,8,.96) 100%);
-  border:1px solid rgba(57,255,20,.45);
-  border-radius:4px;
-  backdrop-filter:blur(20px) saturate(1.4);
-  -webkit-backdrop-filter:blur(20px) saturate(1.4);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.55),
-    0 0 0 1px rgba(57,255,20,.08),
-    0 0 60px rgba(57,255,20,.18),
-    inset 0 0 60px rgba(57,255,20,.04);
-  opacity:0;transform:scale(.5);filter:blur(8px);transform-origin:0 50%;
-  transition:opacity .35s cubic-bezier(.2,.8,.2,1),transform .42s cubic-bezier(.2,.8,.2,1),filter .35s cubic-bezier(.2,.8,.2,1);
-  will-change:transform,opacity,filter;
-  overflow:hidden;
-}
-.tile-preview.is-flip .tp-inner{transform-origin:100% 50%}
-.tile-preview.is-open .tp-inner{opacity:1;transform:scale(1);filter:blur(0)}
-/* HUD corner markers */
-.tile-preview .tp-inner::before,.tile-preview .tp-inner::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--green);pointer-events:none;z-index:3}
-.tile-preview .tp-inner::before{top:8px;left:8px;border-right:none;border-bottom:none}
-.tile-preview .tp-inner::after{bottom:8px;right:8px;border-left:none;border-top:none}
-/* Scan line animation */
-.tile-preview .tp-stage{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:4px}
-.tile-preview .tp-stage::before{content:"";position:absolute;left:-2px;right:-2px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--green) 30%,var(--green) 70%,transparent);box-shadow:0 0 12px var(--green);opacity:.6;animation:tpScan 4s linear infinite}
-@keyframes tpScan{0%{transform:translateY(0)}100%{transform:translateY(620px)}}
-.tile-preview .tp-stage::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 3px,rgba(57,255,20,.025) 3px 4px);mix-blend-mode:screen}
-/* Card content layout */
-.tile-preview .tp-card{position:relative;padding:26px 24px 22px;display:flex;flex-direction:column;gap:14px;z-index:2}
-.tile-preview .tp-num{display:flex;justify-content:space-between;align-items:center;font:500 10px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--green);padding-bottom:10px;border-bottom:1px solid rgba(57,255,20,.15)}
-.tile-preview .tp-num .dim{color:#888;letter-spacing:.2em}
-.tile-preview .tp-num .live{display:inline-flex;align-items:center;gap:5px;color:var(--green)}
-.tile-preview .tp-num .live::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:tpRec 1.6s ease-in-out infinite}
-@keyframes tpRec{0%,100%{opacity:1}50%{opacity:.35}}
-.tile-preview .tp-title{font:900 clamp(22px,2.2vw,30px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.02em;color:#fff}
-.tile-preview .tp-title .g{color:var(--green)}
-.tile-preview .tp-sub{font:400 12px/1.5 var(--sans);color:#bbb;max-width:38ch}
-.tile-preview .tp-meta{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font:500 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:12px 0;border-top:1px solid rgba(57,255,20,.12);border-bottom:1px solid rgba(57,255,20,.12)}
-.tile-preview .tp-meta dt{color:var(--green);letter-spacing:.22em}
-.tile-preview .tp-meta dd{color:#fff;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:11px}
-.tile-preview .tp-scope{display:flex;flex-wrap:wrap;gap:5px}
-.tile-preview .tp-scope span{font:500 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--green);border:1px solid rgba(57,255,20,.4);padding:5px 8px;background:rgba(57,255,20,.05)}
-.tile-preview .tp-stack{font:500 9px/1.5 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#888}
-.tile-preview .tp-stack b{color:var(--green);font-weight:500}
-.tile-preview .tp-cta{display:flex;justify-content:space-between;align-items:center;font:500 9px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:#666;padding-top:10px;border-top:1px solid rgba(57,255,20,.1)}
-.tile-preview .tp-cta .arrow{color:var(--green);font-size:14px;transform:translateX(0);transition:transform .3s}
-.tile-preview.is-open .tp-cta .arrow{animation:tpArrow 1.6s ease-in-out infinite}
-@keyframes tpArrow{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
-/* Debug helper - add class "force-show" on .tile-preview from devtools */
-.tile-preview.force-show{transform:translate3d(50vw,50vh,0) translate(-50%,-50%) !important}
-.tile-preview.force-show .tp-inner{opacity:1 !important;transform:scale(1) !important;filter:blur(0) !important}
-@media (hover:none),(max-width:820px){.tile-preview{display:none}}
-
-/* WHAT WE REFUSE (09) */
-.refuse{background:var(--paper);color:#000;border-top:1px solid #000;padding:80px 40px}
-.refuse .wrap{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start}
-.refuse h2{font:900 clamp(40px,5.6vw,84px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.03em}
-.refuse h2 .g{color:var(--green)}
-.refuse .hint{margin-top:22px;font:500 10px/1.5 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#555;display:flex;align-items:center;gap:10px}
-.refuse .hint .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(57,255,20,.2);animation:pulseHint 1.8s ease-in-out infinite}
-@keyframes pulseHint{0%,100%{box-shadow:0 0 0 3px rgba(57,255,20,.2)}50%{box-shadow:0 0 0 6px rgba(57,255,20,.08)}}
-.refuse ul{list-style:none;display:grid;gap:0}
-.refuse ul li{padding:18px 0;border-top:1px solid #000;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:center;cursor:pointer;user-select:none;transition:padding .3s}
-.refuse ul li:last-child{border-bottom:1px solid #000}
-.refuse ul li:hover{padding-left:6px}
-
-.refuse ul li .icon{width:36px;height:36px;position:relative}
-.refuse ul li .icon .face{position:absolute;inset:0;display:grid;place-items:center;border:1.5px solid transparent;font:900 18px/1 var(--display);transition:opacity .35s ease,transform .45s cubic-bezier(.65,.05,.36,1),color .3s,background .3s,box-shadow .3s,border-color .3s}
-.refuse ul li .icon .face.no{color:#E63946;opacity:1}
-.refuse ul li .icon .face.yes{color:var(--green);background:#000;border-color:currentColor;opacity:0;transform:rotate(-90deg)}
-.refuse ul li:hover .icon .face.no{background:#E63946;color:#fff;border-color:#E63946;box-shadow:0 0 0 3px rgba(230,57,70,.15)}
-.refuse ul li.on .icon .face.no{opacity:0;transform:rotate(90deg)}
-.refuse ul li.on .icon .face.yes{opacity:1;transform:rotate(0);box-shadow:0 0 0 3px rgba(57,255,20,.22),0 0 22px rgba(57,255,20,.18)}
-
-.refuse ul li .txt{position:relative;display:grid;font:500 17px/1.35 var(--sans)}
-.refuse ul li .txt .no,.refuse ul li .txt .yes{grid-area:1/1;transition:opacity .45s ease, transform .45s cubic-bezier(.2,.8,.2,1)}
-.refuse ul li .txt .yes{opacity:0;transform:translateY(10px);color:#0a0a0a;font-weight:600}
-.refuse ul li .txt .yes::before{content:"→ ";color:var(--green);font-weight:800}
-.refuse ul li.on .txt .no{opacity:0;transform:translateY(-10px)}
-.refuse ul li.on .txt .yes{opacity:1;transform:translateY(0)}
-.refuse ul li.on{background:linear-gradient(90deg,rgba(57,255,20,.06),transparent 70%)}
-
-/* CONTACT (09) */
-.contact{background:#000;color:#fff;padding:80px 40px 40px;border-top:1px solid #1f1f1f;position:relative}
-.contact .sh{border-color:#1f1f1f;color:#666;max-width:1400px;margin:0 auto 50px;padding:18px 0;display:flex;justify-content:space-between;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #1f1f1f}
-.contact .sh .num{color:var(--green)}
-.contact h2{font:900 clamp(56px,10vw,170px)/.86 var(--display);letter-spacing:-.04em;text-transform:uppercase;max-width:1400px;margin:0 auto}
-.contact h2 .g{color:var(--green)}
-.contact h2 .line{overflow:hidden;display:block}
-.contact .cols{margin:60px auto 0;max-width:1400px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:1px solid #1f1f1f;padding-top:40px}
-.contact .cols .lbl{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:14px}
-.contact .cols a{display:block;font:400 14px/1.7 var(--sans);color:#bbb;transition:color .2s}
-.contact .cols a:hover{color:var(--green)}
-.contact .cols .mail{font:900 26px/1 var(--display);color:#fff;text-transform:uppercase;letter-spacing:-.01em}
-.contact .cols .mail:hover{color:var(--green)}
-.contact .foot{margin:60px auto 0;max-width:1400px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#666;border-top:1px solid #1f1f1f;padding-top:24px}
-.contact .foot b{color:#fff;font-weight:500}
-.contact .foot a{transition:color .2s ease}
-.contact .foot a:hover{color:var(--green)}
-.contact .book{max-width:1400px;margin:50px auto 0;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;padding:28px 32px;background:linear-gradient(90deg,#0d0d0d,#050505);border:1px solid #1f1f1f;position:relative;overflow:hidden;transition:border-color .3s,background .3s}
-.contact .book::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 50%, rgba(57,255,20,.12), transparent 60%);opacity:.8;transition:opacity .4s;pointer-events:none}
-.contact .book:hover{border-color:var(--green);background:linear-gradient(90deg,#0f0f0f,#070707)}
-.contact .book:hover::before{opacity:1}
-.contact .book .txt{position:relative;z-index:1}
-.contact .book .txt .kk{font:500 10px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--green);margin-bottom:8px;display:block}
-.contact .book .txt .ll{font:900 clamp(22px,2.4vw,34px)/1 var(--display);letter-spacing:-.01em;text-transform:uppercase;color:#fff}
-.contact .book .txt .sub{font:400 13px/1.5 var(--sans);color:#888;margin-top:6px;max-width:560px}
-.contact .book .btn{position:relative;z-index:1;display:inline-flex;align-items:center;gap:14px;padding:18px 28px;background:var(--green);color:#000;font:800 13px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--green);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s}
-.contact .book .btn .ar{display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-.contact .book .btn:hover{transform:translateX(4px);box-shadow:0 0 0 4px rgba(57,255,20,.18),0 0 40px rgba(57,255,20,.25)}
-.contact .book .btn:hover .ar{transform:translateX(6px)}
-@media (max-width:720px){.contact .book{padding:22px;flex-direction:column;align-items:flex-start}.contact .book .btn{width:100%;justify-content:center}}
-
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
-
-@media (max-width:1280px){
-  .hero .disc{display:none}
-  .hero .meta{max-width:240px;bottom:70px}
-  .hero .hero-display{font-size:clamp(56px,11vw,160px)}
-}
-@media (max-width:1000px){
-  .toolkit .board,.toolkit .ui{grid-template-columns:1fr}
-  .toolkit .cell{border-right:none;border-bottom:1px solid #1f1f1f}
-  .toolkit .icons{grid-template-columns:repeat(4,1fr)}
-  .toolkit .graphics{grid-template-columns:repeat(3,1fr)}
-  .services .row{grid-template-columns:60px 1fr 100px}
-  .services .row .desc,.services .row .cta{display:none}
-  .fd,.fd.flip,.founders .intro,.process .head,.refuse .wrap{grid-template-columns:1fr}
-  .fd .body,.fd.flip .body{border-left:none;border-top:1px solid #1f1f1f;padding:32px 24px}
-  .fd.flip .body{order:2;border-right:none}
-  .fd .img{min-height:440px}
-  .talents .grid{grid-template-columns:repeat(3,1fr)}
-  .process .track{grid-template-columns:1fr 1fr}
-  .process .track .ph:nth-child(2){border-right:none}
-  .nav .links{display:none}
-  .contact .cols{grid-template-columns:1fr 1fr}
-  body{cursor:auto}
-  .cursor{display:none}
-}
-
-/* === MOBILE - tablet & large phones === */
-@media (max-width:720px){
-  /* HERO - hide decorative absolutes that overlap title at narrow widths */
-  .hero{height:auto;min-height:560px}
-  .hero .stage{padding-top:90px;padding-bottom:24px}
-  .hero .title{padding:0 22px}
-  .hero .hero-display{font-size:clamp(46px,12vw,84px);line-height:.9}
-  .hero .meta{display:none}
-  .hero .disc{display:none}
-  .hero .target{display:none}
-  .hero .cta{display:none}
-  .hero .ticker{padding:12px 18px;font-size:8px;letter-spacing:.14em;gap:10px}
-  .hero .ticker > span:nth-child(2),.hero .ticker > span:nth-child(3){display:none}
-
-  /* MANIFESTO */
-  .manifesto{padding:60px 22px}
-  .manifesto .wrap{grid-template-columns:1fr;gap:36px}
-  .manifesto h2{font-size:clamp(34px,9vw,52px)}
-
-  /* FOUNDERS */
-  .founders .intro{padding:40px 22px 32px;gap:28px}
-  .founders .intro h2{font-size:clamp(30px,8.5vw,52px)}
-  .fd .body,.fd.flip .body{padding:28px 22px;gap:14px}
-  .fd.flip .body{align-items:flex-start;text-align:left}
-  .fd.flip .body .quote{border-right:none;border-left:2px solid var(--green);padding-left:14px;padding-right:0}
-  .fd.flip .body .stats{flex-direction:row}
-  .fd .img,.fd.flip .img{min-height:340px}
-  .fd .nm{font-size:clamp(40px,11vw,64px)}
-  .fd .stats{gap:18px;padding-top:18px;margin-top:18px;flex-wrap:wrap}
-  .fd .stats .s b{font-size:18px}
-
-  /* PROCESS */
-  .process .head{padding:40px 22px 24px;gap:20px}
-  .process h2{font-size:clamp(32px,9vw,52px)}
-  .process .track .ph{padding:22px 20px;min-height:auto;gap:10px}
-  .process .track .ph h3{font-size:22px}
-
-  /* TALENTS - 3 cols stays at 1000 breakpoint, drop to 2 here */
-  .talents .grid{grid-template-columns:repeat(2,1fr)}
-
-  /* TOOLKIT */
-  .toolkit .cell{padding:24px 22px}
-  .toolkit .icons{grid-template-columns:repeat(4,1fr)}
-
-  /* REALISATIONS - CRITICAL fix: tile clamp(400px,...) overflows iPhone SE */
-  .real .head{padding:36px 22px;gap:16px}
-  .real h3{font-size:clamp(26px,7vw,38px)}
-  .real .scroller{padding:0 22px 30px}
-  .real .tile{width:clamp(260px,82vw,400px)}
-  .real .tile .cap h4{font-size:22px}
-
-  /* PLAYER */
-  .player{padding:60px 22px}
-  .player .ctrl{padding:28px 22px;gap:18px}
-  .player h3{font-size:clamp(34px,8vw,54px)}
-  .player .byline{flex-wrap:wrap;gap:8px 14px;font-size:10px}
-
-  /* REFUSE */
-  .refuse{padding:60px 22px}
-  .refuse h2{font-size:clamp(30px,9vw,52px)}
-  .refuse ul li{padding:16px 0;grid-template-columns:36px 1fr;gap:14px}
-  .refuse ul li .icon{width:30px;height:30px}
-  .refuse ul li .txt{font-size:14px;line-height:1.4}
-
-  /* CONTACT */
-  .contact{padding:60px 22px 30px}
-  .contact .sh{margin:0 auto 28px;font-size:9px;letter-spacing:.14em}
-  .contact h2{font-size:clamp(40px,13vw,90px)}
-  .contact .cols{gap:22px}
-  .contact .book{flex-direction:column;align-items:flex-start;padding:26px 22px;gap:22px}
-  .contact .book .ll{font-size:clamp(26px,8vw,40px)}
-  .contact .book .btn{width:100%;justify-content:center}
-  .contact .foot{flex-direction:column;align-items:flex-start;gap:6px;padding:24px 22px;font-size:9px;letter-spacing:.14em}
-}
-
-/* === PHONE - iPhone SE class & narrow phones === */
-@media (max-width:480px){
-  .hero .title{padding:0 18px}
-  .hero .hero-display{font-size:clamp(40px,13vw,68px)}
-
-  .manifesto{padding:50px 18px}
-  .manifesto h2{font-size:clamp(28px,9vw,42px)}
-
-  .founders .intro{padding:36px 18px 28px}
-  .founders .intro h2{font-size:clamp(26px,9vw,40px)}
-  .fd .body,.fd.flip .body{padding:24px 18px}
-  .fd .img,.fd.flip .img{min-height:280px}
-  .fd .stats .s{flex:1 1 calc(50% - 9px)}
-
-  .process .head{padding:36px 18px}
-  .process .track{grid-template-columns:1fr}
-  .process .track .ph{border-right:none;border-bottom:1px solid #000}
-  .process .track .ph:last-child{border-bottom:none}
-
-  .talents .grid{grid-template-columns:repeat(2,1fr)}
-  .talents .card{aspect-ratio:3/4}
-
-  .toolkit .cell{padding:22px 18px}
-  .toolkit .icons{grid-template-columns:repeat(3,1fr)}
-  .toolkit .graphics{grid-template-columns:repeat(2,1fr)}
-
-  .real .head{padding:32px 18px}
-  .real .scroller{padding:0 18px 30px}
-  .real .tile{width:clamp(240px,86vw,360px)}
-
-  .player{padding:50px 18px}
-  .player .ctrl{padding:24px 18px}
-  .player .viz{height:60px}
-  .player .trans{flex-wrap:wrap;justify-content:center;gap:8px}
-  .player .vol{order:99;flex:1 1 100%}
-
-  .refuse{padding:50px 18px}
-  .refuse h2{font-size:clamp(26px,9vw,38px)}
-
-  .contact{padding:50px 18px 24px}
-  .contact h2{font-size:clamp(36px,13vw,72px)}
-  .contact .cols{grid-template-columns:1fr;gap:18px}
-  .contact .book{padding:22px 18px}
-  .contact .foot{padding:22px 18px}
-}
-
-/* a11y - WCAG 2.3.3: respect users who reduce motion in their OS preferences */
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
-  }
-  body{cursor:auto !important}
-  .cursor{display:none !important}
-  .reveal{opacity:1 !important;transform:none !important}
-  .tile-preview{display:none !important}
-  .hero-display .row span{transform:translateY(0) !important}
-}
-</style>
-
-<!-- === STRUCTURED DATA (JSON-LD) ===
-     Valider via https://validator.schema.org/ ou Google Rich Results Test. -->
+<!-- Schema.org structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -766,6 +54,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
       "foundingDate": "2025",
       "slogan": "Dream it. We make it.",
       "telephone": "+33-1-89-72-44-98",
+      "email": "contact@mad-makers.fr",
       "taxID": "83205969500029",
       "vatID": "FR12832059695",
       "address": {
@@ -783,7 +72,6 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
         "Direction artistique web",
         "Production vidéo",
         "Google My Business",
-        "Growth hacking",
         "Gestion réseaux sociaux"
       ],
       "knowsLanguage": ["fr", "en"],
@@ -810,7 +98,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
       "@id": "https://www.mad-makers.fr/#website",
       "url": "https://www.mad-makers.fr/",
       "name": "Mad Makers",
-      "inLanguage": ["fr-FR", "en-US"],
+      "inLanguage": "fr-FR",
       "publisher": {"@id": "https://www.mad-makers.fr/#organization"}
     },
     {
@@ -832,7 +120,7 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
       "@type": "Person",
       "@id": "https://www.mad-makers.fr/#goudet",
       "name": "Goudet Abalé",
-      "jobTitle": "Cofondateur · Stratégie & Développement",
+      "jobTitle": "Cofondateur · Stratégie & développement",
       "worksFor": {"@id": "https://www.mad-makers.fr/#organization"},
       "alumniOf": [
         {"@type": "CollegeOrUniversity", "name": "Sciences Po Lille"},
@@ -843,993 +131,499 @@ body.player-paused .player .cover .cdot{animation-play-state:paused}
   ]
 }
 </script>
+
+<!-- Fonts: Bunny Fonts (drop-in Google Fonts, EU-hosted, RGPD-compliant, no IP logging) -->
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<button class="ui-toggle" id="uiToggle" aria-label="Toggle interface" data-lbl="Hide UI" title="Hide / show UI">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-</button>
-
-<div class="cursor" id="cur"><div class="dot"></div><div class="rd" id="curRd">MM / 00</div></div>
-
-<div class="hud">
-  <div class="corner c-tl"></div>
-  <div class="corner c-tr"></div>
-  <div class="corner c-bl"></div>
-  <div class="corner c-br"></div>
-  <div class="rail" id="rail">
-    <a href="#hero" class="on">01</a>
-    <a href="#manifesto">02</a>
-    <a href="#services">03</a>
-    <a href="#founders">04</a>
-    <a href="#process">05</a>
-    <a href="#talents">06</a>
-    <a href="#toolkit">07</a>
-    <a href="#realisations">08</a>
-    <a href="#refuse">09</a>
-    <a href="#contact">10</a>
+<!-- ================ NAV ================ -->
+<nav class="nav" id="nav" data-screen-label="01 Nav">
+  <a href="#" class="brand"><span class="mk"></span><span class="brand-name">Mad Makers</span></a>
+  <div class="nav-links">
+    <a href="#manifeste">Agence <span class="caret">▾</span></a>
+    <a href="#services">Services <span class="caret">▾</span></a>
+    <a href="#projets">Projets</a>
+    <a href="#equipe">Fondateurs</a>
+    <a href="#refus">Engagements</a>
   </div>
-</div>
-
-<nav class="nav">
-  <a href="#hero" class="logo">MAD<br>MAKERS</a>
-  <div class="links">
-    <a href="#realisations" data-i18n="nav.realisations">Réalisations</a>
-    <a href="#founders" data-i18n="nav.studio">Studio</a>
-    <a href="#services" data-i18n="nav.services">Services</a>
-    <a href="#process" data-i18n="nav.process">Process</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-  </div>
-  <div class="lang" id="langSwitch" role="switch" tabindex="0" aria-checked="false" aria-label="Language toggle">
-    <span class="lbl fr">FR</span>
-    <span class="sw"><span class="knob"></span></span>
-    <span class="lbl en">EN</span>
-  </div>
-  <a class="menu" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><span data-i18n="nav.menu">Contact</span><span class="ar">↗</span></a>
+  <a class="nav-cta" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener">Réserver un créneau <span class="arrow">↗</span></a>
 </nav>
 
-<main>
+<!-- ================ HERO ================ -->
+<section class="hero" data-screen-label="02 Hero">
+  <div class="hero-bg">
+    <video class="hero-video" src="assets/hero-video-loop.mp4"
+           autoplay muted loop playsinline preload="metadata"
+           aria-hidden="true"></video>
+    <div class="hero-tint"></div>
+  </div>
+  <div class="dot-grid"></div>
 
-<!-- 01 HERO -->
-<section id="hero" class="hero" data-screen-label="01 Hero">
-  <div class="stage">
-    <div class="bg">
-      <div class="photo"></div>
-      <div class="vig"></div>
-      <div class="grain"></div>
-    </div>
-    <div class="target t1"></div>
-    <div class="target t2"></div>
-    <div class="title">
-      <h1 class="sr-only" data-i18n="hero.h1.sr">Mad Makers - agence web créative à Paris : création de sites web, SEO, direction artistique et production vidéo.</h1>
-      <div class="hero-display" aria-hidden="true">
-        <span class="row"><span>DREAM IT<span class="dot">.</span></span></span>
-        <span class="row"><span>WE MAKE</span></span>
-        <span class="row"><span>IT<span class="dot">.</span></span></span>
-      </div>
-    </div>
-    <div class="cta" data-i18n="hero.scroll">SCROLL · EXPERIENCE ↓</div>
-    <div class="disc"><div data-i18n="hero.disc">AGENCE<br>WEB<br>CRÉATIVE<br>--<br>PARIS · FR</div></div>
-    <div class="meta">
-      <div class="lbl" data-i18n="hero.meta.lbl">[ 01 / INTRO ]</div>
-      <span data-i18n="hero.meta.body">Votre prochain client vous cherche sur Google. On s'assure qu'il vous trouve - et qu'il reste. Agence web créative à Paris. Sites sur-mesure, SEO, direction artistique, vidéo. Livraison en 10 jours. Pour les entreprises qui refusent de ressembler à leurs concurrents.</span>
-    </div>
-  </div>
-  <div class="ticker">
-    <span>© MAD MAKERS - <b>AGENCE WEB CRÉATIVE PARIS</b></span>
-    <span>EST. <b>2025</b></span>
-    <span>PARIS · FR</span>
-    <span>INDEX / <b>001</b> / 010</span>
-  </div>
-</section>
+  <div class="eyebrow eyebrow-loop"><span class="sq"></span><span class="eyebrow-text">AGENCE WEB CRÉATIVE - PARIS</span></div>
+  <h1>On ne livre pas des sites.<br/>On livre des <em>outils de vente.</em></h1>
+  <p class="hero-sub">Sites web, SEO, direction artistique et vidéo — pour les entreprises qui refusent de ressembler à leurs concurrents.</p>
+  <a class="hero-cta" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener">Réserver un créneau <span class="turn">↗</span></a>
 
-<!-- 02 MANIFESTO -->
-<section id="manifesto" class="manifesto" data-screen-label="02 Manifeste">
-  <div class="sh"><span data-i18n="manifesto.sh.a"><span class="num">02</span> / MANIFESTE</span><span class="dim" data-i18n="manifesto.sh.b">[ NOS CONVICTIONS ]</span></div>
-  <div class="wrap">
-    <h2 class="reveal" data-i18n="manifesto.h2">ON NE LIVRE PAS<br>DES SITES.<br>ON LIVRE DES OUTILS DE <span class="g">VENTE.</span></h2>
-    <div class="body reveal">
-      <div class="conv"><h3 data-i18n="manifesto.c1.h">Un site doit vous <span class="g">rapporter.</span></h3><p data-i18n="manifesto.c1.p">La plupart des sites coûtent de l'argent sans jamais en rapporter. C'est parce qu'ils sont pensés pour plaire et non pour vendre. Nous ? Nous partons de votre objectif commercial, et le design en découle. Vous obtenez un site qui génère des demandes, des appels et des ventes.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c2.h">Une méthode <span class="g">claire.</span></h3><p data-i18n="manifesto.c2.p">Trop d'agences vous laissent dans le flou pendant des semaines. Nous procédons autrement : chaque étape est cadrée, chaque livrable est daté. Du brief à la mise en ligne, vous savez toujours où en est votre projet.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c3.h">Livré en <span class="g">10 jours.</span></h3><p data-i18n="manifesto.c3.p">Une agence classique met deux à trois mois pour livrer un site. Nos outils nous permettent d'aller cinq fois plus vite. Vous gagnez du temps, vous économisez du budget - sans rien perdre en qualité ni en finition.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c4.h">Adapté à votre <span class="g">marché.</span></h3><p data-i18n="manifesto.c4.p">Un site qui parle à un client de restaurant ne parle pas aux cibles d'un cabinet de conseil. Avant la première maquette, nous étudions donc votre secteur, vos clients et vos concurrents. Avec cette préparation : votre site parle vraiment à vos prospects, dans leurs mots, sur leurs leviers de décision.</p></div>
-      <div class="conv"><h3 data-i18n="manifesto.c5.h">Paris, France, <span class="g">Europe.</span></h3><p data-i18n="manifesto.c5.p">Nous accompagnons des PME, des ETI et des directions marketing de grands groupes - à Paris, en province et ailleurs en Europe. Les projets sont livrés en français ou en anglais, selon votre marché. Confidentialité garantie par contrat.</p></div>
-      <div class="sig"><span>MAD MAKERS - MAÏCK · GOUDET</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 03 SERVICES -->
-<section id="services" class="services" data-screen-label="03 Services">
-  <div class="sec-head"><span data-i18n="services.sh.a"><span class="num">03</span> / SERVICES</span><span class="dim" data-i18n="services.sh.b">[ L'OFFRE STRUCTURÉE ]</span></div>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.01</div><div><div class="tit" data-i18n="services.s1.tit">Site one-page</div></div><div class="desc" data-i18n="services.s1.desc">Pour lancer un produit, un service ou une activité en quelques jours. Une seule page, pensée pour une seule action : convertir vos visiteurs en contacts qualifiés.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.02</div><div><div class="tit" data-i18n="services.s2.tit">Site vitrine</div></div><div class="desc" data-i18n="services.s2.desc">Pour les entreprises qui veulent une présence digitale complète et professionnelle. 5 à 8 pages, structure éditoriale claire, optimisation SEO incluse dès la mise en ligne.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.03</div><div><div class="tit" data-i18n="services.s3.tit">Site sur-mesure</div></div><div class="desc" data-i18n="services.s3.desc">Pour les marques haut de gamme qui doivent le démontrer dès la première seconde : animations avancées, design entièrement sur-mesure, e-commerce intégré si besoin.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.04</div><div><div class="tit" data-i18n="services.s4.tit">Vidéo institutionnelle</div></div><div class="desc" data-i18n="services.s4.desc">Pour raconter votre entreprise avec impact, en 1 à 3 minutes. Script, tournage, montage - livrés en formats adaptés à votre site et à vos réseaux sociaux.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.05</div><div><div class="tit" data-i18n="services.s5.tit">Audit SEO</div></div><div class="desc" data-i18n="services.s5.desc">Votre site est en ligne mais ne génère pas de trafic qualifié. Nous identifions les blocages techniques et éditoriaux, puis vous remettons un plan d'action concret, priorisé et chiffré.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.06</div><div><div class="tit" data-i18n="services.s6.tit">Accompagnement SEO</div></div><div class="desc" data-i18n="services.s6.desc">Pour être trouvé sur Google sans avoir à vous en occuper. 4 à 8 articles optimisés par mois, suivi des positions, et gestion complète de votre fiche Google My Business.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.07</div><div><div class="tit" data-i18n="services.s7.tit">Gestion réseaux sociaux</div></div><div class="desc" data-i18n="services.s7.desc">Pour transformer vos comptes en véritable canal d'acquisition. 8 à 16 publications par mois - stratégie éditoriale, création visuelle et animation comprises.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-  <a class="row reveal" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener"><div class="idx">S.08</div><div><div class="tit" data-i18n="services.s8.tit">Pack démarrage</div></div><div class="desc" data-i18n="services.s8.desc">Pour lancer votre activité avec une présence digitale complète et cohérente. Site web, identité visuelle et fondations SEO - l'ensemble livré sous 2 semaines, prêt à convertir vos cibles.</div><div class="pr" data-i18n="services.pr">Sur devis</div><div class="cta" data-i18n="services.cta">Brief →</div></a>
-</section>
-
-<!-- 04 FOUNDERS -->
-<section id="founders" class="founders" data-screen-label="04 Founders">
-  <div class="sec-head sh"><span data-i18n="founders.sh.a"><span class="num">04</span> / LE DUO</span><span class="dim" data-i18n="founders.sh.b">[ DEUX PROFILS · DEUX MONDES ]</span></div>
-  <div class="intro reveal">
-    <h2 data-i18n="founders.intro.h2">UN <span class="g">CRÉATIF.</span><br>UN <span class="g">STRATÈGE.</span></h2>
-    <div>
-      <p data-i18n="founders.intro.p1">Mad Makers est née de la rencontre de deux profils complémentaires. D'un côté, un créatif hybride formé aux codes du web, du marketing et de l'image - habitué à concevoir des contenus qui tiennent la route face à des audiences exigeantes.</p>
-      <p data-i18n="founders.intro.p2">De l'autre, un stratège passé par le conseil international auprès de grands groupes et institutions françaises ou internationales. Avec cette combinaison, vous bénéficiez d'une exigence de finition créative, doublée d'une rigueur de méthode issue du conseil. <b style="color:#fff">Ni atelier déconnecté du business, ni cabinet sans âme.</b></p>
-    </div>
-  </div>
-
-  <div class="fd reveal">
-    <div class="img"><picture><source srcset="assets/artist-maick.webp" type="image/webp"><img src="assets/artist-maick.png?v=2" alt="Maïck - Cofondateur Mad Makers, agence web créative Paris" width="1023" height="1537" loading="eager" decoding="async" fetchpriority="high"></picture><span class="tag" data-i18n="founders.f2.tag">F.02 / COFONDATEUR</span><span class="code" data-i18n="founders.f2.code">DIRECTEUR ARTISTIQUE · PARIS</span></div>
-    <div class="body">
-      <div class="role" data-i18n="founders.f2.role">Cofondateur · Directeur Artistique</div>
-      <div class="nm">MAÏCK<span style="color:var(--green)">.</span></div>
-      <div class="sub" data-i18n="founders.f2.sub">MARKETING DIGITAL · ORANGE · VINCI CONSTRUCTION</div>
-      <div class="txt">
-        <p data-i18n="founders.f2.p1">Profil hybride formé au marketing digital chez <b style="color:#fff">Orange</b> et <b style="color:#fff">Vinci Construction</b>, où il a piloté des projets pour des audiences exigeantes. Il sait parler à un dirigeant de PME comme à un directeur marketing de grand groupe - sans changer d'exigence de qualité.</p>
-        <p data-i18n="founders.f2.p2">Chez Mad Makers, c'est lui qui prend les briefs, conçoit les directions créatives et pilote la production jusqu'à la livraison. <b style="color:#fff">Votre interlocuteur unique, du premier appel au site mis en ligne.</b></p>
-      </div>
-      <div class="quote" data-i18n="founders.f2.quote">Ma mission, c'est de vous aider à obtenir plus que ce que vous avez investi, grâce à une meilleure traction commerciale.</div>
-      <div class="stats">
-        <div class="s"><b data-i18n="founders.f2.s1.v"><span class="g">2×</span></b><span data-i18n="founders.f2.s1.t">Grands groupes<br>Orange · Vinci</span></div>
-        <div class="s"><b data-i18n="founders.f2.s2.v">7+</b><span data-i18n="founders.f2.s2.t">Années<br>Marketing digital</span></div>
-        <div class="s"><b data-i18n="founders.f2.s3.v">100%</b><span data-i18n="founders.f2.s3.t">Interlocuteur<br>unique</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="fd flip reveal">
-    <div class="body">
-      <div class="role" data-i18n="founders.f3.role">Cofondateur · Stratégie & Développement</div>
-      <div class="nm">GOUDET<br>ABALÉ<span style="color:var(--green)">.</span></div>
-      <div class="sub" data-i18n="founders.f3.sub">SCIENCES PO LILLE · JOHNS HOPKINS SAIS · CONSEIL INTERNATIONAL</div>
-      <div class="txt">
-        <p data-i18n="founders.f3.p1">Diplômé de <b style="color:#fff">Sciences Po Lille</b> et titulaire d'un master à <b style="color:#fff">Johns Hopkins (SAIS)</b>, Goudet a piloté des missions de stratégie et de communication pour des institutions et des grands groupes en Europe et en Afrique francophone - Assemblée nationale, ministère de la Justice, dirigeants d'entreprise.</p>
-        <p data-i18n="founders.f3.p2">Chez Mad Makers, il co-dirige le développement commercial et la stratégie.</p>
-      </div>
-      <div class="quote" data-i18n="founders.f3.quote">Trop d'entreprises courent après la visibilité. Ce qui compte, c'est un positionnement clair et une croissance qui s'installe dans la durée.</div>
-      <div class="stats">
-        <div class="s"><b data-i18n="founders.f3.s1.v">10ans+</b><span data-i18n="founders.f3.s1.t">Conseil<br>stratégique</span></div>
-        <div class="s"><b data-i18n="founders.f3.s2.v">SAIS</b><span data-i18n="founders.f3.s2.t">Johns<br>Hopkins</span></div>
-        <div class="s"><b data-i18n="founders.f3.s3.v"><span class="g">2×</span></b><span data-i18n="founders.f3.s3.t">Prix MUN<br>Harvard</span></div>
-      </div>
-    </div>
-    <div class="img"><picture><source srcset="assets/artist-goudet.webp" type="image/webp"><img src="assets/artist-goudet.png?v=2" alt="Goudet Abalé - Cofondateur Mad Makers, stratégie et développement" width="1122" height="1402" loading="lazy" decoding="async"></picture><span class="tag" data-i18n="founders.f3.tag">F.03 / COFONDATEUR</span><span class="code" data-i18n="founders.f3.code">STRATÉGIE · DÉVELOPPEMENT</span></div>
-  </div>
-</section>
-
-<!-- 05 PROCESS -->
-<section id="process" class="process" data-screen-label="05 Process">
-  <div class="sec-head"><span data-i18n="process.sh.a"><span class="num">05</span> / PROCESS</span><span class="dim" data-i18n="process.sh.b">[ 12 ÉTAPES · 2 GATES ]</span></div>
-  <div class="head reveal">
-    <h2 data-i18n="process.h2">RIEN N'EST<br>IMPROVISÉ. TOUT<br>EST <span class="g">CADRÉ.</span></h2>
-    <p data-i18n="process.p">Chaque projet Mad Makers suit un déroulé en 12 étapes, du brief initial à la mise en ligne. Vous savez à chaque instant où en est votre projet, ce qui a été validé, et ce qui reste à faire. Deux points de validation formelle ponctuent le processus : sans votre accord écrit, on ne passe pas à l'étape suivante. Vous gardez le contrôle. On garde la cadence.</p>
-  </div>
-  <div class="track">
-    <div class="ph reveal">
-      <span class="tag" data-i18n="process.ph1.tag">Phase 01 - Stratégie</span>
-      <h3 data-i18n="process.ph1.h">Comprendre<br>votre projet.</h3>
-      <ol>
-        <li data-n="01" data-i18n="process.ph1.1">Brief initial</li>
-        <li data-n="02" data-i18n="process.ph1.2">Étude de votre marché</li>
-        <li data-n="03" data-i18n="process.ph1.3">Cadrage du projet</li>
-        <li data-n="04" data-i18n="process.ph1.4">Proposition commerciale</li>
-        <li data-n="05" data-i18n="process.ph1.5">Signature · acompte 40 %</li>
-      </ol>
-    </div>
-    <div class="ph reveal">
-      <span class="tag" data-i18n="process.ph2.tag">Phase 02 - Production</span>
-      <h3 data-i18n="process.ph2.h">Concevoir<br>le site.</h3>
-      <ol>
-        <li data-n="06" data-i18n="process.ph2.1">Collecte des contenus</li>
-        <li data-n="07" data-i18n="process.ph2.2">Maquettes design</li>
-        <li data-n="08" data-i18n="process.ph2.3">Direction artistique</li>
-        <li data-n="09" data-i18n="process.ph2.4">Développement</li>
-        <li data-n="10" data-i18n="process.ph2.5">Optimisation SEO · tests</li>
-      </ol>
-    </div>
-    <div class="ph reveal">
-      <span class="tag" data-i18n="process.ph3.tag">Phase 03 - Livraison</span>
-      <h3 data-i18n="process.ph3.h">Mettre<br>en ligne.</h3>
-      <ol>
-        <li data-n="11" data-i18n="process.ph3.1">Corrections (2 séries incluses)</li>
-        <li data-n="12" data-i18n="process.ph3.2">Mise en ligne · clôture</li>
-      </ol>
-    </div>
-    <div class="ph reveal" style="background:#000;color:#fff">
-      <span class="tag" data-i18n="process.ph4.tag">Modalités</span>
-      <h3 style="color:#fff" data-i18n="process.ph4.h">Les règles<br>du jeu.</h3>
-      <ol style="color:#bbb">
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.1">40 % à la signature</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.2">60 % à la livraison</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.3">2 séries de corrections incluses</li>
-        <li data-n="→" style="color:#fff" data-i18n="process.ph4.4">Outils de suivi installés et configurés</li>
-      </ol>
-    </div>
-  </div>
-  <div class="gate">
-    <span data-i18n="process.gate1.a">VALIDATION 01 · <b>Accord écrit sur les maquettes avant développement</b></span>
-    <span class="g" data-i18n="process.gate1.b">→ ÉTAPE CLÉ</span>
-  </div>
-  <div class="gate">
-    <span data-i18n="process.gate2.a">VALIDATION 02 · <b>Accord final et solde avant mise en ligne</b></span>
-    <span class="g" data-i18n="process.gate2.b">→ ÉTAPE CLÉ</span>
-  </div>
-</section>
-
-<!-- 06 TALENTS / ASSETS -->
-<section id="talents" class="talents" data-screen-label="06 Talents">
-  <div class="sec-head sh"><span data-i18n="talents.sh.a"><span class="num">06</span> / TALENTS</span><span class="dim" data-i18n="talents.sh.b">[ CE QU'ON SAIT FAIRE ]</span></div>
-  <div class="grid">
-    <div class="card reveal"><picture><source srcset="assets/direction-artistique.webp" type="image/webp"><img src="assets/direction-artistique.png" alt="Direction artistique" width="1672" height="941" loading="lazy" decoding="async"></picture><span class="tag">T.01</span><div class="tit" data-i18n="talents.t1.tit">Direction<br>Artistique<small>Identité · univers · impact</small></div></div>
-    <div class="card reveal"><picture><source srcset="assets/creation-web.webp" type="image/webp"><img src="assets/creation-web.png" alt="Création web" width="4096" height="2728" loading="lazy" decoding="async"></picture><span class="tag">T.02</span><div class="tit" data-i18n="talents.t2.tit">Création<br>Web<small>Framer · Vercel · Figma</small></div></div>
-    <div class="card reveal"><video src="assets/waitinforyou.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tag">T.03</span><div class="tit" data-i18n="talents.t3.tit">Vidéo<br>Institutionnelle<small>Davinci · Runway · Clip</small></div></div>
-    <div class="card reveal"><picture><source srcset="assets/seo-marketing.webp" type="image/webp"><img src="assets/seo-marketing.png" alt="SEO marketing" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.04</span><div class="tit" data-i18n="talents.t4.tit">SEO<br>Marketing<small>Audit · local · contenus</small></div></div>
-    <div class="card reveal"><picture><source srcset="assets/reseaux-sociaux.webp" type="image/webp"><img src="assets/reseaux-sociaux.png" alt="Réseaux sociaux" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.05</span><div class="tit" data-i18n="talents.t5.tit">Réseaux<br>Sociaux<small>Strat · visuel · anim</small></div></div>
-    <div class="card reveal"><picture><source srcset="assets/copywriting-storytelling.webp" type="image/webp"><img src="assets/copywriting-storytelling.png" alt="Copywriting et storytelling" width="1024" height="1024" loading="lazy" decoding="async"></picture><span class="tag">T.06</span><div class="tit" data-i18n="talents.t6.tit">Copywriting<br>Storytelling<small>AIDA · scripts · SEO</small></div></div>
-  </div>
-</section>
-
-<!-- 07 TOOLKIT -->
-<section id="toolkit" class="toolkit" data-screen-label="07 Toolkit">
-  <div class="sec-head sh"><span data-i18n="toolkit.sh.a"><span class="num">07</span> / TOOLKIT</span><span class="dim" data-i18n="toolkit.sh.b">[ STACK · INTERFACE · CRAFT ]</span></div>
-  <div class="board">
-    <div class="cell reveal">
-      <div class="lbl"><span data-i18n="toolkit.e1.lbl">ICÔNES · SYSTÈME</span><span class="code">E.01</span></div>
-      <div class="icons">
-        <div class="ic" data-k="01"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg></div>
-        <div class="ic" data-k="02"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
-        <div class="ic" data-k="03"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="4"/></svg></div>
-        <div class="ic" data-k="04"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4l16 16M20 4L4 20"/></svg></div>
-        <div class="ic" data-k="05"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></div>
-        <div class="ic" data-k="06"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="4" width="16" height="16"/><path d="M4 10h16M10 4v16"/></svg></div>
-        <div class="ic" data-k="07"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9-9 9z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <div class="ic" data-k="08"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 8l7-5 7 5v8l-7 5-7-5z"/></svg></div>
-        <div class="ic" data-k="09"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4h16v16H4z"/><path d="M4 4l16 16"/></svg></div>
-        <div class="ic" data-k="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8"/><path d="M12 4v16"/></svg></div>
-      </div>
-    </div>
-    <div class="cell reveal">
-      <div class="lbl"><span data-i18n="toolkit.e2.lbl">ÉLÉMENTS GRAPHIQUES</span><span class="code">E.02</span></div>
-      <div class="graphics">
-        <div class="g"><span class="num">G.01</span>
-          <picture><source srcset="assets/mockup-box.webp" type="image/webp"><img src="assets/mockup-box.png" alt="Mad Makers - packaging 3D" width="1024" height="1536" loading="lazy" decoding="async"></picture>
-        </div>
-        <div class="g"><span class="num">G.02</span>
-          <picture><source srcset="assets/mockup-poster.webp" type="image/webp"><img src="assets/mockup-poster.png" alt="Mad Makers - poster Make It Mad" width="1024" height="1536" loading="lazy" decoding="async"></picture>
-        </div>
-        <div class="g"><span class="num">G.03</span>
-          <picture><source srcset="assets/mockup-phone.webp" type="image/webp"><img src="assets/mockup-phone.png" alt="Mad Makers - mobile Crafting Brands" width="1024" height="1536" loading="lazy" decoding="async"></picture>
+  <div class="feature-card-wrap">
+    <div class="feature-card note">
+      <div class="head">
+        <div class="label"><span class="sq"></span> NOTRE PROMESSE</div>
+        <div class="expand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7l10 10"/>
+            <path d="M11 17h6v-6"/>
+          </svg>
         </div>
       </div>
+      <div class="body">Un site qui doit vous rapporter, une méthode claire, livré en 10 jours, adapté à votre marché. Pas de slides creuses, pas de templates recyclés — du travail.</div>
+    </div>
+    <div class="feature-card note">
+      <div class="head">
+        <div class="label"><span class="sq"></span> PREMIER ÉCHANGE</div>
+        <div class="expand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7l10 10"/>
+            <path d="M11 17h6v-6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="body">30 minutes, gratuit, sans engagement. On regarde ensemble votre projet, votre marché et ce qu'il faut vraiment construire pour générer de la traction.</div>
     </div>
   </div>
 </section>
 
-<!-- 08 REALISATIONS -->
-<section id="realisations" class="real" data-screen-label="08 Réalisations">
-  <div class="head">
-    <div>
-      <div data-i18n="real.head.num"><span class="num">08</span> / RÉALISATIONS · TERRAIN</div>
-      <h3 style="margin-top:10px" data-i18n="real.head.h">LA SCÈNE<br>N'EST PAS UN DÉCOR<span style="color:var(--green)">.</span></h3>
-    </div>
-    <div data-i18n="real.head.drag">DRAG → SCROLL →</div>
-  </div>
-  <div class="scroller" id="scroller">
-    <a class="tile video-tile" target="_blank" rel="noopener" href="project-01.html"><span class="num">R.01</span><video src="assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/fight%20epic%20battles.mp4" muted loop playsinline autoplay preload="metadata" poster="assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero.png"></video><div class="cap"><h4 data-i18n="real.r1.h">Riot MMO</h4><div class="meta" data-i18n="real.r1.meta"><span>RIOT GAMES · CINEMATIC WEB</span><b>2025</b></div></div></a>
-    <a class="tile video-tile" target="_blank" rel="noopener" href="project-02.html"><span class="num">R.02</span><video src="assets/papiche-concept/region.mp4" muted loop playsinline autoplay preload="metadata" poster="assets/papiche-concept/hero.png"></video><div class="cap"><h4 data-i18n="real.r2.h">La Papiche</h4><div class="meta" data-i18n="real.r2.meta"><span>RESTAURANT · CHARENTE</span><b>2026</b></div></div></a>
-    <a class="tile" target="_blank" rel="noopener" href="project-03.html"><span class="num">R.03</span><img src="assets/sophie-marchand/hero-cabinet.png" alt="Dr. Sophie Marchand - médecin généraliste à Nantes" width="1039" height="1513" loading="lazy" decoding="async"><div class="cap"><h4 data-i18n="real.r3.h">Dr. Sophie Marchand</h4><div class="meta" data-i18n="real.r3.meta"><span>MÉDECIN · NANTES</span><b>2026</b></div></div></a>
-    <div class="tile tile-empty"><span class="num">R.04</span><div class="empty-mark"><span class="dot"></span><span data-i18n="real.coming">À venir</span></div></div>
-    <div class="tile tile-empty"><span class="num">R.05</span><div class="empty-mark"><span class="dot"></span><span data-i18n="real.coming">À venir</span></div></div>
-    <div class="tile tile-empty"><span class="num">R.06</span><div class="empty-mark"><span class="dot"></span><span data-i18n="real.coming">À venir</span></div></div>
-    <div class="tile tile-empty"><span class="num">R.07</span><div class="empty-mark"><span class="dot"></span><span data-i18n="real.coming">À venir</span></div></div>
-  </div>
-</section>
-
-<!-- 08B MUSIC PLAYER -->
-<section id="player" class="player" data-screen-label="08B Écoute">
-  <div class="sh">
-    <span data-i18n="player.sh.a"><span class="num">08</span>.B / ÉCOUTE · CASE STUDY</span>
-    <span id="ptSubHeader">[ KURI · HARD TO LOVE ]</span>
-  </div>
-  <div class="wrap">
-    <!-- Cover / Video slot -->
-    <div class="cover">
-      <div class="stack">
-        <video class="vid" id="ptVideo" muted loop playsinline preload="metadata"></video>
-        <div class="scrim"></div>
-        <div class="scan"></div>
-      </div>
-      <div class="meta">
-        <span class="rec" data-i18n="player.rec">PLAYING</span>
-        <span>CONCEPTUAL · 2024</span>
-      </div>
-      <div class="tag swap-target" id="ptCoverTag"></div>
-      <div class="cdot">MAD<br>MAKERS<br>◉ REC</div>
-      <div class="vidoff">
-        <span data-i18n="player.vidoff.a">VIDÉO · LOOP</span>
-        <span class="g" data-i18n="player.vidoff.b">AUDIO LIVE ↓</span>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <div class="ctrl">
-      <div class="ltag">
-        <span id="ptCounter">NOW PLAYING · 01/02</span>
-        <span class="g" data-i18n="player.ltag.b">▲ MUSIC SHOWCASE</span>
-      </div>
+<!-- ================ MANIFESTE / STATS ================ -->
+<section class="dark" id="manifeste" data-screen-label="03 Manifeste">
+  <div class="container">
+    <div class="stats-row">
       <div>
-        <h3 id="ptTitle" class="swap-target">KURI<br>- <span class="g">HARD TO LOVE.</span></h3>
-        <div class="byline">
-          <span><span data-i18n="player.by.a.lbl">ARTISTE</span> · <b id="ptArtist" class="swap-target">KURI</b></span>
-          <span><span data-i18n="player.by.b.lbl">FORMAT</span> · <b id="ptFormat" class="swap-target">OFFICIAL VIDEO</b></span>
-          <span><span data-i18n="player.by.c.lbl">ANNÉE</span> · <b id="ptYear" class="swap-target">2024</b></span>
-          <span><span data-i18n="player.by.d.lbl">CURATION</span> · <b id="ptCuration" class="swap-target">MAÏCK</b></span>
+        <div class="eyebrow"><span class="sq"></span> NOTRE POSITION</div>
+        <h2 class="big-title">Trop d'entreprises courent après la visibilité. Ce qui compte, c'est <em>un positionnement clair.</em></h2>
+        <p class="lead">On accompagne dirigeants, fondateurs et équipes marketing dans la durée. Direction artistique, création web, SEO, vidéo : tout est cadré, rien n'est improvisé.</p>
+        <div class="stats">
+          <div class="stat"><div class="num">10</div><div class="lab">Jours de livraison</div></div>
+          <div class="stat"><div class="num">40/60</div><div class="lab">Signature / livraison</div></div>
+          <div class="stat"><div class="num">2×</div><div class="lab">Cycles de corrections</div></div>
         </div>
       </div>
-      <div class="viz" id="viz">
-        <!-- 48 bars injected by JS -->
-      </div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="bar-row">
-          <span id="ptCur">0:00</span>
-          <div class="track" id="ptTrack"><div class="fill" id="ptFill"></div><div class="knob" id="ptKnob"></div></div>
-          <span id="ptDur">-:-</span>
-        </div>
-        <div class="trans">
-          <button class="btn" id="ptBack" title="Morceau précédent" aria-label="Previous track"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM20 6v12l-10-6z"/></svg></button>
-          <button class="btn play" id="ptPlay" aria-label="Play"><svg id="ptIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg></button>
-          <button class="btn" id="ptFwd" title="Morceau suivant" aria-label="Next track"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM4 6v12l10-6z"/></svg></button>
-          <button class="btn" id="ptMute" aria-label="Mute"><svg id="ptVolIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></button>
-          <div class="vol"><span>VOL</span><input type="range" id="ptVol" min="0" max="1" step="0.01" value="0.8"></div>
-        </div>
+      <div class="orb-wrap">
+        <img class="mm-box" src="assets/assets%20box%20custom%20mad%20makers.png" alt="Box Mad Makers" loading="lazy">
       </div>
     </div>
-  </div>
 
-  <div class="ftr">
-    <span data-i18n="player.ftr.a">SHOWCASE · <b>MUSIC × DA</b></span>
-    <span class="links">
-      <span data-i18n="player.ftr.b">DIRECTION ARTISTIQUE</span>
-      <a href="#realisations">↑ RÉALISATIONS</a>
-      <a href="#contact">→ BRIEF</a>
-    </span>
+    <div class="logos-row">
+      <div class="lab">Nos inspirations — les outils avec lesquels on construit.</div>
+      <div class="logos tools">
+        <div class="tool tool--sm" title="cosmos.so">
+          <img src="assets/cosmos.svg" alt="">
+          <span>cosmos.so</span>
+        </div>
+        <div class="tool" title="Framer">
+          <img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark">
+        </div>
+        <div class="tool" title="CodePen">
+          <img src="assets/CodePen_logo.png" alt="">
+          <span>CodePen</span>
+        </div>
+        <div class="tool" title="Claude Code">
+          <img src="assets/Claudecode.png" alt="">
+          <span>Claude Code</span>
+        </div>
+        <div class="tool" title="Antigravity">
+          <img src="assets/antigravity-color.png" alt="">
+          <span>Antigravity</span>
+        </div>
+        <div class="tool tool--lg" title="Figma">
+          <img src="assets/figma_logo_icon_171159.webp" alt="">
+          <span>Figma</span>
+        </div>
+        <div class="tool" title="Vercel">
+          <img src="assets/Vercel_logo_2025.svg" alt="">
+          <span>Vercel</span>
+        </div>
+        <div class="tool tool--lg" title="Spline">
+          <img src="assets/spline.design-AI-1.png" alt="">
+          <span>Spline</span>
+        </div>
+        <div class="tool" title="JavaScript">
+          <img src="assets/JavaScript-logo.png" alt="">
+          <span>JavaScript</span>
+        </div>
+        <div class="tool" title="Cloudflare">
+          <img src="assets/Cloudflare_Logo.svg.png" alt="">
+          <span>Cloudflare</span>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <audio id="ptAudio" preload="metadata"></audio>
 </section>
 
-<!-- 09 REFUSE -->
-<section id="refuse" class="refuse" data-screen-label="09 Ce qu'on refuse">
-  <div class="sec-head" style="max-width:1400px;margin:0 auto 50px;padding:18px 0;border-bottom:1px solid #000"><span data-i18n="refuse.sh.a"><span class="num">09</span> / CE QU'ON REFUSE</span><span class="dim" data-i18n="refuse.sh.b">[ NO-LIST ]</span></div>
-  <div class="wrap">
-    <div>
-      <h2 class="reveal" data-i18n="refuse.h2">POUR BIEN SAVOIR<br>QUI ON EST -<br>VOYEZ CE QU'ON<br><span class="g">NE FERA PAS.</span></h2>
-      <div class="hint" data-i18n="refuse.hint"><span class="dot"></span>Cliquez sur une croix → découvrez notre promesse</div>
+<!-- ================ SERVICES (cream) ================ -->
+<section class="cream" id="services" data-screen-label="04 Services">
+  <div class="container">
+    <div class="eyebrow"><span class="sq"></span> NOS SERVICES</div>
+    <h2 class="big-title" style="margin-top:14px">De la première intuition<br/>à la mise en ligne de votre <em>outil de vente.</em></h2>
+  </div>
+
+  <div class="services-scroller">
+    <div class="services-grid">
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 4v14M3 9h5"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Site one-page</h3>
+          <p>Pour lancer un produit, un service ou une activité en quelques jours.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Site vitrine</h3>
+          <p>5 à 8 pages, structure éditoriale claire, optimisation SEO incluse.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Site sur-mesure</h3>
+          <p>Animations avancées, design entièrement sur-mesure. Conçu, dessiné et codé sous le même toit.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Vidéo institutionnelle</h3>
+          <p>Script, tournage, montage — livrés en formats adaptés à vos canaux.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Audit SEO</h3>
+          <p>Identifier les blocages techniques et éditoriaux qui freinent votre visibilité.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Accompagnement SEO</h3>
+          <p>4 à 8 articles optimisés par mois, pensés pour ranker et convertir.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Réseaux sociaux</h3>
+          <p>8 à 16 publications par mois — stratégie, visuels et animations cohérents.</p>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc">
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l3 6 6 1-4.5 4.5L18 21l-6-3-6 3 1.5-6.5L3 10l6-1z"/></svg>
+        </div>
+        <div class="svc-label">
+          <h3>Pack démarrage</h3>
+          <p>Site web, identité visuelle et fondations SEO. Posés en 2 semaines.</p>
+        </div>
+      </div>
     </div>
-    <ul class="reveal" id="refuseList">
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l1.no">Recycler un template qu'on revend trois fois plus cher.</span><span class="yes" data-i18n="refuse.l1.yes">Concevoir un design unique, pensé pour votre marché.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l2.no">Écrire « Bienvenue sur notre site, nous sommes passionnés par notre métier ».</span><span class="yes" data-i18n="refuse.l2.yes">Écrire des textes qui parlent à vos clients, dans leurs mots, sur leurs leviers de décision.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l3.no">Utiliser des photos de stock qu’on retrouve sur 4 000 autres sites.</span><span class="yes" data-i18n="refuse.l3.yes">Produire des visuels originaux - photos, illustrations, animations - qui n’existent que chez vous.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l4.no">Livrer un site sans outils de mesure, sans suivi, sans données.</span><span class="yes" data-i18n="refuse.l4.yes">Installer et configurer tous les outils de suivi. Vous savez exactement ce que rapporte votre site.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l5.no">Facturer un site « joli » sans stratégie pour générer des contacts.</span><span class="yes" data-i18n="refuse.l5.yes">Concevoir chaque page avec un objectif clair : demande de devis, prise de rendez-vous, vente.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l6.no">Nous lancer sans connaître votre métier ni vos clients.</span><span class="yes" data-i18n="refuse.l6.yes">Étudier votre marché et vos concurrents avant la première maquette.</span></span></li>
-      <li><span class="icon"><span class="face no">✕</span><span class="face yes">✓</span></span><span class="txt"><span class="no" data-i18n="refuse.l7.no">Accepter un projet pour le facturer, en sachant qu’on n’est pas les bons.</span><span class="yes" data-i18n="refuse.l7.yes">Vous orienter vers d’autres si votre besoin sort de notre expertise. Notre temps et le vôtre comptent.</span></span></li>
-    </ul>
   </div>
 </section>
 
-<!-- 10 CONTACT -->
-<section id="contact" class="contact" data-screen-label="10 Contact">
-  <div class="sh"><span data-i18n="contact.sh.a"><span class="num">10</span> / CONTACT</span><span class="dim" data-i18n="contact.sh.b">[ ON SE PARLE ]</span></div>
-  <h2 class="reveal"><span class="line">DREAM IT<span class="g">.</span></span><span class="line">WE MAKE</span><span class="line">IT<span class="g">.</span></span></h2>
-  <div class="cols">
-    <div>
-      <div class="lbl" data-i18n="contact.col1.lbl">Projets · Brief</div>
-      <a href="mailto:contact@mad-makers.fr" class="mail">CONTACT@MAD-MAKERS.FR</a>
-      <a href="#" style="margin-top:14px" data-i18n="contact.col1.a">Votre interlocuteur direct : Maïck, cofondateur</a>
+<!-- ================ PROJETS ================ -->
+<section class="projects" id="projets" data-screen-label="05 Réalisations">
+  <div class="container">
+    <div class="proj-head">
+      <div>
+        <div class="eyebrow"><span class="sq"></span> RÉALISATIONS</div>
+        <h2 class="big-title" style="margin-top:14px">Nos derniers projets,<br/><em>livrés sans bavardage.</em></h2>
+      </div>
+      <div class="right">CASES — <b>2025 / 2026</b></div>
     </div>
-    <div>
-      <div class="lbl" data-i18n="contact.col2.lbl">Studio</div>
-      <a href="#" data-i18n="contact.col2.a1">Paris · France</a>
-      <a href="#" data-i18n="contact.col2.a2">Clients : France, Europe, francophonie</a>
-      <a href="#" data-i18n="contact.col2.a3">FR · EN</a>
-    </div>
-    <div>
-      <div class="lbl" data-i18n="contact.col3.lbl">Social</div>
-      <a href="https://www.linkedin.com/company/113270995" target="_blank" rel="noopener" data-i18n="contact.col3.a2">Mad Makers · LinkedIn ↗</a>
-      <a href="https://www.linkedin.com/in/rayan-m-3a8ba6145/" target="_blank" rel="noopener" data-i18n="contact.col3.a3">Maïck · LinkedIn ↗</a>
-      <a href="https://www.linkedin.com/in/goudet-abalé-329909104/" target="_blank" rel="noopener" data-i18n="contact.col3.a4">Goudet · LinkedIn ↗</a>
-    </div>
-    <div>
-      <div class="lbl" data-i18n="contact.col4.lbl">Modalités</div>
-      <a href="#" data-i18n="contact.col4.a1">40 % à la signature · 60 % à la livraison</a>
-      <a href="#" data-i18n="contact.col4.a2">2 séries de corrections incluses</a>
-      <a href="#" data-i18n="contact.col4.a3">Outils de suivi installés et configurés</a>
-      <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener" data-i18n="contact.col4.a4">Premier échange gratuit · 30 min ↗</a>
+
+    <div class="proj-grid">
+      <a class="proj-card featured" href="project-01.html">
+        <div class="cover">
+          <video src="assets/riot/fight-epic-battles.mp4"
+                 poster="assets/riot/hero.png"
+                 muted loop playsinline autoplay preload="metadata"></video>
+        </div>
+        <span class="num">R.01</span>
+        <span class="live"><span class="pulse"></span> En ligne</span>
+        <div class="meta">
+          <div class="name"><em>Riot MMO</em> — Cinematic Web Experience</div>
+          <div class="sub"><span>Riot Games · Concept · 2025</span><span class="arr">Voir le projet →</span></div>
+        </div>
+      </a>
+
+      <a class="proj-card" href="project-02.html">
+        <div class="cover">
+          <video src="assets/papiche/region.mp4"
+                 poster="assets/papiche/hero.png"
+                 muted loop playsinline autoplay preload="metadata"></video>
+        </div>
+        <span class="num">R.02</span>
+        <span class="live"><span class="pulse"></span> En ligne</span>
+        <div class="meta">
+          <div class="name"><em>La Papiche</em> — Bistrot de Saint-Avit</div>
+          <div class="sub"><span>Bistrot · Charente · 2026</span><span class="arr">Voir le projet →</span></div>
+        </div>
+      </a>
+
+      <a class="proj-card" href="project-03.html">
+        <div class="cover">
+          <img src="assets/sophie-marchand/hero-cabinet.png" alt="Cabinet médical Dr. Sophie Marchand" loading="lazy">
+        </div>
+        <span class="num">R.03</span>
+        <span class="live"><span class="pulse"></span> En ligne</span>
+        <div class="meta">
+          <div class="name"><em>Dr. Sophie Marchand</em> — Cabinet médical à Nantes</div>
+          <div class="sub"><span>Médecin généraliste · Nantes · 2026</span><span class="arr">Voir le projet →</span></div>
+        </div>
+      </a>
+
+      <div class="proj-card empty">
+        <div class="cover"><div class="empty-mark"><span class="dot"></span><span>À venir</span></div></div>
+        <span class="num">R.04</span>
+        <div class="meta"><div class="name">Slot disponible</div></div>
+      </div>
+
+      <div class="proj-card empty">
+        <div class="cover"><div class="empty-mark"><span class="dot"></span><span>À venir</span></div></div>
+        <span class="num">R.05</span>
+        <div class="meta"><div class="name">Slot disponible</div></div>
+      </div>
     </div>
   </div>
-  <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener" class="book reveal">
-    <div class="txt">
-      <span class="kk" data-i18n="contact.book.kk">[ 30 MIN · GRATUIT · SANS ENGAGEMENT ]</span>
-      <div class="ll" data-i18n="contact.book.ll">Parlons de<br>votre projet.</div>
-      <div class="sub" data-i18n="contact.book.sub">Trente minutes en visio pour comprendre vos enjeux, vous donner un retour direct sur votre projet, et voir si nous sommes les bons pour vous accompagner. Pas de commercial, pas de script - juste une conversation utile.</div>
-    </div>
-    <span class="btn"><span data-i18n="contact.book.btn">Réserver un créneau</span><span class="ar">↗</span></span>
-  </a>
-  <footer class="foot">
-    <span>© 2026 - <b>MAD MAKERS</b></span>
-    <span data-i18n="contact.foot.slogan">AGENCE WEB CRÉATIVE PARIS</span>
-    <span>PARIS · FR</span>
-    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="https://share.google/PSeyhdo7m6e7L82Om" target="_blank" rel="noopener">Google Business</a></span>
-  </footer>
 </section>
 
-</main>
+<!-- ================ DUO / FONDATEURS ================ -->
+<section class="duo" id="equipe" data-screen-label="06 Fondateurs">
+  <div class="container">
+    <div class="duo-banner">
+      <div class="duo-banner-bg"></div>
+      <div class="pill">
+        <div class="mk-orb"></div>
+        <h2>Rien n'est improvisé. Tout est cadré.</h2>
+        <a class="btn glass-dark" href="#contact">Voir notre méthode</a>
+      </div>
+    </div>
 
-<!-- Hover preview - Holographic project info card -->
-<div class="tile-preview" id="tilePreview" aria-hidden="true">
-  <div class="tp-inner">
-    <div class="tp-stage"></div>
-    <div class="tp-card" id="tpCard"></div>
+    <h2 class="duo-head"><span class="dim">Deux cofondateurs, deux rôles.</span><br/><em>Un seul interlocuteur sur votre projet.</em></h2>
+
+    <div class="duo-cards">
+      <button type="button" class="duo-card" data-founder="maick" aria-haspopup="dialog">
+        <div class="icon-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l3 6 6 1-4.5 4.5L18 21l-6-3-6 3 1.5-6.5L3 10l6-1z"/></svg>
+        </div>
+        <div class="text">
+          <div class="t1">Maïck — Direction artistique &amp; production</div>
+          <div class="t2">Votre interlocuteur unique, du premier appel à la mise en ligne.</div>
+        </div>
+        <div class="arr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </button>
+      <button type="button" class="duo-card" data-founder="goudet" aria-haspopup="dialog">
+        <div class="icon-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        </div>
+        <div class="text">
+          <div class="t1">Goudet Abalé — Stratégie &amp; développement</div>
+          <div class="t2">Conseil stratégique 10+ ans.<br/>Sciences Po Lille, Johns Hopkins SAIS.</div>
+        </div>
+        <div class="arr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================ ENGAGEMENTS ================ -->
+<section class="articles" id="refus" data-screen-label="07 Engagements">
+  <div class="container">
+    <h2 class="articles-head"><em style="font-style:italic">Pour savoir qui on est —</em><br/><span class="dim">voyez ce qu'on ne fera pas.</span></h2>
+    <div class="article-grid">
+      <article class="article t1">
+        <div class="thumb"><h4><em>Pas de templates recyclés.</em><br/>Du design unique à chaque projet.</h4></div>
+        <div class="body">
+          <h5>Vos concurrents utilisent les mêmes thèmes que vous. Ressembler à tout le monde, c'est la garantie de ne convertir personne.</h5>
+          <div class="foot">
+            <div class="tag"><span class="sq"></span> ENGAGEMENT 01</div>
+            <div>Design unique</div>
+          </div>
+        </div>
+      </article>
+      <article class="article t2">
+        <div class="thumb"><h4><em>Pas de site sans mesure.</em><br/>Outils de suivi installés et configurés.</h4></div>
+        <div class="body">
+          <h5>Un site qu'on ne mesure pas est un site qu'on ne sait pas piloter. Analytics, search console, tracking d'objectifs : posés à la livraison.</h5>
+          <div class="foot">
+            <div class="tag"><span class="sq"></span> ENGAGEMENT 02</div>
+            <div>Mesure configurée</div>
+          </div>
+        </div>
+      </article>
+      <article class="article t3">
+        <div class="thumb"><h4><em>Pas de « joli »</em><br/>sans objectif commercial.</h4></div>
+        <div class="body">
+          <h5>Un site doit vous rapporter. Le design est un levier de décision, pas une décoration. Chaque écran sert la conversion.</h5>
+          <div class="foot">
+            <div class="tag"><span class="sq"></span> ENGAGEMENT 03</div>
+            <div>Design avec impact</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="articles-foot">
+      <span>Quatre autres engagements qu'on tient — texte, photo, marché, posture.</span>
+      <a href="#contact">↳ En parler avec nous</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================ FOOTER CTA ================ -->
+<section class="footer-cta" id="contact" data-screen-label="08 Contact">
+  <video class="footer-video" src="assets/footer%20video%20loop.mp4"
+         autoplay muted loop playsinline preload="metadata"
+         aria-hidden="true"></video>
+  <div class="footer-tint"></div>
+  <h2>Dream it.<br/><em>We make it.</em></h2>
+  <p>30 minutes, gratuit, sans engagement — pour cadrer votre projet.</p>
+  <div class="footer-cta-buttons">
+    <a class="btn-dark glass-dark" href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener">RÉSERVER UN CRÉNEAU</a>
+    <a class="link" href="mailto:contact@mad-makers.fr">↳ contact@mad-makers.fr</a>
+  </div>
+</section>
+
+<!-- ================ FOOTER ================ -->
+<footer class="foot" data-screen-label="09 Footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="mk"></div>
+      <div class="addr">Mad Makers<br/>Agence web créative<br/>Paris — France</div>
+      <div class="tag">— Dream it. We make it.</div>
+    </div>
+    <div class="foot-col">
+      <h6>Services</h6>
+      <ul>
+        <li><a href="#services">Site one-page</a></li>
+        <li><a href="#services">Site vitrine</a></li>
+        <li><a href="#services">Site sur-mesure</a></li>
+        <li><a href="#services">Vidéo institutionnelle</a></li>
+        <li><a href="#services">SEO &amp; contenus</a></li>
+        <li><a href="#services">Pack démarrage</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h6>Agence</h6>
+      <ul>
+        <li><a href="#manifeste">Notre position</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#equipe">Fondateurs</a></li>
+        <li><a href="#refus">Engagements</a></li>
+      </ul>
+    </div>
+    <div class="foot-col contact">
+      <h6>Contact</h6>
+      <ul>
+        <li>
+          <span class="lbl">Email</span>
+          <a href="mailto:contact@mad-makers.fr">contact@mad-makers.fr</a>
+        </li>
+        <li>
+          <span class="lbl">Téléphone</span>
+          <a href="tel:+33189724498">01 89 72 44 98</a>
+        </li>
+        <li>
+          <span class="lbl">Rendez-vous</span>
+          <a href="https://calendly.com/directedbymaick/30min" target="_blank" rel="noopener">Réserver un créneau ↗</a>
+        </li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h6>Légal</h6>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="politique-confidentialite.html">Politique</a></li>
+        <li><a href="https://share.google/PSeyhdo7m6e7L82Om" target="_blank" rel="noopener">Google Business ↗</a></li>
+        <li><a href="https://pro.mad-makers.fr" target="_blank" rel="noopener">Mad Makers Pro ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 — MAD MAKERS · Agence web créative · Paris</div>
+    <div class="social">
+      <a href="https://www.linkedin.com/company/113270995" target="_blank" rel="noopener" aria-label="LinkedIn Mad Makers" title="LinkedIn">In</a>
+      <a href="mailto:contact@mad-makers.fr" aria-label="Envoyer un email" title="Email">@</a>
+      <a href="https://share.google/PSeyhdo7m6e7L82Om" target="_blank" rel="noopener" aria-label="Google Business Mad Makers" title="Google Business">G</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================ FOUNDER MODAL ================ -->
+<div class="founder-modal" id="founderModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="fmName">
+  <div class="founder-modal-backdrop" data-close-modal></div>
+  <div class="founder-modal-card" role="document">
+    <button type="button" class="founder-modal-close" data-close-modal aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="founder-modal-photo">
+      <img id="fmPhoto" src="" alt="" loading="lazy">
+    </div>
+    <div class="founder-modal-body">
+      <div class="founder-modal-role" id="fmRole"></div>
+      <h3 class="founder-modal-name" id="fmName"></h3>
+      <div class="founder-modal-meta" id="fmMeta"></div>
+      <div class="founder-modal-bio" id="fmBio"></div>
+      <a class="founder-modal-link glass-dark" id="fmLink" href="#" target="_blank" rel="noopener">
+        <span>LinkedIn</span>
+        <span class="ar">↗</span>
+      </a>
+    </div>
   </div>
 </div>
 
-<script>
-// Refuse list: click to flip "no" → "yes"
-(() => {
-  const list = document.getElementById('refuseList');
-  if(!list) return;
-  list.querySelectorAll('li').forEach(li => {
-    li.setAttribute('role','button');
-    li.setAttribute('tabindex','0');
-    li.setAttribute('aria-pressed','false');
-    const toggle = () => {
-      const on = li.classList.toggle('on');
-      li.setAttribute('aria-pressed', on ? 'true':'false');
-    };
-    li.addEventListener('click', toggle);
-    li.addEventListener('keydown', e => {
-      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
-    });
-  });
-})();
-</script>
-<script>
-// MUSIC PLAYER (08B) - Music showcase / DA
-(() => {
-  const section = document.getElementById('player');
-  const audio = document.getElementById('ptAudio');
-  if(!section || !audio) return;
+<!-- ================ BACK TO TOP ================ -->
+<button class="back-top" id="backTop" type="button" aria-label="Retour en haut de la page" title="Retour en haut">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5"/>
+    <path d="M5 12l7-7 7 7"/>
+  </svg>
+</button>
 
-  const viz    = document.getElementById('viz');
-  const btnPlay= document.getElementById('ptPlay');
-  const icon   = document.getElementById('ptIcon');
-  const btnBack= document.getElementById('ptBack');
-  const btnFwd = document.getElementById('ptFwd');
-  const btnMute= document.getElementById('ptMute');
-  const volIcn = document.getElementById('ptVolIcon');
-  const volRng = document.getElementById('ptVol');
-  const track  = document.getElementById('ptTrack');
-  const fill   = document.getElementById('ptFill');
-  const knob   = document.getElementById('ptKnob');
-  const cur    = document.getElementById('ptCur');
-  const dur    = document.getElementById('ptDur');
-  const video  = document.getElementById('ptVideo');
-  const elTitle    = document.getElementById('ptTitle');
-  const elCoverTag = document.getElementById('ptCoverTag');
-  const elCounter  = document.getElementById('ptCounter');
-  const elArtist   = document.getElementById('ptArtist');
-  const elFormat   = document.getElementById('ptFormat');
-  const elYear     = document.getElementById('ptYear');
-  const elCuration = document.getElementById('ptCuration');
-
-  // Playlist - music showcase / Mad Makers DA
-  const TRACKS = [
-    {
-      title:  'KURI<br>- <span class="g">HARD TO LOVE.</span>',
-      header: '[ KURI · HARD TO LOVE ]',
-      artist: 'KURI', format: 'CONCEPTUAL EDIT', year: '2024', curation: 'MAÏCK',
-      audio:  'assets/' + encodeURIComponent('why am i so hard to love, part. 2.mp3'),
-      video:  'assets/' + encodeURIComponent('KURI - why am i so hard to love, part 2 (Official Video).mp4')
-    },
-    {
-      title:  'YEAT<br>- <span class="g">HIGH AS GOD.</span>',
-      header: '[ YEAT · HIGH AS GOD ]',
-      artist: 'YEAT', format: 'CONCEPTUAL EDIT', year: '2022', curation: 'MAÏCK',
-      audio:  'assets/' + encodeURIComponent('YEAT - High As God (ft. Playboi Carti) [prod. Sanikwave].mp3'),
-      video:  'assets/' + encodeURIComponent('yeat clip video.mp4')
-    },
-    {
-      title:  'PNL<br>- <span class="g">DEUX FRÈRES.</span>',
-      header: '[ PNL · DEUX FRÈRES ]',
-      artist: 'PNL', format: 'DIAMOND REMIX', year: '2019', curation: 'MAÏCK',
-      audio:  'assets/' + encodeURIComponent('PNL deux frères diamond remix.mp3'),
-      video:  'assets/' + encodeURIComponent('pnl clip.mp4')
-    },
-    {
-      title:  'HAKO<br>- <span class="g">LISTEN.</span>',
-      header: '[ HAKO · LISTEN ]',
-      artist: 'HAKO', format: 'ORIGINAL', year: '2020', curation: 'MAÏCK',
-      audio:  'assets/' + encodeURIComponent('listen by hako ORIGINAL NOT SLOWED OR REVERBED.mp3'),
-      video:  'assets/' + encodeURIComponent('After Dark - Alice in Wonderland - video decorative.mp4') + '?v=2'
-    },
-    {
-      title:  'YUNODJI<br>- <span class="g">PDM RMX.</span>',
-      header: '[ YUNODJI · PDM RMX (PNL) ]',
-      artist: 'YUNODJI', format: 'PDM REMIX', year: '2024', curation: 'MAÏCK',
-      audio:  'assets/' + encodeURIComponent('PDM RMX [PNL] - yunodji (@yunodji) - SoundLoadMate.com.mp3'),
-      video:  'assets/' + encodeURIComponent('pnl pdm ring.mp4')
-    }
-  ];
-  let current = 0;
-  const pad2 = n => String(n).padStart(2,'0');
-
-  // Strip "[ ... ]" wrapper from header to use as cover overlay tag
-  const cleanCoverLabel = (s) => String(s || '').replace(/^\[\s*|\s*\]$/g, '');
-
-  // Apply track data to DOM (no animation — caller handles fading)
-  const applyTrackData = (t) => {
-    audio.src = t.audio;
-    if(video){ video.src = t.video; video.load(); if(!audio.paused) video.play().catch(()=>{}); }
-    if(elTitle)    elTitle.innerHTML   = t.title;
-    if(elCoverTag) elCoverTag.textContent = cleanCoverLabel(t.header);
-    if(elCounter)  elCounter.textContent = `NOW PLAYING · ${pad2(current+1)}/${pad2(TRACKS.length)}`;
-    if(elArtist)   elArtist.textContent = t.artist;
-    if(elFormat)   elFormat.textContent = t.format;
-    if(elYear)     elYear.textContent = t.year;
-    if(elCuration) elCuration.textContent = t.curation;
-    dur.textContent = '-:-';
-    cur.textContent = '0:00';
-    fill.style.width = '0%';
-    knob.style.left  = '0%';
-  };
-
-  const swapTargets = () => [...document.querySelectorAll('.player .swap-target')];
-  const SWAP_DURATION = 280;
-
-  const loadTrack = (i, autoplay, animate = true) => {
-    current = ((i % TRACKS.length) + TRACKS.length) % TRACKS.length;
-    const t = TRACKS[current];
-    if (!animate) {
-      applyTrackData(t);
-      if(autoplay) audio.play().catch(()=>{});
-      return;
-    }
-    // Fade out → swap content → fade in
-    const targets = swapTargets();
-    targets.forEach(el => el.classList.add('is-swap'));
-    setTimeout(() => {
-      applyTrackData(t);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => targets.forEach(el => el.classList.remove('is-swap')));
-      });
-      if(autoplay) audio.play().catch(()=>{});
-    }, SWAP_DURATION);
-  };
-
-  // Build waveform bars - pseudo-random but stable pattern to suggest a song shape
-  const N = 48;
-  const bars = [];
-  // pre-bake a pseudo-waveform envelope (intro build, verse, drop, outro)
-  const env = i => {
-    const t = i / (N-1);
-    const intro = Math.min(1, t*3);
-    const drop  = 0.65 + 0.35*Math.sin(t*Math.PI*2.3);
-    const outro = 1 - Math.max(0, (t-0.88)*6);
-    const noise = 0.55 + 0.45*Math.sin(i*1.37) * Math.cos(i*0.73);
-    return Math.max(.15, Math.min(1, intro*drop*outro*noise));
-  };
-  for(let i=0;i<N;i++){
-    const b = document.createElement('div');
-    b.className = 'bar';
-    b.style.height = (env(i)*90 + 10) + '%';
-    b.dataset.base = env(i).toFixed(3);
-    viz.appendChild(b);
-    bars.push(b);
-  }
-
-  // Icons
-  const ICON_PLAY  = '<path d="M6 4l14 8-14 8z"/>';
-  const ICON_PAUSE = '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
-  const ICON_VOL   = '<path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8a5 5 0 0 1 0 8"/>';
-  const ICON_MUTE  = '<path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l5 6M22 9l-5 6"/>';
-
-  const fmt = s => {
-    if(!isFinite(s)) return '-:-';
-    s = Math.max(0, Math.floor(s));
-    const m = Math.floor(s/60), ss = (s%60).toString().padStart(2,'0');
-    return m + ':' + ss;
-  };
-
-  // Transport
-  const setPlaying = (on) => {
-    section.classList.toggle('live', on);
-    icon.innerHTML = on ? ICON_PAUSE : ICON_PLAY;
-    btnPlay.setAttribute('aria-label', on ? 'Pause' : 'Play');
-    document.body.classList.toggle('player-paused', !on);
-    if (video) {
-      if (on) video.play().catch(()=>{});
-      else video.pause();
-    }
-  };
-  btnPlay.addEventListener('click', async () => {
-    if(audio.paused){ try{ await audio.play(); }catch(e){} }
-    else audio.pause();
-  });
-  audio.addEventListener('play',  () => setPlaying(true));
-  audio.addEventListener('pause', () => setPlaying(false));
-  audio.addEventListener('ended', () => { loadTrack(current + 1, true); });
-
-  // If current time > 3s, prev restarts the track; otherwise go to previous track.
-  btnBack.addEventListener('click', () => {
-    if(audio.currentTime > 3){ audio.currentTime = 0; }
-    else { loadTrack(current - 1, !audio.paused); }
-  });
-  btnFwd .addEventListener('click', () => { loadTrack(current + 1, !audio.paused); });
-
-  // Volume
-  audio.volume = parseFloat(volRng.value);
-  volRng.addEventListener('input', () => {
-    audio.volume = parseFloat(volRng.value);
-    if(audio.volume > 0 && audio.muted){ audio.muted = false; volIcn.innerHTML = ICON_VOL; }
-  });
-  btnMute.addEventListener('click', () => {
-    audio.muted = !audio.muted;
-    volIcn.innerHTML = audio.muted ? ICON_MUTE : ICON_VOL;
-  });
-
-  // Scrubber
-  audio.addEventListener('loadedmetadata', () => { dur.textContent = fmt(audio.duration); });
-  audio.addEventListener('timeupdate', () => {
-    const p = audio.duration ? audio.currentTime / audio.duration : 0;
-    fill.style.width = (p*100) + '%';
-    knob.style.left  = (p*100) + '%';
-    cur.textContent  = fmt(audio.currentTime);
-  });
-  const seek = (e) => {
-    const r = track.getBoundingClientRect();
-    const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
-    const p = Math.max(0, Math.min(1, x / r.width));
-    if(audio.duration) audio.currentTime = p * audio.duration;
-  };
-  let dragging = false;
-  track.addEventListener('mousedown', e => { dragging = true; seek(e); });
-  window.addEventListener('mousemove', e => { if(dragging) seek(e); });
-  window.addEventListener('mouseup',   () => { dragging = false; });
-  track.addEventListener('touchstart', e => { seek(e); }, {passive:true});
-  track.addEventListener('touchmove',  e => { seek(e); }, {passive:true});
-
-  // Waveform anim - tie bar heights to both the static envelope and a live pulse
-  let raf = 0;
-  const tick = () => {
-    const playing = !audio.paused && !audio.ended;
-    const p = audio.duration ? audio.currentTime / audio.duration : 0;
-    const cursor = Math.floor(p * N);
-    const t = performance.now() / 1000;
-    for(let i=0;i<N;i++){
-      const base = parseFloat(bars[i].dataset.base);
-      let h;
-      if(playing){
-        // current bar boosts, past bars stay green-dim, future bars wiggle
-        const dist = Math.abs(i - cursor);
-        const pulse = 0.5 + 0.5*Math.sin(t*6 + i*0.7);
-        const boost = Math.max(0, 1 - dist/3) * 0.5;
-        h = Math.min(1, base * (0.75 + 0.5*pulse) + boost);
-        bars[i].style.opacity = (i <= cursor) ? 1 : 0.55;
-      } else {
-        h = base;
-        bars[i].style.opacity = 1;
-      }
-      bars[i].style.height = (h*90 + 10) + '%';
-    }
-    raf = requestAnimationFrame(tick);
-  };
-  tick();
-
-  // Load the first track (no autoplay - audio must wait for user interaction)
-  loadTrack(0, false, false);
-  document.body.classList.add('player-paused');
-})();
-</script>
-
-<script>
-// HOVER PREVIEW - Holographic info card on project tiles (section 08)
-// Renders project meta (title, scope, stack, role…) at cursor with fluid lerp follow.
-(() => {
-  if (!window.matchMedia('(hover: hover)').matches) return;
-
-  const preview = document.getElementById('tilePreview');
-  const card    = document.getElementById('tpCard');
-  const scroller = document.getElementById('scroller');
-  if (!preview || !card || !scroller) return;
-
-  const PADDING    = 16;
-  const OFFSET_X   = 28;
-  const LERP       = 0.22;
-  const FADE_OUT   = 420;       // matches CSS .tp-inner transition
-
-  const state = {
-    target: { x: 0, y: 0 },
-    curr:   { x: 0, y: 0 },
-    visible: false,
-    activeId: null,
-    cleanupTimer: 0,
-    gapTimer: 0
-  };
-
-  // ---- HTML escape ----
-  const esc = (s) => String(s == null ? '' : s)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-
-  // ---- Position ----
-  const setTargetFromCursor = (e) => {
-    const w = preview.offsetWidth  || 440;
-    const h = preview.offsetHeight || 275;
-    let x = e.clientX + OFFSET_X;
-    let y = e.clientY - h / 2;
-    let flip = false;
-    if (x + w > window.innerWidth - PADDING) {
-      x = e.clientX - w - OFFSET_X;
-      flip = true;
-    }
-    y = Math.max(PADDING, Math.min(y, window.innerHeight - h - PADDING));
-    x = Math.max(PADDING, x);
-    state.target.x = x;
-    state.target.y = y;
-    preview.classList.toggle('is-flip', flip);
-  };
-
-  // ---- rAF lerp loop ----
-  const tick = () => {
-    state.curr.x += (state.target.x - state.curr.x) * LERP;
-    state.curr.y += (state.target.y - state.curr.y) * LERP;
-    preview.style.transform = `translate3d(${state.curr.x}px, ${state.curr.y}px, 0)`;
-    requestAnimationFrame(tick);
-  };
-  tick();
-
-  // ---- Build holographic info card. Returns true if rendered. ----
-  const swapContent = (projectId) => {
-    const data = (window.MM_PROJECTS || {})[projectId];
-    if (!data) return false;
-
-    const scope = (data.scope || []).slice(0, 4)
-      .map(s => `<span>${esc(s)}</span>`).join('');
-    const stack = (data.stack || []).slice(0, 5)
-      .map((s, i, a) => `<b>${esc(s)}</b>${i < a.length - 1 ? ' · ' : ''}`).join('');
-    const liveBadge = data.liveUrl
-      ? `<span class="live">LIVE</span>`
-      : `<span class="dim">${esc(data.year || '')}</span>`;
-
-    // Truncate subtitle to ~2 lines
-    const sub = (data.subtitle || '').replace(/\s+/g, ' ').trim();
-    const subShort = sub.length > 110 ? sub.slice(0, 107).trim() + '…' : sub;
-
-    card.innerHTML = `
-      <div class="tp-num">
-        <span>${esc(data.num || '')} · ${esc(data.client || '')}</span>
-        ${liveBadge}
-      </div>
-      <h3 class="tp-title">${esc(data.title || '')}<span class="g">.</span></h3>
-      ${subShort ? `<p class="tp-sub">${esc(subShort)}</p>` : ''}
-      <dl class="tp-meta">
-        ${data.year     ? `<dt>Année</dt><dd>${esc(data.year)}</dd>`     : ''}
-        ${data.duration ? `<dt>Durée</dt><dd>${esc(data.duration)}</dd>` : ''}
-        ${data.role     ? `<dt>Rôle</dt><dd>${esc(data.role)}</dd>`      : ''}
-      </dl>
-      ${scope ? `<div class="tp-scope">${scope}</div>` : ''}
-      ${stack ? `<div class="tp-stack">${stack}</div>` : ''}
-      <div class="tp-cta">
-        <span>VOIR LE PROJET</span>
-        <span class="arrow">↗</span>
-      </div>`;
-    return true;
-  };
-
-  // ---- Show / hide ----
-  const show = () => {
-    if (state.visible) return;
-    clearTimeout(state.cleanupTimer);
-    // Snap to target synchronously so the bubble fades in at the correct spot
-    state.curr.x = state.target.x;
-    state.curr.y = state.target.y;
-    preview.style.transform = `translate3d(${state.curr.x}px, ${state.curr.y}px, 0)`;
-    state.visible = true;
-    preview.classList.add('is-open');
-    preview.setAttribute('aria-hidden', 'false');
-  };
-
-  const hide = () => {
-    if (!state.visible) return;
-    state.visible = false;
-    state.activeId = null;
-    preview.classList.remove('is-open');
-    preview.setAttribute('aria-hidden', 'true');
-    // No DOM cleanup needed - text content stays in memory, swapped on next hover
-  };
-
-  // ---- Get project id from a tile ----
-  const tileToId = (tile) => {
-    if (!tile) return null;
-    const href = tile.getAttribute('href') || '';
-    // Static URLs: project-XX.html
-    const mStatic = href.match(/project-(\d+)\.html/);
-    if (mStatic) return mStatic[1];
-    // Legacy query string: project.html?id=XX
-    const mQuery = href.match(/[?&]id=([^&]+)/);
-    return mQuery ? decodeURIComponent(mQuery[1]) : null;
-  };
-
-  // ---- Event delegation on the scroller (more reliable than per-tile listeners) ----
-  // pointermove fires for every cursor movement; we look up the tile under cursor
-  scroller.addEventListener('pointermove', (e) => {
-    const tile = e.target.closest && e.target.closest('.tile');
-    setTargetFromCursor(e);
-
-    if (tile) {
-      // Cursor is on a video tile - cancel any pending gap-hide
-      clearTimeout(state.gapTimer);
-      state.gapTimer = 0;
-
-      const id = tileToId(tile);
-      if (!id) return;
-      // First time hovering this tile (or switched from another)
-      if (state.activeId !== id) {
-        state.activeId = id;
-        if (!swapContent(id)) {
-          hide();
-          return;
-        }
-      }
-      // Always (re-)show, even if already on the same tile (no-op if visible)
-      show();
-    } else {
-      // Cursor inside scroller but NOT on a video-tile.
-      // Debounce hide so we don't flicker on the 1px gap between tiles.
-      if (state.visible && !state.gapTimer) {
-        state.gapTimer = setTimeout(() => {
-          state.gapTimer = 0;
-          hide();
-        }, 100);
-      }
-    }
-  });
-
-  // pointerleave: cursor left the scroller area entirely - hide immediately
-  scroller.addEventListener('pointerleave', () => {
-    clearTimeout(state.gapTimer);
-    state.gapTimer = 0;
-    if (state.visible) hide();
-  });
-
-  // Hide on horizontal scroll (avoids lag visual)
-  scroller.addEventListener('scroll', () => {
-    if (state.visible) hide();
-  }, { passive: true });
-
-  // Hide on window blur (alt-tab etc.)
-  window.addEventListener('blur', () => { if (state.visible) hide(); });
-})();
-</script>
-
-<script>
-// ui-hide toggle
-(() => {
-  const btn = document.getElementById('uiToggle');
-  if(!btn) return;
-  const saved = localStorage.getItem('mm_ui_hidden') === '1';
-  if(saved) document.body.classList.add('ui-hidden');
-  btn.dataset.lbl = document.body.classList.contains('ui-hidden') ? 'Show UI' : 'Hide UI';
-  btn.addEventListener('click', () => {
-    const hidden = document.body.classList.toggle('ui-hidden');
-    localStorage.setItem('mm_ui_hidden', hidden ? '1':'0');
-    btn.dataset.lbl = hidden ? 'Show UI' : 'Hide UI';
-  });
-})();
-
-// hero play - skip the deferred animation frames when the user reduces motion (a11y)
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (reduceMotion){
-  document.getElementById('hero').classList.add('play');
-  document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
-} else {
-  requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('hero').classList.add('play')));
-}
-
-// cursor
-(() => {
-  const cur = document.getElementById('cur');
-  const rd = document.getElementById('curRd');
-  let tx=0,ty=0,cx=0,cy=0;
-  window.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; });
-  (function loop(){
-    cx += (tx-cx)*.2; cy += (ty-cy)*.2;
-    cur.style.transform = `translate(${cx-18}px,${cy-18}px)`;
-    rd.textContent = `X ${String(Math.round(cx)).padStart(4,'0')} · Y ${String(Math.round(cy)).padStart(4,'0')}`;
-    requestAnimationFrame(loop);
-  })();
-  document.querySelectorAll('a,button,.card,.tile,.row').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cur.classList.remove('hover'));
-  });
-})();
-
-// reveal
-(() => {
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold:.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-})();
-
-// rail - scroll-spy + auto-show on scroll, auto-hide on pause
-(() => {
-  const rail  = document.getElementById('rail');
-  const links = [...document.querySelectorAll('#rail a')];
-  const map   = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
-  const sections = [...document.querySelectorAll('section[id]')].filter(s => map.has(s.id));
-
-  const setActive = (id) => {
-    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + id));
-  };
-  const updateActive = () => {
-    const trigger = window.innerHeight * 0.35;
-    let current = sections[0].id;
-    for (const s of sections) {
-      const r = s.getBoundingClientRect();
-      if (r.top <= trigger) current = s.id;
-      else break;
-    }
-    setActive(current);
-  };
-
-  // Show/hide on scroll activity ────────────────────────────────────
-  let hideTimer = null;
-  let hovering  = false;
-  const HIDE_DELAY = 1200; // ms of inactivity before fading out
-
-  const show = () => {
-    rail.classList.add('is-active');
-    if (hideTimer) clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => { if (!hovering) rail.classList.remove('is-active'); }, HIDE_DELAY);
-  };
-
-  rail.addEventListener('mouseenter', () => { hovering = true;  rail.classList.add('is-active'); });
-  rail.addEventListener('mouseleave', () => { hovering = false; show(); });
-
-  window.addEventListener('scroll', () => { updateActive(); show(); }, { passive: true });
-  window.addEventListener('resize', updateActive);
-
-  // Initial state: discoverable hello pulse so user notices the rail exists
-  updateActive();
-  setTimeout(show, 500);
-})();
-
-// drag scroll
-(() => {
-  const s = document.getElementById('scroller');
-  let down=false, x=0, l=0, moved=false;
-  s.addEventListener('mousedown', e => { down=true; moved=false; x=e.pageX; l=s.scrollLeft; });
-  window.addEventListener('mouseup', () => { down=false; });
-  window.addEventListener('mousemove', e => {
-    if(!down) return;
-    if(Math.abs(e.pageX - x) > 5) moved = true;
-    s.scrollLeft = l - (e.pageX - x);
-  });
-  // Suppress anchor navigation when a real drag occurred
-  s.addEventListener('click', e => {
-    if(moved){ e.preventDefault(); e.stopPropagation(); moved = false; }
-  }, true);
-  s.addEventListener('wheel', e => { if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ s.scrollLeft += e.deltaY; e.preventDefault(); }}, {passive:false});
-})();
-</script>
-<script src="projects.js"></script>
-<script src="i18n.js"></script>
+<script src="main.js" defer></script>
+<script src="cards-fx.js" defer></script>
 </body>
 </html>
