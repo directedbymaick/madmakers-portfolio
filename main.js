@@ -5,14 +5,220 @@
 (function () {
   "use strict";
 
+  // ---------- Mobile nav: hamburger toggle ----------
+  (function () {
+    const burger = document.getElementById("navBurger");
+    const links = document.getElementById("navLinks");
+    const nav = document.getElementById("nav");
+    if (!burger || !links || !nav) return;
+    const close = () => {
+      nav.classList.remove("nav-open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-locked");
+    };
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("nav-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("nav-locked", open);
+    });
+    // Close on link click (anchor nav inside the open menu)
+    links.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("nav-open")) close();
+    });
+  })();
+
+  // ---------- Universal reveal on viewport entry ----------
+  // Mark any element with `data-reveal` to get a subtle fade-up.
+  // `data-reveal="cascade"` cascades children using --i for stagger.
+  // `data-reveal="count"` triggers a count-up via the stat-counter block below.
+  (function () {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (!targets.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Set pending state (hides) before observer fires
+    targets.forEach((el) => {
+      el.classList.add("reveal-pending");
+      // For cascade, set --i on each child so the CSS staggers
+      if (el.getAttribute("data-reveal") === "cascade") {
+        Array.from(el.children).forEach((child, i) => {
+          if (!child.style.getPropertyValue("--i")) {
+            child.style.setProperty("--i", i);
+          }
+        });
+      }
+    });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          // Remove pending BEFORE adding in, otherwise nth-child specificity in
+          // some variant rules (e.g. data-reveal="split") keeps the pending
+          // state overriding the in state.
+          e.target.classList.remove("reveal-pending");
+          e.target.classList.add("reveal-in");
+          io.unobserve(e.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -15% 0px" }
+    );
+    targets.forEach((el) => io.observe(el));
+  })();
+
+  // ---------- Stat count-up: animate numeric values when they enter view ----------
+  // Used on the Manifesto stats. Each .stat-counter has data-target="10",
+  // optional data-suffix="/60" or "×".
+  (function () {
+    const counters = document.querySelectorAll(".stat-counter");
+    if (!counters.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    function animateOne(el) {
+      const target = parseFloat(el.getAttribute("data-target")) || 0;
+      const suffix = el.getAttribute("data-suffix") || "";
+      const duration = 1300;
+      const start = performance.now();
+      el.textContent = "0" + suffix;
+      function frame(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const v = target * eased;
+        // Decimals only if target has them (e.g. 2.5)
+        el.textContent = (Number.isInteger(target) ? Math.floor(v) : v.toFixed(1)) + suffix;
+        if (t < 1) requestAnimationFrame(frame);
+        else el.textContent = (Number.isInteger(target) ? target : target.toFixed(1)) + suffix;
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          animateOne(e.target);
+          io.unobserve(e.target);
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach((el) => io.observe(el));
+  })();
+
+  // ---------- Method rail + cards scroll-triggered animation ----------
+  // Default CSS has the cards visible; we opt INTO the hidden-then-reveal
+  // animation by adding .js-anim, then .is-in once the section enters view.
+  (function () {
+    const wrap = document.getElementById("methodWrap");
+    if (!wrap) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; // keep CSS default = visible
+    wrap.classList.add("js-anim");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            wrap.classList.add("is-in");
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -15% 0px" }
+    );
+    io.observe(wrap);
+  })();
+
+  // ---------- Hero stats strip: scramble numbers on viewport entry ----------
+  // Each <.hs-num data-final="X"> animates from random digits to the final
+  // value (Apple keynote style). Strings like "100%", "90j", "10-14" are
+  // parsed: digits get scrambled, the suffix locked in at the end.
+  (function () {
+    const strip = document.getElementById("heroStrip");
+    if (!strip) return;
+    const nums = strip.querySelectorAll(".hs-num");
+    if (!nums.length) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Parse "10-14" -> {prefix:'', digits:'10-14', suffix:''} (range stays as final)
+    // Parse "100%"  -> {digits:'100', suffix:'%'}
+    // Parse "90j"   -> {digits:'90', suffix:'j'}
+    // Parse "0"     -> {digits:'0', suffix:''}
+    function parseTarget(s) {
+      // Range like "10-14" - animate to "14" then lock in the dash form
+      const range = s.match(/^(\d+)-(\d+)$/);
+      if (range) return { digits: range[2], suffix: "", finalText: s };
+      const m = s.match(/^(\d+)(.*)$/);
+      if (!m) return { digits: s, suffix: "", finalText: s };
+      return { digits: m[1], suffix: m[2], finalText: s };
+    }
+
+    function scrambleTo(el, finalText, duration) {
+      const target = parseTarget(finalText);
+      const targetNum = parseInt(target.digits, 10) || 0;
+      const start = performance.now();
+      const len = target.digits.length;
+
+      function frame(now) {
+        const t = Math.min(1, (now - start) / duration);
+        // ease-out cubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        if (t < 0.78) {
+          // first phase: random digits with progressive lock-in from left
+          let s = "";
+          const locked = Math.floor(eased * len * 1.2);
+          for (let i = 0; i < len; i++) {
+            s += i < locked
+              ? target.digits[i]
+              : Math.floor(Math.random() * 10).toString();
+          }
+          el.textContent = s + target.suffix;
+        } else if (t < 1) {
+          // second phase: count up to final value
+          const v = Math.floor(eased * targetNum);
+          el.textContent = String(v).padStart(len, "0").replace(/^0+(?=\d)/, "") + target.suffix;
+        } else {
+          el.textContent = target.finalText;
+          return;
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // Place placeholder so they don't show the final value before animation starts
+    nums.forEach((el) => {
+      const final = el.getAttribute("data-final") || el.textContent.trim();
+      el.setAttribute("data-final", final);
+      el.textContent = "0";
+    });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          nums.forEach((el, i) => {
+            const final = el.getAttribute("data-final");
+            // Stagger each number by 110ms
+            setTimeout(() => scrambleTo(el, final, 1300), i * 110);
+          });
+          io.disconnect();
+        });
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(strip);
+  })();
+
   // ---------- Eyebrow loop: cycle through several lines in sync with the animation ----------
   (function () {
     const eyebrow = document.querySelector(".eyebrow-loop .eyebrow-text");
     if (!eyebrow) return;
     const lines = [
-      "AGENCE WEB CRÉATIVE - PARIS",
-      "IMAGINÉ PAR MAÏCK & GOUDET",
-      "MAKE IT MAD!",
+      "AGENCE WEB CRÉATIVE · PARIS",
+      "10 JOURS · UN INTERLOCUTEUR · GARANTI 90 JOURS",
+      "MAÏCK · GOUDET · DEPUIS 2025",
     ];
     let i = 0;
     eyebrow.textContent = lines[0];
@@ -552,18 +758,11 @@
     });
   })();
 
-  // ---------- Background videos: force play, but skip on mobile ----------
-  // The hero video is ~43 MB and the footer ~5 MB. On phones we just don't
-  // load them at all - the CSS gradients on .hero-bg / .footer-cta act as a
-  // graceful fallback (see styles.css mobile media query).
-  const skipVideos = matchMedia("(max-width: 720px)").matches;
+  // ---------- Background videos: force play on all devices ----------
+  // We keep the hero + footer videos on mobile too. The CSS gradient fallback
+  // on .hero-bg / .footer-cta covers the brief moment before the video paints
+  // (and stays visible if it ever fails to load).
   document.querySelectorAll(".hero-video, .footer-video").forEach((v) => {
-    if (skipVideos) {
-      v.removeAttribute("autoplay");
-      v.removeAttribute("src");
-      try { v.load(); } catch(_){}
-      return;
-    }
     v.muted = true;
     v.playsInline = true;
     const tryPlay = () => {

@@ -31,16 +31,17 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 
-<!-- Bunny Fonts (drop-in Google Fonts, EU-hosted, RGPD-compliant) -->
+<!-- Bunny Fonts (drop-in Google Fonts, EU-hosted, RGPD-compliant)
+     Peak Design set : Playfair Display + Inter + Montserrat + Roboto Mono. -->
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin/>
-<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap"/>
 
 <!-- Pro design system (nav, glass buttons, shared tokens) -->
 <link rel="stylesheet" href="styles.css"/>
 
 <style>
   /* =========================================================
-     PROJECT DETAIL PAGES — Pro design tokens
+     PROJECT DETAIL PAGES, Pro design tokens
      Reuses styles.css for nav + glass-dark + tokens
      ========================================================= */
 
@@ -63,9 +64,9 @@
     color:var(--lime);font-size:9px;letter-spacing:.3em;
   }
   .pj-hero h1{
-    font-family:var(--serif);font-weight:400;
-    font-size:clamp(40px,7.5vw,120px);line-height:.96;letter-spacing:-.02em;
-    color:var(--cream);margin-bottom:24px;text-wrap:balance;
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(34px,5.8vw,84px);line-height:1.02;letter-spacing:-.02em;
+    color:var(--cream);margin-bottom:24px;text-wrap:balance;max-width:18ch;
   }
   .pj-hero h1 .dot{color:var(--lime)}
   .pj-hero .sub{
@@ -130,8 +131,8 @@
   .pj-body .section{margin-bottom:48px;max-width:62ch}
   .pj-body .section:last-child{margin-bottom:0}
   .pj-body .section h2{
-    font-family:var(--serif);font-weight:400;
-    font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.01em;
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(22px,2.6vw,32px);line-height:1.1;letter-spacing:-.01em;
     color:var(--cream);margin-bottom:18px;
   }
   .pj-body .section h2 .g{color:var(--lime);font-style:italic}
@@ -183,44 +184,56 @@
   .pj-lb.is-closing{animation:lbFadeOut .55s ease forwards}
   @keyframes lbFade{from{opacity:0}to{opacity:1}}
   @keyframes lbFadeOut{from{opacity:1}to{opacity:0}}
-  .pj-lb .stage{max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center}
-  .pj-lb .stage img,.pj-lb .stage video{
+  /* Note: lightbox controls use prefixed `lb-*` class names to avoid colliding
+     with the global `.nav` pill (position:fixed, width:1080px) on the home
+     navbar, that conflict made the arrows drift in fullscreen. Each control
+     is now positioned fixed relative to the viewport, never to the .pj-lb
+     padding box, so they sit at exact 24px from each edge. */
+  .pj-lb .lb-stage{max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center}
+  .pj-lb .lb-stage img,.pj-lb .lb-stage video{
     max-width:100%;max-height:calc(100vh - 160px);width:auto;height:auto;
     object-fit:contain;display:block;border-radius:8px;
     box-shadow:0 20px 60px rgba(0,0,0,.6);
     transform-origin:center center;
     animation:lbZoom .58s cubic-bezier(.2,.8,.2,1) backwards;
   }
-  .pj-lb.is-closing .stage img,.pj-lb.is-closing .stage video{
+  .pj-lb.is-closing .lb-stage img,.pj-lb.is-closing .lb-stage video{
     animation:lbZoomOut .55s cubic-bezier(.4,0,.6,1) forwards;
   }
   @keyframes lbZoom{from{transform:scale(0);opacity:0;filter:blur(6px)}to{transform:scale(1);opacity:1;filter:blur(0)}}
   @keyframes lbZoomOut{from{transform:scale(1);opacity:1;filter:blur(0)}to{transform:scale(0);opacity:0;filter:blur(6px)}}
-  .pj-lb .close,.pj-lb .nav{
-    position:absolute;background:rgba(241,236,224,0.06);
+  .pj-lb .lb-close,.pj-lb .lb-arrow{
+    position:fixed;
+    z-index:101;padding:0;
+    background:rgba(241,236,224,0.06);
     border:1px solid rgba(241,236,224,0.18);
-    color:var(--cream);cursor:pointer;display:grid;place-items:center;
-    font-family:var(--mono);font-weight:500;border-radius:999px;
+    color:var(--cream);cursor:pointer;display:flex;align-items:center;justify-content:center;
+    border-radius:999px;
     transition:background .2s ease,color .2s ease,border-color .2s ease;
   }
-  .pj-lb .close:hover,.pj-lb .nav:hover{
+  .pj-lb .lb-close:hover,.pj-lb .lb-arrow:hover{
     background:var(--lime);color:var(--ink);border-color:var(--lime);
   }
-  .pj-lb .close{top:24px;right:24px;width:48px;height:48px;font-size:24px;line-height:1}
-  .pj-lb .nav{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:28px;line-height:1}
-  .pj-lb .nav.prev{left:24px}
-  .pj-lb .nav.next{right:24px}
-  .pj-lb .meta{
-    position:absolute;bottom:24px;left:24px;right:24px;
+  .pj-lb .lb-close{top:24px;right:24px;width:48px;height:48px}
+  .pj-lb .lb-arrow{top:50%;transform:translateY(-50%);width:54px;height:54px}
+  .pj-lb .lb-prev{left:24px}
+  .pj-lb .lb-next{right:24px}
+  /* SVG icons inside the controls: perfectly centered via flex */
+  .pj-lb .lb-close svg,.pj-lb .lb-arrow svg{
+    width:20px;height:20px;display:block;
+  }
+  .pj-lb .lb-arrow svg{width:22px;height:22px}
+  .pj-lb .lb-meta{
+    position:fixed;bottom:24px;left:24px;right:24px;z-index:101;
     display:flex;justify-content:space-between;align-items:center;gap:20px;
     font:500 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;
     color:var(--cream);pointer-events:none;
   }
-  .pj-lb .meta .cap{
+  .pj-lb .lb-meta .lb-cap{
     background:rgba(12,13,10,0.7);padding:8px 14px;border-radius:6px;
     border:1px solid rgba(241,236,224,0.10);
   }
-  .pj-lb .meta .counter{
+  .pj-lb .lb-meta .lb-counter{
     color:var(--lime);background:rgba(12,13,10,0.7);
     padding:8px 14px;border-radius:6px;
     border:1px solid rgba(200,255,61,0.5);white-space:nowrap;
@@ -228,11 +241,222 @@
   body.lb-open{overflow:hidden}
   @media (max-width:820px){
     .pj-lb{padding:50px 12px}
-    .pj-lb .close{top:14px;right:14px;width:42px;height:42px;font-size:22px}
-    .pj-lb .nav{width:44px;height:44px;font-size:24px}
-    .pj-lb .nav.prev{left:8px}
-    .pj-lb .nav.next{right:8px}
-    .pj-lb .meta{bottom:12px;left:12px;right:12px;flex-direction:column;align-items:stretch}
+    .pj-lb .lb-close{top:14px;right:14px;width:42px;height:42px}
+    .pj-lb .lb-arrow{width:44px;height:44px}
+    .pj-lb .lb-prev{left:8px}
+    .pj-lb .lb-next{right:8px}
+    .pj-lb .lb-meta{bottom:12px;left:12px;right:12px;flex-direction:column;align-items:stretch}
+  }
+
+  /* ---------- PERFORMANCE HUD ---------- */
+  .pj-stats{
+    max-width:1400px;margin:0 auto;
+    padding:80px 40px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .pj-stats::before{
+    content:"";position:absolute;inset:80px 40px;
+    background:
+      linear-gradient(180deg, rgba(200,255,61,0.04), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(241,236,224,0.025) 0 1px, transparent 1px 4px);
+    pointer-events:none;
+    border:1px solid var(--line-2);
+    border-radius:12px;
+  }
+  .pj-stats-head{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 22px;
+    border:1px solid var(--line-2);
+    border-bottom:none;
+    border-radius:12px 12px 0 0;
+    background:rgba(20,21,17,0.6);
+    backdrop-filter:blur(6px);
+  }
+  .pj-stats-eyebrow{
+    font:500 11px/1 var(--mono);letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--lime);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .pj-stats-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--lime);
+    box-shadow:0 0 8px var(--lime);
+    animation:pj-stats-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pj-stats-pulse{
+    0%,100%{opacity:0.4;transform:scale(0.85)}
+    50%{opacity:1;transform:scale(1)}
+  }
+  .pj-stats-meta{
+    display:inline-flex;align-items:center;gap:14px;
+    font:500 10px/1 var(--mono);letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--fg-mute);
+  }
+  .pj-stats-rec{
+    color:var(--lime);
+    animation:pj-stats-rec-blink 1.2s ease-in-out infinite;
+  }
+  @keyframes pj-stats-rec-blink{
+    0%,100%{opacity:1}
+    50%{opacity:0.35}
+  }
+  .pj-stats-id{padding:4px 8px;border:1px solid var(--line-2);border-radius:4px;color:var(--cream)}
+
+  .pj-stats-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:repeat(3, 1fr);
+    gap:0;
+    border:1px solid var(--line-2);
+    background:rgba(12,13,10,0.4);
+    backdrop-filter:blur(6px);
+    perspective:1400px;
+  }
+  /* Each stat is a button so the entire face is clickable + keyboard accessible */
+  .pj-stat{
+    /* clear default <button> visuals */
+    appearance:none;-webkit-appearance:none;
+    background:transparent;color:inherit;font:inherit;text-align:left;
+    border:none;
+    /* grid cell sizing */
+    padding:0;
+    min-height:210px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    cursor:pointer;
+    transition:background .25s ease;
+  }
+  .pj-stat:focus{outline:none}
+  .pj-stat:focus-visible .pj-stat-inner{
+    box-shadow:0 0 0 2px rgba(200,255,61,0.45) inset;
+  }
+  .pj-stat:nth-child(3n){border-right:none}
+  .pj-stat:nth-last-child(-n+3){border-bottom:none}
+  .pj-stat:hover{background:rgba(200,255,61,0.04)}
+  /* 3D flip mechanism */
+  .pj-stat-inner{
+    position:relative;width:100%;height:100%;min-height:210px;
+    transform-style:preserve-3d;
+    transition:transform .85s cubic-bezier(.2,.8,.2,1);
+  }
+  .pj-stat.is-flipped .pj-stat-inner{transform:rotateY(180deg)}
+  .pj-stat-face{
+    position:absolute;inset:0;
+    padding:24px 22px;
+    display:flex;flex-direction:column;gap:6px;
+    backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  }
+  .pj-stat-face--back{
+    transform:rotateY(180deg);
+    background:linear-gradient(180deg, rgba(20,21,17,0.92) 0%, rgba(12,13,10,0.88) 100%);
+    justify-content:space-between;
+  }
+  .pj-stat--good .pj-stat-face--back{
+    border-left:2px solid var(--lime);
+  }
+  .pj-stat--neutral .pj-stat-face--back{
+    border-left:2px solid var(--fg-mute);
+  }
+  .pj-stat-back-head{
+    font:500 10px/1.3 var(--mono);letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--lime);
+  }
+  .pj-stat--neutral .pj-stat-back-head{color:var(--fg-dim)}
+  .pj-stat-back-body{
+    font:400 13.5px/1.6 var(--sans);color:var(--cream);
+    flex:1;display:flex;align-items:center;
+  }
+  .pj-stat-back-foot{
+    display:flex;align-items:center;gap:8px;
+    font:500 10px/1 var(--mono);letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--fg-mute);
+    padding-top:10px;border-top:1px solid var(--line);
+  }
+  .pj-stat-back-foot span:first-child{color:var(--lime);font-size:14px}
+
+  .pj-stat-lbl{
+    font:500 10px/1 var(--mono);letter-spacing:0.20em;
+    text-transform:uppercase;color:var(--fg-mute);
+  }
+  .pj-stat-val{display:flex;align-items:baseline;gap:6px;margin-top:4px}
+  .pj-stat-num{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:44px;line-height:1;letter-spacing:-0.02em;
+    color:var(--cream);
+    padding-right:0.1em;margin-right:-0.1em;
+  }
+  .pj-stat--good .pj-stat-num{
+    background:linear-gradient(95deg, var(--lime) 0%, var(--lime) 55%, var(--cream) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .pj-stat-unit{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.12em;
+    color:var(--fg-mute);text-transform:uppercase;
+  }
+  .pj-stat-bar{
+    margin-top:10px;height:3px;background:rgba(241,236,224,0.08);border-radius:2px;
+    overflow:hidden;position:relative;
+  }
+  .pj-stat-bar-fill{
+    position:absolute;inset:0;
+    background:linear-gradient(90deg, var(--lime) 0%, var(--lime-2) 100%);
+    transform-origin:left center;
+    transform:scaleX(0);
+    animation:pj-stat-fill 1.4s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay:calc(0.12s * var(--i, 0));
+  }
+  .pj-stat--neutral .pj-stat-bar-fill{
+    background:linear-gradient(90deg, var(--fg-dim) 0%, var(--fg-mute) 100%);
+  }
+  @keyframes pj-stat-fill{
+    from{transform:scaleX(0)}
+    to{transform:scaleX(1)}
+  }
+  .pj-stat-note{
+    margin-top:8px;
+    font:400 11.5px/1.45 var(--sans);color:var(--fg-dim);
+    flex:1;
+  }
+  .pj-stat-cta{
+    display:flex;align-items:center;gap:8px;
+    padding-top:10px;border-top:1px solid var(--line);
+    font:500 10px/1 var(--mono);letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--fg-mute);
+    transition:color .25s ease;
+  }
+  .pj-stat:hover .pj-stat-cta{color:var(--lime)}
+  .pj-stat-cta span:first-child{color:var(--lime);font-size:14px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .pj-stat:hover .pj-stat-cta span:first-child{transform:rotate(90deg)}
+
+  .pj-stats-foot{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 22px;
+    border:1px solid var(--line-2);
+    border-top:none;
+    border-radius:0 0 12px 12px;
+    background:rgba(20,21,17,0.6);
+    font:500 10px/1 var(--mono);letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--fg-mute);
+  }
+  .pj-stats-foot-l{color:var(--cream)}
+
+  @media (prefers-reduced-motion:reduce){
+    .pj-stats-dot, .pj-stats-rec{animation:none}
+    .pj-stat-bar-fill{animation:none;transform:scaleX(1)}
+  }
+
+  @media (max-width:820px){
+    .pj-stats{padding:60px 24px}
+    .pj-stats::before{inset:60px 24px}
+    .pj-stats-grid{grid-template-columns:1fr 1fr}
+    .pj-stat:nth-child(3n){border-right:1px solid var(--line)}
+    .pj-stat:nth-child(2n){border-right:none}
+    .pj-stat:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
+    .pj-stat:nth-last-child(-n+2){border-bottom:none}
+    .pj-stats-head,.pj-stats-foot{flex-direction:column;gap:8px;text-align:center}
   }
 
   /* ---------- QUOTE ---------- */
@@ -241,7 +465,7 @@
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   }
   .pj-quote blockquote{
-    font-family:var(--serif);font-weight:400;font-style:italic;
+    font-family:var(--display);font-weight:400;font-style:italic;
     font-size:clamp(24px,2.8vw,42px);line-height:1.3;
     color:var(--cream);margin-bottom:22px;
   }
@@ -251,7 +475,7 @@
     font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;
     color:var(--fg-mute);
   }
-  .pj-quote .author::before{content:"— ";color:var(--lime)}
+  .pj-quote .author::before{content:"";color:var(--lime)}
 
   /* ---------- NEXT PROJECT ---------- */
   .pj-next{
@@ -262,7 +486,7 @@
     color:var(--fg-mute);margin-bottom:24px;
   }
   .pj-next .t{
-    font-family:var(--serif);font-weight:400;font-style:italic;
+    font-family:var(--display);font-weight:400;font-style:italic;
     font-size:clamp(34px,5.5vw,76px);line-height:1;letter-spacing:-.02em;
     color:var(--cream);transition:color .2s ease;
   }
@@ -292,7 +516,7 @@
   /* ---------- 404 ---------- */
   .pj-error{padding:180px 40px 120px;text-align:center;max-width:620px;margin:0 auto}
   .pj-error h1{
-    font-family:var(--serif);font-weight:400;font-style:italic;
+    font-family:var(--display);font-weight:400;font-style:italic;
     font-size:clamp(80px,14vw,160px);line-height:.9;letter-spacing:-.04em;
     margin-bottom:20px;
     background:linear-gradient(95deg, var(--lime) 0%, var(--lime) 50%, var(--cream) 100%);
@@ -325,24 +549,45 @@
   <a href="index.html" class="brand"><span class="mk"></span><span class="brand-name">Mad Makers</span></a>
   <div class="nav-links">
     <a href="index.html#manifeste">Agence</a>
+    <span class="nav-dot" aria-hidden="true"></span>
     <a href="index.html#services">Services</a>
+    <span class="nav-dot" aria-hidden="true"></span>
     <a href="index.html#projets">Projets</a>
+    <span class="nav-dot" aria-hidden="true"></span>
     <a href="index.html#equipe">Fondateurs</a>
   </div>
-  <a class="nav-cta" href="index.html#projets">← Retour aux projets</a>
+  <a class="nav-cta" href="index.html#projets">
+    <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M19 12H5"/>
+      <path d="M12 19l-7-7 7-7"/>
+    </svg>
+    Retour aux projets
+  </a>
 </nav>
 
 <main id="pjRoot"></main>
 
 <!-- Lightbox overlay (rendered always, toggled via .is-open) -->
 <div class="pj-lb" id="pjLb" role="dialog" aria-modal="true" aria-label="Visualiseur image">
-  <button class="close" id="pjLbClose" aria-label="Fermer">×</button>
-  <button class="nav prev" id="pjLbPrev" aria-label="Précédent">‹</button>
-  <button class="nav next" id="pjLbNext" aria-label="Suivant">›</button>
-  <div class="stage" id="pjLbStage"></div>
-  <div class="meta">
-    <span class="cap" id="pjLbCap"></span>
-    <span class="counter" id="pjLbCounter"></span>
+  <button class="lb-close" id="pjLbClose" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+  <button class="lb-arrow lb-prev" id="pjLbPrev" aria-label="Précédent">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M15 6l-6 6 6 6"/>
+    </svg>
+  </button>
+  <button class="lb-arrow lb-next" id="pjLbNext" aria-label="Suivant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M9 6l6 6-6 6"/>
+    </svg>
+  </button>
+  <div class="lb-stage" id="pjLbStage"></div>
+  <div class="lb-meta">
+    <span class="lb-cap" id="pjLbCap"></span>
+    <span class="lb-counter" id="pjLbCounter"></span>
   </div>
 </div>
 
@@ -367,7 +612,7 @@
         <p>Ce projet n'existe pas ou n'a pas encore été publié.</p>
         <a href="index.html#projets">← Retour aux réalisations</a>
       </section>`;
-    document.title = '404 — Mad Makers';
+    document.title = '404 · Mad Makers';
     const r = document.querySelector('meta[name="robots"]');
     if (r) r.setAttribute('content', 'noindex,follow');
     return;
@@ -382,7 +627,7 @@
   // === SEO META INJECTION (per project) ===
   const SITE_ORIGIN = 'https://www.mad-makers.fr';
   const pageUrl  = `${SITE_ORIGIN}/project-${encodeURIComponent(id)}.html`;
-  const pageTitle = `${data.title} — Mad Makers`;
+  const pageTitle = `${data.title} · Mad Makers`;
   const pageDesc  = (data.subtitle || data.intro || '').slice(0, 160);
   const coverSrc  = data.cover && data.cover.src
     ? (/^https?:/i.test(data.cover.src) ? data.cover.src : `${SITE_ORIGIN}/${data.cover.src}`)
@@ -453,6 +698,47 @@
       ${g.caption ? `<div class="cap">${esc(g.caption)}</div>` : ''}
     </div>`).join('');
 
+  // Map tone -> short label for the back of the flip card
+  const toneLabel = { good: "Pourquoi c'est bien", neutral: "Pourquoi c'est neutre", bad: "Pourquoi ça pourrait être mieux" };
+
+  const statsHtml = (data.stats && data.stats.length) ? `
+    <section class="pj-stats">
+      <div class="pj-stats-head">
+        <div class="pj-stats-eyebrow"><span class="pj-stats-dot"></span> PERFORMANCE · TECHNICAL READOUT</div>
+        <div class="pj-stats-meta"><span class="pj-stats-rec">● REC</span> <span class="pj-stats-id">${esc(data.num)} / LIVE</span></div>
+      </div>
+      <div class="pj-stats-grid">
+        ${data.stats.map((s, i) => {
+          const tone = esc(s.tone || 'neutral');
+          const backTitle = esc(toneLabel[s.tone] || toneLabel.neutral);
+          return `
+          <button type="button" class="pj-stat pj-stat--${tone}" style="--i:${i}" aria-label="Voir l'analyse de ${esc(s.lbl)}">
+            <div class="pj-stat-inner">
+              <div class="pj-stat-face pj-stat-face--front">
+                <div class="pj-stat-lbl">${esc(s.lbl)}</div>
+                <div class="pj-stat-val">
+                  <span class="pj-stat-num">${esc(s.val)}</span>${s.unit ? `<span class="pj-stat-unit">${esc(s.unit)}</span>` : ''}
+                </div>
+                <div class="pj-stat-bar"><span class="pj-stat-bar-fill"></span></div>
+                ${s.note ? `<div class="pj-stat-note">${esc(s.note)}</div>` : ''}
+                <div class="pj-stat-cta" aria-hidden="true"><span>↻</span><span>analyse</span></div>
+              </div>
+              <div class="pj-stat-face pj-stat-face--back">
+                <div class="pj-stat-back-head">${backTitle}</div>
+                <div class="pj-stat-back-body">${esc(s.why || s.note || '')}</div>
+                <div class="pj-stat-back-foot"><span>↺</span><span>retour</span></div>
+              </div>
+            </div>
+          </button>
+          `;
+        }).join('')}
+      </div>
+      <div class="pj-stats-foot">
+        <span class="pj-stats-foot-l">SOURCE / ${esc(data.liveUrl || 'mad-makers.fr')}</span>
+        <span class="pj-stats-foot-r">CLIQUEZ UNE STAT POUR VOIR L'ANALYSE, TTFB mesuré via curl edge, ${new Date().getFullYear()}</span>
+      </div>
+    </section>` : '';
+
   const quoteHtml = data.quote ? `
     <section class="pj-quote">
       <blockquote>${esc(data.quote.text)}</blockquote>
@@ -470,7 +756,7 @@
 
   const statusBadge = data.status ? `<span class="status">${esc(data.status)}</span>` : '';
   const liveCta = data.liveUrl
-    ? `<a class="live-cta glass-dark" href="${esc(data.liveUrl)}" target="_blank" rel="noopener">Voir le site live <span class="arr">↗</span></a>`
+    ? `<a class="live-cta glass-dark" href="${esc(data.liveUrl)}" target="_blank" rel="noopener">Voir le site en ligne <span class="arr">↗</span></a>`
     : '';
 
   root.innerHTML = `
@@ -507,11 +793,13 @@
 
     ${galleryHtml ? `<section class="pj-gallery">${galleryHtml}</section>` : ''}
 
+    ${statsHtml}
+
     ${quoteHtml}
     ${nextHtml}
 
     <footer class="pj-foot">
-      <span>© Mad Makers — <b>Dream it. We make it.</b></span>
+      <span>© Mad Makers · <b>Dream it. We make it.</b></span>
       <span>
         <a href="index.html">↑ Accueil</a>
         <a href="index.html#contact">Brief →</a>
@@ -579,6 +867,11 @@
       if (e.key === 'ArrowRight')  stepLb( 1);
     });
   }
+
+  // === STAT FLIP, click any HUD stat to reveal its analysis (back face) ===
+  document.querySelectorAll('.pj-stat').forEach((el) => {
+    el.addEventListener('click', () => el.classList.toggle('is-flipped'));
+  });
 })();
 </script>
 

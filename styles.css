@@ -16,9 +16,16 @@
   --lime:#c8ff3d;
   --lime-2:#9ed420;
   --lime-deep:#5a7a0d;
-  --serif:"Instrument Serif", "Georgia", serif;
-  --sans:"Inter", system-ui, sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, monospace;
+  /* Peak Design set :
+     - Exposure-10 (sub. Playfair Display) for serif display headlines
+     - Geist (sub. Inter) for body and UI
+     - bryant (sub. Montserrat) for uppercase CTAs, nav, badges
+     - Geist Mono (sub. Roboto Mono) for technical data points */
+  --display:"Playfair Display", "Exposure-10", "Georgia", "Times New Roman", serif;
+  --serif:var(--display);
+  --sans:"Inter", "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --label:"Montserrat", "bryant", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono:"Roboto Mono", "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -38,18 +45,18 @@ img{max-width:100%;display:block}
 .nav{
   position:fixed;top:18px;left:50%;transform:translateX(-50%);
   z-index:50;
-  width:min(1240px, calc(100% - 32px));
+  width:min(1080px, calc(100% - 32px));
   background:rgba(20,21,17,0.72);
   backdrop-filter:blur(18px) saturate(140%);
   -webkit-backdrop-filter:blur(18px) saturate(140%);
   border:1px solid var(--line);
   border-radius:999px;
-  padding:10px 14px 10px 22px;
+  padding:6px 8px 6px 18px;
   display:flex;align-items:center;justify-content:space-between;
   transition:transform .35s ease, background .3s ease;
 }
 .nav.is-hidden{transform:translateX(-50%) translateY(-130%)}
-.brand{display:flex;align-items:center;gap:0;font-family:var(--serif);font-size:22px;font-style:italic;letter-spacing:0.2px}
+.brand{display:flex;align-items:center;gap:0;font-family:var(--serif);font-size:17px;font-style:italic;letter-spacing:0.2px;line-height:1}
 .brand .mk{
   width:28px;height:28px;border-radius:6px;
   background:url("assets/logo-mad-makers.png") center/contain no-repeat;
@@ -85,9 +92,9 @@ img{max-width:100%;display:block}
   transform:translateX(0);
   pointer-events:auto;
 }
-.nav-links{display:flex;align-items:center;gap:0}
+.nav-links{display:flex;align-items:center;gap:2px}
 .nav-links a{
-  padding:9px 14px;font-size:14px;font-weight:500;color:var(--fg);
+  padding:7px 12px;font-size:13.5px;font-weight:500;color:var(--fg);
   border-radius:999px;display:inline-flex;align-items:center;gap:6px;
   transition:background .2s ease, color .2s ease;
 }
@@ -96,21 +103,21 @@ img{max-width:100%;display:block}
 /* small lime dot separator between nav items */
 .nav-dot{
   display:inline-block;
-  width:4px;height:4px;
+  width:3px;height:3px;
   border-radius:50%;
   background:var(--lime);
   opacity:0.55;
   flex-shrink:0;
-  margin:0 2px;
+  margin:0 4px;
   align-self:center;
 }
 
 /* Liquid glass - primary nav button (cream-tinted glass) */
 .nav-cta{
   position:relative;overflow:hidden;
-  padding:10px 18px;font-size:14px;font-weight:500;
+  padding:7px 14px 7px 12px;font-size:13px;font-weight:500;
   color:var(--ink);border-radius:999px;
-  display:inline-flex;align-items:center;gap:8px;
+  display:inline-flex;align-items:center;gap:7px;
   background:radial-gradient(ellipse 100% 70% at 50% 0%, rgba(255,255,255,0.98) 0%, rgba(255,253,247,0.85) 50%, rgba(225,219,205,0.78) 100%);
   border:1px solid rgba(255,255,255,0.85);
   backdrop-filter:blur(20px) saturate(180%);
@@ -119,9 +126,14 @@ img{max-width:100%;display:block}
     inset 0 1.5px 0 rgba(255,255,255,1),
     inset 0 -1px 0 rgba(0,0,0,0.06),
     inset 0 0 18px rgba(255,255,255,0.4),
-    0 10px 24px rgba(0,0,0,0.28);
+    0 8px 18px rgba(0,0,0,0.22);
   transition:transform .3s cubic-bezier(.2,.7,.2,1), background .3s ease, box-shadow .3s ease;
 }
+.nav-cta-icon{
+  width:14px;height:14px;flex-shrink:0;color:var(--ink);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.nav-cta:hover .nav-cta-icon{transform:scale(1.08) rotate(-3deg)}
 .nav-cta::after{
   content:"";position:absolute;top:0;left:-30%;height:100%;width:30%;
   background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
@@ -264,10 +276,10 @@ img{max-width:100%;display:block}
   .eyebrow-loop .sq{animation:none}
 }
 .hero h1{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(44px, 7.2vw, 104px);
-  line-height:1.02;letter-spacing:-0.02em;
-  text-align:center;max-width:1100px;
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(38px, 5.8vw, 80px);
+  line-height:1.04;letter-spacing:-0.02em;
+  text-align:center;max-width:1000px;
   text-wrap:balance;
 }
 .hero h1 em{
@@ -396,9 +408,9 @@ section.dark{background:var(--bg);padding:140px 32px;position:relative;overflow:
 .container{max-width:1240px;margin:0 auto}
 .stats-row{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
 .big-title{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(34px, 4.6vw, 64px);
-  line-height:1.05;letter-spacing:-0.02em;color:var(--cream);
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(28px, 3.8vw, 52px);
+  line-height:1.08;letter-spacing:-0.02em;color:var(--cream);
   text-wrap:balance;
 }
 .big-title em{font-style:italic;background:linear-gradient(95deg, var(--lime) 0%, var(--lime) 50%, rgba(241,236,224,0.4) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -432,6 +444,33 @@ section.dark{background:var(--bg);padding:140px 32px;position:relative;overflow:
 }
 .logos-row .lab{font-size:13px;color:var(--fg-dim);max-width:200px;line-height:1.5}
 .logos.tools{display:flex;align-items:center;justify-content:flex-start;gap:30px 36px;flex-wrap:wrap}
+
+/* Infinite-scroll marquee variant: two identical copies translate together
+   by exactly -50%, so the seam is never visible. Hover pauses the loop. */
+.logos-marquee{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image:linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.logos-marquee-track{
+  display:flex;
+  width:max-content;
+  gap:36px;
+  animation:logos-scroll 44s linear infinite;
+}
+.logos-marquee-track:hover{animation-play-state:paused}
+.logos-marquee .logos.tools{
+  display:flex;flex-wrap:nowrap;flex-shrink:0;gap:36px;
+  padding-right:36px; /* visual gap between the two copies = same as inter-tool gap */
+}
+.logos-marquee .tool{flex-shrink:0}
+@keyframes logos-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .logos-marquee-track{animation:none}
+}
 .tool{
   display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:11px;letter-spacing:0.10em;
@@ -504,24 +543,31 @@ section.cream .eyebrow .sq{background:var(--ink)}
   /* dark grey-black at rest (and as no-WebGL fallback) */
   background:linear-gradient(180deg, #161812 0%, #0a0b07 100%);
   /* outer drop shadow only - inset shadows would draw a dark ring along the
-     rounded corners (visible because rounded-corner anti-aliasing leaves a
-     thin sliver where the canvas can't fully overpaint them) */
+     rounded corners. */
   box-shadow:0 10px 24px rgba(0,0,0,0.30);
-  transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease;
+  transition:
+    transform .45s cubic-bezier(.2,.7,.2,1),
+    box-shadow .45s ease,
+    background .35s ease;
 }
 .svc:hover{
   transform:translateY(-6px);
   box-shadow:0 18px 40px rgba(0,0,0,0.45);
+  /* Apple-grade pixel-perfect corner fix: when the WebGL canvas paints the
+     lime splash, the subpixel anti-aliasing at the rounded corners can leave
+     a 1px sliver of the CSS base showing through. We flip the CSS base to
+     match the canvas's lime state, so the leak — if any — is invisible. */
+  background:linear-gradient(180deg, var(--lime) 0%, var(--lime-2) 100%);
 }
 .svc-fx{
-  /* extend 1.5px beyond the card on every side so that subpixel anti-aliasing
-     at the rounded corners doesn't leave a sliver of the CSS background
-     showing through. The parent's border-radius + overflow:hidden does the
-     clipping, so the canvas itself doesn't need a border-radius. */
+  /* Extend 3px beyond the card on every side. The parent's border-radius
+     + overflow:hidden clips it back to the rounded shape, so the canvas
+     itself doesn't need its own radius. Combined with the hover background
+     swap above, this gives a perfect corner coverage at any zoom level. */
   position:absolute;
-  inset:-1.5px;
-  width:calc(100% + 3px);
-  height:calc(100% + 3px);
+  inset:-3px;
+  width:calc(100% + 6px);
+  height:calc(100% + 6px);
   z-index:1;
   display:block;
   pointer-events:none;
@@ -647,13 +693,13 @@ section.duo{background:var(--bg);padding:0 32px 140px;position:relative}
   border-radius:18px;backdrop-filter:blur(8px);max-width:600px;
 }
 .duo-banner .pill .mk-orb{width:54px;height:54px;margin:0 auto 22px;background:url("assets/logo-mad-makers.png") center/contain no-repeat;filter:drop-shadow(0 0 20px rgba(200,255,61,0.4))}
-.duo-banner .pill h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.15;color:var(--cream);text-wrap:balance}
+.duo-banner .pill h2{font-family:var(--display);font-weight:400;font-size:34px;line-height:1.15;color:var(--cream);text-wrap:balance}
 .duo-banner .pill .btn{
   margin-top:26px;display:inline-flex;align-items:center;gap:8px;
   padding:14px 28px;border-radius:999px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;
 }
 
-.duo-head{font-family:var(--serif);font-weight:400;font-size:clamp(28px, 3.4vw, 44px);line-height:1.15;color:var(--cream);letter-spacing:-0.01em;text-wrap:balance;max-width:780px}
+.duo-head{font-family:var(--display);font-weight:400;font-size:clamp(24px, 2.8vw, 36px);line-height:1.18;color:var(--cream);letter-spacing:-0.01em;text-wrap:balance;max-width:720px}
 .duo-head .dim{color:var(--fg-mute)}
 .duo-head em{font-style:normal;color:var(--cream)}
 .duo-cards{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -772,7 +818,7 @@ section.duo{background:var(--bg);padding:0 32px 140px;position:relative}
   text-transform:uppercase;color:var(--lime);
 }
 .founder-modal-name{
-  font-family:var(--serif);font-weight:400;
+  font-family:var(--display);font-weight:400;
   font-size:36px;line-height:1.05;letter-spacing:-0.02em;
   color:var(--cream);
   text-wrap:balance;
@@ -815,7 +861,7 @@ section.duo{background:var(--bg);padding:0 32px 140px;position:relative}
 
 /* ================ ARTICLES ================ */
 section.articles{padding:0 32px 140px;background:var(--bg)}
-.articles-head{font-family:var(--serif);font-weight:400;font-size:clamp(36px, 4.4vw, 60px);letter-spacing:-0.01em;color:var(--cream);margin-bottom:56px}
+.articles-head{font-family:var(--display);font-weight:400;font-size:clamp(36px, 4.4vw, 60px);letter-spacing:-0.01em;color:var(--cream);margin-bottom:56px}
 .articles-head .dim{color:var(--fg-mute)}
 .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .article{
@@ -829,7 +875,7 @@ section.articles{padding:0 32px 140px;background:var(--bg)}
   padding:24px;display:flex;flex-direction:column;justify-content:flex-end;
 }
 .article .thumb h4{
-  font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;letter-spacing:-0.01em;
+  font-family:var(--display);font-weight:400;font-size:22px;line-height:1.2;letter-spacing:-0.01em;
   text-wrap:balance;
   position:relative;z-index:2;
 }
@@ -883,7 +929,7 @@ section.articles{padding:0 32px 140px;background:var(--bg)}
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   mix-blend-mode:overlay;opacity:.28;pointer-events:none;
 }
-.footer-cta h2{position:relative;z-index:3;font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,84px);line-height:1.05;letter-spacing:-0.02em;color:var(--cream);text-wrap:balance;max-width:1100px;margin:0 auto;text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 0 rgba(0,0,0,0.25)}
+.footer-cta h2{position:relative;z-index:3;font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,68px);line-height:1.08;letter-spacing:-0.02em;color:var(--cream);text-wrap:balance;max-width:900px;margin:0 auto;text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 0 rgba(0,0,0,0.25)}
 .footer-cta h2 em{font-style:normal;background:linear-gradient(95deg, var(--lime) 0%, var(--lime) 55%, rgba(241,236,224,0.85) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
 .footer-cta p{position:relative;z-index:3;margin-top:20px;color:var(--cream);font-size:16px;font-weight:400;text-shadow:0 1px 8px rgba(0,0,0,0.55)}
 .footer-cta-buttons{position:relative;z-index:3;margin-top:44px;display:inline-flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
@@ -900,8 +946,18 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 .foot-brand .mk{width:54px;height:54px;border-radius:10px;background:url("assets/logo-mad-makers.png") center/contain no-repeat;margin-bottom:24px}
 .foot-brand .addr{font-size:14px;line-height:1.6;color:var(--cream)}
 .foot-brand .tag{margin-top:20px;font-size:13px;color:var(--fg-dim);font-style:italic;font-family:var(--serif)}
-.foot-col h6{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:20px;letter-spacing:0.02em}
+.foot-col h6{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:20px;letter-spacing:0.02em;display:inline-block}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+/* Footer columns are <details> elements so they can become accordions on
+   mobile. On desktop they're forced visually open and the toggle is hidden. */
+details.foot-col{cursor:default}
+details.foot-col > summary{
+  list-style:none;display:flex;align-items:center;
+  cursor:default;padding:0;
+}
+details.foot-col > summary::-webkit-details-marker{display:none}
+details.foot-col > summary::marker{display:none}
+.foot-toggle{display:none;color:var(--lime);font-size:18px;font-weight:500;line-height:1;margin-left:auto;flex-shrink:0;transition:transform .25s ease}
 .foot-col ul a{font-size:14px;color:var(--fg-dim);transition:color .2s ease}
 .foot-col ul a:hover{color:var(--lime)}
 .foot-col.contact ul a{color:var(--cream);font-weight:500}
@@ -925,7 +981,7 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;color:var(--cream);
   /* radial gradients (circular, not elliptical) so the highlight follows
-     the round shape — inset horizontal shadows would create visible chords
+     the round shape - inset horizontal shadows would create visible chords
      on a perfect circle, so we use only a soft top glow + outer drop shadow */
   background:
     radial-gradient(circle at 50% 28%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.06) 55%, transparent 80%),
@@ -963,7 +1019,8 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 
 /* responsive */
 @media (max-width: 960px){
-  .nav-links{display:none}
+  /* .nav-links display handled by the hamburger nav block below (≤900px).
+     Removing the legacy display:none here that was killing the dropdown. */
   .stats-row, .duo-cards, .article-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
   .svc-row{flex:0 0 280px}
@@ -981,8 +1038,9 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
    effects entirely. Replace with rich gradient backgrounds so the sections
    still feel alive. */
 @media (max-width: 720px){
-  .hero-bg .hero-video,
-  .footer-cta .footer-video{display:none}
+  /* Keep the hero + footer-CTA videos on mobile — they're H.264 with
+     faststart and small enough to stream cleanly. The gradient stays
+     as a fallback if the video fails or while it loads. */
   .hero-bg{
     background:
       radial-gradient(ellipse 90% 60% at 50% 30%, rgba(200,255,61,0.55), transparent 60%),
@@ -999,6 +1057,78 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
   /* simplify the heaviest non-WebGL effects too so phones don't lag */
   .nav{backdrop-filter:blur(10px) saturate(120%);-webkit-backdrop-filter:blur(10px) saturate(120%)}
   .glass-dark{backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+}
+
+/* =========================================================
+   REVEAL - universal subtle fade-up on viewport entry.
+   Used sparingly on big titles + key card grids.
+   Add `data-reveal` to any element you want to fade up.
+   ========================================================= */
+[data-reveal]{
+  opacity:1;transform:none;
+}
+/* JS opts elements in by adding .reveal-pending; reveal once they
+   intersect (class .reveal-in). If JS fails, default = visible. */
+[data-reveal].reveal-pending{
+  opacity:0;
+  transform:translateY(22px);
+}
+[data-reveal].reveal-in{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+}
+/* Variant: cascade for children (stagger via --i) */
+[data-reveal="cascade"] > *{
+  opacity:1;transform:none;
+}
+[data-reveal="cascade"].reveal-pending > *{
+  opacity:0;
+  transform:translateY(18px);
+}
+[data-reveal="cascade"].reveal-in > *{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+  transition-delay:calc(0.08s * var(--i, 0));
+}
+/* Variant: count-up - JS animates the number, this just makes sure the
+   element starts hidden when JS marks it pending */
+[data-reveal="count"].reveal-pending{opacity:0}
+[data-reveal="count"].reveal-in{opacity:1;transition:opacity .6s ease}
+
+/* Variant: split - two direct children slide in from opposite sides */
+[data-reveal="split"] > *{opacity:1;transform:none}
+[data-reveal="split"].reveal-pending > *:nth-child(1){opacity:0;transform:translateX(-32px)}
+[data-reveal="split"].reveal-pending > *:nth-child(2){opacity:0;transform:translateX(32px)}
+[data-reveal="split"].reveal-in > *{
+  opacity:1;transform:translateX(0);
+  transition:opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal="split"].reveal-in > *:nth-child(2){transition-delay:.10s}
+
+/* Variant: columns - children of a 4-col grid stagger column by column.
+   Used for the Comparatif table where each row has 4 cells: criterion,
+   Mad Makers, Agence, Freelance. We target by nth-child(4n+offset). */
+[data-reveal="columns"] .compare-cell{opacity:1;transform:none}
+[data-reveal="columns"].reveal-pending .compare-cell{
+  opacity:0;transform:translateY(14px);
+}
+[data-reveal="columns"].reveal-in .compare-cell{
+  opacity:1;transform:translateY(0);
+  transition:opacity .65s cubic-bezier(.2,.7,.2,1), transform .65s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal="columns"].reveal-in .compare-cell:nth-child(4n+1){transition-delay:0s}
+[data-reveal="columns"].reveal-in .compare-cell:nth-child(4n+2){transition-delay:.22s}
+[data-reveal="columns"].reveal-in .compare-cell:nth-child(4n+3){transition-delay:.44s}
+[data-reveal="columns"].reveal-in .compare-cell:nth-child(4n){transition-delay:.66s}
+
+@media (prefers-reduced-motion: reduce){
+  [data-reveal].reveal-pending,
+  [data-reveal="cascade"].reveal-pending > *{
+    opacity:1 !important;
+    transform:none !important;
+  }
 }
 
 /* =========================================================
@@ -1034,7 +1164,10 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 .fit-icon{
   display:inline-flex;align-items:center;justify-content:center;
   width:28px;height:28px;border-radius:8px;
-  font-family:var(--mono);font-size:14px;font-weight:600;
+  flex-shrink:0;
+}
+.fit-icon svg{
+  display:block;width:16px;height:16px;
 }
 .fit-yes .fit-icon{
   background:rgba(200,255,61,0.18);color:var(--lime);
@@ -1059,47 +1192,347 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 }
 
 /* =========================================================
-   NOTRE MÉTHODE (cream section variant)
+   HERO STRIP - chiffres-clés sous le hero
    ========================================================= */
-.method-track{
-  margin-top:80px;
+.hero-strip{
+  background:var(--bg-2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:22px 32px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-strip::before,
+.hero-strip::after{
+  content:"";position:absolute;top:0;bottom:0;width:80px;pointer-events:none;z-index:2;
+}
+.hero-strip::before{left:0;background:linear-gradient(90deg, var(--bg-2) 10%, transparent 100%)}
+.hero-strip::after{right:0;background:linear-gradient(270deg, var(--bg-2) 10%, transparent 100%)}
+.hero-strip-track{
+  max-width:1240px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  flex-wrap:nowrap;
+  overflow-x:auto;overflow-y:visible;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.hero-strip-track::-webkit-scrollbar{display:none}
+.hero-strip-item{
+  display:flex;align-items:baseline;gap:10px;
+  flex-shrink:0;white-space:nowrap;
+}
+.hs-num{
+  font-family:var(--display);font-weight:400;font-style:italic;
+  font-size:32px;line-height:1;letter-spacing:-0.02em;
+  background:linear-gradient(95deg, var(--lime) 0%, var(--lime) 55%, var(--cream) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  padding-right:0.1em;margin-right:-0.1em;
+}
+.hs-lab{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.20em;
+  text-transform:uppercase;color:var(--fg-dim);font-weight:500;
+}
+.hs-dot{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--lime);opacity:0.45;flex-shrink:0;
+}
+
+/* =========================================================
+   NOTRE MÉTHODE - Clean rail + 5 phase cards (Apple-style)
+   ========================================================= */
+.method-section{position:relative;overflow:hidden}
+.method-wrap{margin-top:90px;position:relative}
+
+/* Horizontal rail with 5 nodes above the cards */
+.method-rail{
+  position:relative;
+  margin-bottom:40px;
+  padding:0 28px;
+  height:60px;
+}
+.method-rail-line{
+  position:absolute;top:18px;left:28px;right:28px;
+  height:2px;
+  background:rgba(12,13,10,0.10);
+  border-radius:2px;overflow:hidden;
+}
+.method-rail-fill{
+  position:absolute;top:0;left:0;bottom:0;
+  background:linear-gradient(90deg, rgba(12,13,10,0.85) 0%, rgba(12,13,10,0.75) 92%, var(--lime-deep) 100%);
+  width:100%;
+}
+/* Bright lime scanner - rides on the right edge of the fill as it draws.
+   Width-based animation (not scaleX) so the leading dot stays unscaled. */
+.method-rail-fill::after{
+  content:"";
+  position:absolute;top:50%;right:-8px;transform:translateY(-50%);
+  width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle, #fff 0%, var(--lime) 45%, var(--lime-2) 100%);
+  box-shadow:
+    0 0 12px rgba(200,255,61,0.75),
+    0 0 28px rgba(158,212,32,0.4),
+    0 0 0 4px rgba(200,255,61,0.18);
+  z-index:3;
+  opacity:0;
+}
+.method-wrap.js-anim:not(.is-in) .method-rail-fill{width:0}
+.method-wrap.js-anim:not(.is-in) .method-rail-fill::after{opacity:0}
+.method-wrap.js-anim.is-in .method-rail-fill{
+  width:100%;
+  transition:width 2.1s cubic-bezier(.55,0,.35,1);
+}
+.method-wrap.js-anim.is-in .method-rail-fill::after{
+  opacity:1;
+  transition:opacity .25s ease;
+}
+/* Scanner fades out when it reaches the milestone */
+.method-wrap.js-anim.is-in .method-rail-fill::after{
+  animation:method-scanner-end .4s ease 2.1s forwards;
+}
+@keyframes method-scanner-end{
+  0%{opacity:1;transform:translateY(-50%) scale(1)}
+  60%{opacity:1;transform:translateY(-50%) scale(2.2)}
+  100%{opacity:0;transform:translateY(-50%) scale(2.8)}
+}
+
+.method-rail-nodes{
+  position:relative;height:60px;
+}
+.method-node{
+  position:absolute;top:0;
+  left:calc(28px + (100% - 56px) * var(--at) / 100);
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.method-node-dot{
+  width:11px;height:11px;border-radius:50%;
+  /* default ENABLED state (dark ink). Calm, monochromatic with the rail. */
+  background:var(--ink);
+  border:2px solid var(--ink);
+  box-shadow:0 0 0 4px rgba(12,13,10,0.06);
+  margin-top:12px;
+}
+/* JS-driven entry: each dot pops with a scale+halo as the scanner passes its
+   position. Delays are computed from the node's --at (0/25/50/75/100). */
+.method-wrap.js-anim:not(.is-in) .method-node-dot{
+  background:#fff;
+  border-color:rgba(12,13,10,0.28);
+  box-shadow:none;
+  transform:scale(0.8);
+}
+.method-wrap.js-anim.is-in .method-node-dot{
+  animation:method-node-pop .65s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes method-node-pop{
+  0%{
+    background:#fff;border-color:rgba(12,13,10,0.28);
+    box-shadow:none;
+    transform:scale(0.8);
+  }
+  55%{
+    background:var(--ink);border-color:var(--ink);
+    box-shadow:0 0 0 9px rgba(12,13,10,0.10);
+    transform:scale(1.35);
+  }
+  100%{
+    background:var(--ink);border-color:var(--ink);
+    box-shadow:0 0 0 4px rgba(12,13,10,0.06);
+    transform:scale(1);
+  }
+}
+/* Final milestone (J+30) keeps the lime accent, softer halo */
+.method-node-dot--end{
+  width:14px;height:14px;
+  margin-top:10.5px;
+  background:var(--lime-deep);
+  border-color:var(--lime-deep);
+  box-shadow:0 0 0 4px rgba(90,122,13,0.18), 0 0 12px rgba(158,212,32,0.25);
+}
+.method-wrap.js-anim:not(.is-in) .method-node-dot--end{
+  background:#fff;border-color:rgba(12,13,10,0.28);box-shadow:none;
+}
+.method-wrap.js-anim.is-in .method-node-dot--end{
+  animation:method-milestone-pop .9s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes method-milestone-pop{
+  0%{
+    background:#fff;border-color:rgba(12,13,10,0.28);
+    box-shadow:none;
+    transform:scale(0.5);
+  }
+  55%{
+    background:var(--lime);border-color:var(--lime);
+    box-shadow:0 0 0 14px rgba(200,255,61,0.32), 0 0 38px rgba(158,212,32,0.7);
+    transform:scale(1.6);
+  }
+  100%{
+    background:var(--lime-deep);border-color:var(--lime-deep);
+    box-shadow:0 0 0 4px rgba(90,122,13,0.18), 0 0 12px rgba(158,212,32,0.25);
+    transform:scale(1);
+  }
+}
+/* Stagger : roughly synced to the 2.1 s scanner sweep */
+.method-node:nth-child(1) .method-node-dot{animation-delay:0s}
+.method-node:nth-child(2) .method-node-dot{animation-delay:.45s}
+.method-node:nth-child(3) .method-node-dot{animation-delay:.95s}
+.method-node:nth-child(4) .method-node-dot{animation-delay:1.45s}
+.method-node:nth-child(5) .method-node-dot{animation-delay:1.95s}
+
+.method-node-lbl{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.22em;
+  color:#7a7d72;font-weight:500;text-transform:uppercase;
+  white-space:nowrap;
+}
+/* Labels fade up just after their dot pops */
+.method-wrap.js-anim:not(.is-in) .method-node-lbl{opacity:0;transform:translateY(4px)}
+.method-wrap.js-anim.is-in .method-node-lbl{
+  opacity:1;transform:translateY(0);
+  transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.method-node:nth-child(1) .method-node-lbl{transition-delay:.30s}
+.method-node:nth-child(2) .method-node-lbl{transition-delay:.75s}
+.method-node:nth-child(3) .method-node-lbl{transition-delay:1.25s}
+.method-node:nth-child(4) .method-node-lbl{transition-delay:1.75s}
+.method-node:nth-child(5) .method-node-lbl{transition-delay:2.25s}
+
+/* Cards grid - 5 columns, equal width */
+.method-grid{
   display:grid;grid-template-columns:repeat(5, 1fr);
-  gap:0;position:relative;
-  border-top:1px solid rgba(12,13,10,0.18);
-  border-bottom:1px solid rgba(12,13,10,0.18);
+  gap:14px;
 }
-.method-phase{
-  padding:36px 24px;position:relative;
-  border-right:1px solid rgba(12,13,10,0.10);
-  background:transparent;
-  transition:background .25s ease;
+.method-card{
+  padding:28px 22px 26px;
+  border:1px solid rgba(12,13,10,0.10);
+  border-radius:14px;
+  background:rgba(241,236,224,0.4);
+  display:flex;flex-direction:column;
+  /* Hover transitions only - short, no delay, fluid. The entry is handled
+     by a @keyframes animation below so the cascade delay never leaks into
+     hover behaviour. */
+  transition:background .3s ease, border-color .3s ease, transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
 }
-.method-phase:last-child{border-right:none}
-.method-phase:hover{background:rgba(12,13,10,0.04)}
-.phase-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+/* Default state when JS is enabling the entry animation: hidden. */
+.method-wrap.js-anim:not(.is-in) .method-card{
+  opacity:0;transform:translateY(18px);
+}
+/* Entry: keyframe animation with per-card stagger via --i, completely
+   independent of the transition above. Once finished, hover transitions
+   take over instantly. */
+.method-wrap.js-anim.is-in .method-card{
+  animation:method-card-in .7s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay:calc(0.18s + 0.10s * var(--i, 0));
+}
+@keyframes method-card-in{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.method-card:hover{
+  background:#fff;
+  border-color:rgba(12,13,10,0.18);
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(12,13,10,0.08);
+}
+.method-card-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
   margin-bottom:18px;
 }
-.phase-num{
-  font-family:var(--serif);font-style:italic;font-size:48px;line-height:1;
-  color:var(--ink);letter-spacing:-0.03em;
-  /* extra right padding so the italic slant doesn't get clipped by background-clip:text */
+.method-card-num{
+  font-family:var(--display);font-weight:400;font-style:italic;
+  font-size:34px;line-height:1;letter-spacing:-0.02em;
+  color:var(--ink);
   padding-right:0.12em;margin-right:-0.12em;
-  background:linear-gradient(95deg, var(--ink) 0%, var(--ink) 60%, #9ca096 100%);
+  background:linear-gradient(95deg, var(--ink) 0%, var(--ink) 50%, #9ca096 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.phase-when{
+.method-card-when{
   font-family:var(--mono);font-size:10px;letter-spacing:0.22em;
-  color:#5a5d54;text-transform:uppercase;font-weight:500;
+  color:#7a7d72;text-transform:uppercase;font-weight:500;
 }
-.method-phase h3{
-  font-family:var(--serif);font-weight:400;
-  font-size:22px;line-height:1.15;letter-spacing:-0.01em;
+.method-card h3{
+  font-family:var(--display);font-weight:400;
+  font-size:20px;line-height:1.15;letter-spacing:-0.01em;
   color:var(--ink);margin-bottom:12px;
 }
-.method-phase p{
-  font:400 14px/1.55 var(--sans);color:#3a3d36;
+.method-card .dot-acc{color:var(--lime-deep);font-style:italic}
+.method-card p{
+  font:400 13.5px/1.55 var(--sans);color:#3a3d36;
 }
+
+.method-card--milestone{
+  background:linear-gradient(180deg, rgba(200,255,61,0.10) 0%, rgba(200,255,61,0.03) 100%);
+  border-color:rgba(200,255,61,0.30);
+}
+.method-card--milestone h3 .dot-acc{color:var(--lime-2)}
+.method-card--milestone:hover{
+  background:linear-gradient(180deg, rgba(200,255,61,0.16) 0%, rgba(200,255,61,0.04) 100%);
+  border-color:rgba(200,255,61,0.50);
+  box-shadow:0 14px 32px rgba(200,255,61,0.18);
+}
+
+/* respect prefers-reduced-motion */
+@media (prefers-reduced-motion:reduce){
+  .method-rail-fill,
+  .method-node-dot,
+  .method-card{transition:none !important}
+  .method-rail-fill{transform:scaleX(1)}
+  .method-node-dot{background:var(--lime);border-color:var(--lime)}
+  .method-card{opacity:1;transform:none}
+}
+
+/* =========================================================
+   COMPARATIF - Mad Makers vs Agence vs Freelance
+   ========================================================= */
+.compare-section{padding:140px 32px;border-top:1px solid var(--line)}
+.compare-table{
+  margin-top:60px;
+  border-top:1px solid var(--line-2);
+}
+.compare-row{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:0;
+  border-bottom:1px solid var(--line);
+  align-items:stretch;
+}
+.compare-cell{
+  padding:22px 20px;
+  font:400 14px/1.5 var(--sans);
+  color:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.compare-cell .dim{color:var(--fg-mute);font-size:12px}
+.compare-criterion{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+  color:var(--fg-dim);text-transform:uppercase;font-weight:500;
+  background:rgba(20,21,17,0.4);
+  border-right:1px solid var(--line-2);
+}
+.compare-mm{
+  background:linear-gradient(180deg, rgba(200,255,61,0.08) 0%, rgba(200,255,61,0.03) 100%);
+  border-left:2px solid var(--lime);
+  border-right:1px solid var(--line-2);
+  color:var(--cream);
+  position:relative;
+}
+.compare-mm strong{color:var(--lime);font-weight:500}
+.compare-other{
+  border-right:1px solid var(--line-2);
+  color:var(--fg-dim);
+}
+.compare-row:last-child > .compare-other:last-child,
+.compare-row:last-child > .compare-mm{border-bottom:none}
+.compare-header{
+  border-bottom:1px solid var(--line-2);
+}
+.compare-header .compare-cell{padding:16px 20px}
+.compare-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;font-weight:600;
+}
+.compare-header .compare-mm .compare-tag{color:var(--lime)}
+.compare-header .compare-mm .compare-tag .sq{width:8px;height:8px;background:var(--lime);flex-shrink:0}
+.compare-header .compare-other .compare-tag{color:var(--fg-mute)}
 
 /* =========================================================
    GARANTIE / PROMESSE
@@ -1193,8 +1626,8 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
   color:var(--lime);font-weight:500;
 }
 .q-text{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(20px, 1.9vw, 26px);line-height:1.25;
+  font-family:var(--sans);font-weight:500;
+  font-size:clamp(15px, 1.35vw, 18px);line-height:1.4;
   color:var(--cream);transition:color .25s ease;
 }
 .faq-item:hover .q-text{
@@ -1234,19 +1667,13 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 }
 
 /* =========================================================
-   RESPONSIVE — new sections
+   RESPONSIVE - new sections
    ========================================================= */
 @media (max-width:880px){
   .fit-grid{grid-template-columns:1fr;gap:18px}
-  .method-track{
-    grid-template-columns:1fr;border:none;
-  }
-  .method-track::before{display:none}
-  .method-phase{
-    border-right:none;border-bottom:1px solid rgba(12,13,10,0.10);
-    padding:32px 4px;
-  }
-  .method-phase:last-child{border-bottom:none}
+  .method-grid{grid-template-columns:1fr;gap:12px}
+  .method-rail{display:none}
+  .compare-header{display:none}
   .guarantee-section{padding:120px 22px}
   .guarantee-card{padding:54px 28px 40px}
   .faq-section{padding:100px 22px}
@@ -1254,7 +1681,263 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
   .faq-right{padding-bottom:0}
   .faq-item summary{grid-template-columns:46px 1fr 36px;gap:14px;padding:22px 0}
   .faq-item[open] summary{padding:22px 14px}
-  .q-text{font-size:18px;line-height:1.3}
+  .q-text{font-size:15px;line-height:1.4}
   .q-answer{padding:0 14px 24px 60px}
+}
+
+/* =========================================================
+   MOBILE NAV (hamburger) — base structure visible everywhere
+   ========================================================= */
+/* Specificity bumped (.nav-links .nav-mobile-cta = 0,2,0) so it beats the
+   `.nav-links a` rule (0,1,1) and keeps the mobile CTA hidden on desktop. */
+.nav-links .nav-mobile-cta{display:none}
+.nav-burger{
+  display:none; /* shown only on mobile via media query below */
+  position:relative;
+  width:38px;height:38px;
+  border:1px solid var(--line-2);border-radius:999px;
+  background:rgba(20,21,17,0.6);
+  cursor:pointer;padding:0;
+  transition:background .2s ease, border-color .2s ease;
+}
+.nav-burger:hover{background:rgba(241,236,224,0.06)}
+.nav-burger span{
+  position:absolute;left:9px;right:9px;height:2px;background:var(--cream);
+  border-radius:2px;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1), opacity .25s ease, top .35s cubic-bezier(.2,.7,.2,1);
+}
+.nav-burger span:nth-child(1){top:12px}
+.nav-burger span:nth-child(2){top:18px}
+.nav-burger span:nth-child(3){top:24px}
+.nav.nav-open .nav-burger span:nth-child(1){top:18px;transform:rotate(45deg)}
+.nav.nav-open .nav-burger span:nth-child(2){opacity:0}
+.nav.nav-open .nav-burger span:nth-child(3){top:18px;transform:rotate(-45deg)}
+
+body.nav-locked{overflow:hidden}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS — tablet (≤880px) and mobile (≤600px)
+   Cleans up section padding, sections layout, strip marquee, table,
+   footer, and footer-cta for narrow viewports.
+   ========================================================= */
+@media (max-width:880px){
+  /* ---- Section padding tighter on tablet ---- */
+  section.dark, section.cream{padding:80px 22px}
+  .compare-section{padding:80px 22px}
+  .container{max-width:100%}
+  /* ---- Manifesto: stack the box vs text ---- */
+  .stats-row{grid-template-columns:1fr;gap:40px}
+  .orb-wrap{height:300px}
+  .stats{flex-wrap:wrap;gap:32px}
+  /* ---- Tool logos row: stack label above tools ---- */
+  .logos-row{grid-template-columns:1fr;gap:24px;margin-top:80px}
+  .logos-row .lab{max-width:none}
+  /* ---- Projects grid -> single column ---- */
+  .proj-grid{grid-template-columns:1fr;gap:14px}
+  .proj-card.featured{grid-column:auto;grid-row:auto}
+  .proj-head{flex-direction:column;align-items:flex-start;gap:14px}
+  .proj-head .right{padding-bottom:0}
+  /* ---- Duo banner pill: shrink + stack content ---- */
+  .duo-banner{padding:0 0 40px}
+  .duo-banner .pill{
+    flex-direction:column;text-align:center;gap:18px;
+    padding:32px 24px;border-radius:24px;
+  }
+  .duo-banner .pill h2{font-size:22px;line-height:1.25}
+  .duo-banner .pill .mk-orb{margin:0 auto}
+  .duo-cards{grid-template-columns:1fr;gap:14px}
+}
+
+/* ---- Tablet + Mobile (≤900px): hamburger nav kicks in here so the inline
+        nav-links never get cropped. The CTA button is hidden too and a CTA
+        appears at the bottom of the open menu instead. ---- */
+@media (max-width:900px){
+  .nav{padding:6px 6px 6px 14px;width:calc(100% - 24px)}
+  /* Hide the desktop CTA — a CTA is added at the bottom of the dropdown */
+  .nav .nav-cta{display:none}
+  /* Always show the brand wordmark on touch viewports */
+  .brand-name{
+    max-width:12em;margin-left:10px;opacity:1;
+    transform:translateX(0);pointer-events:auto;
+    font-size:15px;
+  }
+  /* Burger always visible at this breakpoint */
+  .nav-burger{display:block}
+  /* Dropdown menu */
+  .nav-links{
+    position:fixed;top:72px;left:12px;right:12px;
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:10px 14px 18px;
+    background:rgba(12,13,10,0.96);
+    backdrop-filter:blur(20px) saturate(160%);
+    -webkit-backdrop-filter:blur(20px) saturate(160%);
+    border:1px solid var(--line-2);
+    border-radius:22px;
+    z-index:60;
+    transform:translateY(-12px);opacity:0;pointer-events:none;
+    transition:opacity .3s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+    box-shadow:0 30px 60px rgba(0,0,0,0.55);
+  }
+  .nav.nav-open .nav-links{opacity:1;transform:translateY(0);pointer-events:auto}
+  .nav-links a{
+    padding:14px 12px;font-size:17px;font-weight:500;
+    border-bottom:1px solid var(--line);border-radius:0;
+  }
+  .nav-links a:last-of-type{border-bottom:none}
+  .nav-dot{display:none}
+  /* CTA pinned at the bottom of the dropdown */
+  .nav-links .nav-mobile-cta{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin-top:14px;padding:14px 18px;
+    background:var(--cream);color:var(--ink) !important;
+    border-radius:999px;
+    font:500 14px/1 var(--sans);text-decoration:none;
+    border:none;border-bottom:none;
+  }
+  .nav-links .nav-mobile-cta::after{content:"↗";font-size:14px}
+
+  /* ---- Hero strip: marquee infini avec fade sur les côtés ---- */
+  .hero-strip{padding:14px 0}
+  .hero-strip::before,.hero-strip::after{width:48px}
+  .hero-strip-track{
+    flex-wrap:nowrap;
+    overflow:hidden;
+    width:max-content;
+    animation:hero-strip-marquee 32s linear infinite;
+    gap:0;
+  }
+  .hero-strip-item{
+    flex-shrink:0;gap:8px;padding:0 28px;
+    border-right:1px solid var(--line);
+  }
+  .hs-num{font-size:22px}
+  .hs-lab{font-size:9px;letter-spacing:0.18em}
+  .hs-dot{display:none}
+  @keyframes hero-strip-marquee{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+
+  /* ---- Hero text scaled down ---- */
+  .hero{padding:120px 18px 60px;min-height:auto}
+  .hero h1{font-size:clamp(32px,8vw,46px);max-width:none}
+  .hero-sub{font-size:15px;max-width:32ch}
+  .feature-card-wrap{grid-template-columns:1fr;gap:12px;margin-top:48px;max-width:none}
+
+  /* ---- Sections : compact padding on mobile ---- */
+  section.dark, section.cream{padding:60px 18px}
+  .compare-section,
+  .guarantee-section,
+  .faq-section{padding:60px 18px}
+  .hero-strip{padding:14px 0}
+  .stats-row{gap:32px}
+  .stats{gap:24px}
+  .stat .num{font-size:38px}
+  .stat .lab{font-size:12px}
+  .orb-wrap{height:240px}
+
+  /* ---- Big titles smaller still ---- */
+  .big-title{font-size:clamp(24px,7vw,34px)}
+  .duo-head{font-size:clamp(20px,5.6vw,26px)}
+  .footer-cta h2{font-size:clamp(28px,8vw,40px)}
+
+  /* ---- Services scroller card sizing ---- */
+  .svc-row{flex:0 0 260px}
+
+  /* ---- COMPARATIF : transformed into stacked offer cards ---- */
+  .compare-table{
+    margin-top:32px;
+    border:none;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  /* Hide the header row entirely on mobile */
+  .compare-row.compare-header{display:none}
+  /* Each row becomes a horizontal comparison card */
+  .compare-row{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
+    border:1px solid var(--line-2);border-radius:12px;
+    overflow:hidden;
+    background:rgba(20,21,17,0.4);
+    position:relative;
+  }
+  /* Make criterion (1st col) span full row at the top */
+  .compare-row > .compare-criterion{
+    grid-column:1 / -1;
+    background:rgba(12,13,10,0.6);
+    border-bottom:1px solid var(--line-2);
+    border-right:none;
+    padding:12px 16px;
+    font-size:10px;
+  }
+  /* Mad Makers cell stands out */
+  .compare-row > .compare-mm{
+    grid-column:1 / -1;
+    border-bottom:1px solid var(--line-2);
+    border-left:none;border-right:none;
+    padding:14px 16px;
+  }
+  .compare-row > .compare-mm::before{
+    content:"MAD MAKERS";
+    display:block;
+    font:500 9px/1 var(--mono);letter-spacing:0.22em;
+    color:var(--lime);margin-bottom:8px;text-transform:uppercase;
+  }
+  /* Other two columns stay side by side */
+  .compare-row > .compare-other{
+    border-right:1px solid var(--line);border-bottom:none;
+    padding:14px 12px;font-size:13px;
+  }
+  .compare-row > .compare-other:last-child{border-right:none}
+  .compare-row > .compare-other:nth-child(3)::before{
+    content:"AGENCE CLASSIQUE";
+    display:block;
+    font:500 9px/1 var(--mono);letter-spacing:0.18em;
+    color:var(--fg-mute);margin-bottom:8px;text-transform:uppercase;
+  }
+  .compare-row > .compare-other:nth-child(4)::before{
+    content:"FREELANCE";
+    display:block;
+    font:500 9px/1 var(--mono);letter-spacing:0.18em;
+    color:var(--fg-mute);margin-bottom:8px;text-transform:uppercase;
+  }
+  /* Restore the header row hiding (was nth-child) — already hidden via .compare-header */
+
+  /* ---- FOOTER CTA : compact, gradient fallback if video hidden ---- */
+  .footer-cta{padding:80px 18px}
+  .footer-cta h2{margin-bottom:14px}
+  .footer-cta p{font-size:14px;padding:0 8px}
+  .footer-cta-buttons{flex-direction:column;gap:14px;margin-top:28px}
+  .footer-cta-buttons .btn-dark{width:100%;text-align:center}
+  .footer-cta-buttons .link{margin:0 auto}
+
+  /* ---- FOOTER : compact accordion layout ---- */
+  .foot{padding:48px 18px 24px}
+  .foot-grid{
+    grid-template-columns:1fr;gap:0;
+  }
+  .foot-brand{padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .foot-brand .mk{width:44px;height:44px;margin-bottom:14px}
+  .foot-brand .addr{font-size:13px}
+  .foot-brand .tag{margin-top:14px;font-size:12px}
+  /* Each column becomes a clickable accordion */
+  details.foot-col{
+    border-bottom:1px solid var(--line);
+  }
+  details.foot-col > summary{
+    cursor:pointer;padding:16px 0;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  details.foot-col > summary h6{margin-bottom:0;font-size:14px}
+  details.foot-col .foot-toggle{display:inline-block;font-size:20px;color:var(--lime)}
+  details.foot-col[open] .foot-toggle{transform:rotate(45deg)}
+  details.foot-col > ul{padding:0 0 16px}
+  /* Foot-bottom : compact */
+  .foot-bottom{margin-top:24px;padding-top:18px;flex-direction:column;align-items:flex-start;gap:14px;text-align:left;font-size:11px}
+  .foot-bottom .social{gap:8px}
+
+  /* ---- Guarantee + FAQ tighter ---- */
+  .guarantee-card{padding:48px 22px 32px;border-radius:18px}
+  .guarantee-card .seal{width:72px;height:72px;top:-36px}
+  .guarantee-body p{font-size:15px}
 }
 
