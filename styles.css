@@ -113,83 +113,68 @@ img{max-width:100%;display:block}
 }
 
 /* Liquid glass - primary nav button (cream-tinted glass) */
+/* Pill button — flat-inset style (Linear/Vercel-inspired, anti-skeuomorphic) */
 .nav-cta{
-  position:relative;overflow:hidden;
-  padding:7px 14px 7px 12px;font-size:13px;font-weight:500;
+  position:relative;
+  padding:8px 16px 8px 14px;font-size:13px;font-weight:500;
   color:var(--ink);border-radius:999px;
   display:inline-flex;align-items:center;gap:7px;
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, rgba(255,255,255,0.98) 0%, rgba(255,253,247,0.85) 50%, rgba(225,219,205,0.78) 100%);
-  border:1px solid rgba(255,255,255,0.85);
-  backdrop-filter:blur(20px) saturate(180%);
-  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  background:linear-gradient(180deg, #fbfaf6 0%, #ebe5d6 100%);
+  border:1px solid rgba(0,0,0,0.10);
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(0,0,0,0.06),
-    inset 0 0 18px rgba(255,255,255,0.4),
-    0 8px 18px rgba(0,0,0,0.22);
-  transition:transform .3s cubic-bezier(.2,.7,.2,1), background .3s ease, box-shadow .3s ease;
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    inset 0 -1px 0 rgba(0,0,0,0.04),
+    0 1px 2px rgba(0,0,0,0.04);
+  transition:background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .nav-cta-icon{
   width:14px;height:14px;flex-shrink:0;color:var(--ink);
-  transition:transform .35s cubic-bezier(.2,.7,.2,1);
-}
-.nav-cta:hover .nav-cta-icon{transform:scale(1.08) rotate(-3deg)}
-.nav-cta::after{
-  content:"";position:absolute;top:0;left:-30%;height:100%;width:30%;
-  background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
-  transform:skewX(-18deg);
-  pointer-events:none;opacity:0;
-  transition:transform .9s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+  transition:color .2s ease;
 }
 .nav-cta:hover{
-  transform:translateY(-2px);
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, #fff 0%, var(--cream) 70%);
+  background:linear-gradient(180deg, #ffffff 0%, #e8e1cf 100%);
+  border-color:rgba(0,0,0,0.16);
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    0 0 0 3px rgba(200,255,61,0.22),
-    0 14px 32px rgba(0,0,0,0.30);
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 0 0 1px rgba(200,255,61,0.18),
+    0 0 0 3px rgba(200,255,61,0.08);
 }
-.nav-cta:hover::after{opacity:1;transform:skewX(-18deg) translateX(420%)}
+.nav-cta:active{
+  background:linear-gradient(180deg, #e8e2d2 0%, #efe9dc 100%);
+  box-shadow:
+    inset 0 1.5px 3px rgba(0,0,0,0.06),
+    inset 0 -1px 0 rgba(255,255,255,0.20);
+}
 .nav-cta .arrow{display:inline-block;transform:rotate(-45deg);font-weight:600;position:relative;z-index:1}
 
-/* Liquid glass - dark variant (use on green/dark surfaces) */
+/* Dark glass — flat-inset variant for green/dark surfaces */
 .glass-dark{
-  position:relative;overflow:hidden;
-  background:
-    radial-gradient(ellipse 110% 75% at 50% 0%, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.10) 45%, transparent 100%),
-    linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.10) 100%);
-  backdrop-filter:blur(30px) saturate(220%) brightness(1.12);
-  -webkit-backdrop-filter:blur(30px) saturate(220%) brightness(1.12);
-  border:1px solid rgba(255,255,255,0.46);
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,0.30);
-  /* lighter shadow at rest - no big halo / frame around the button */
+  position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.08) 100%);
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--cream);
+  text-shadow:0 1px 2px rgba(0,0,0,0.25);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.55),
-    inset 0 -1px 0 rgba(0,0,0,0.18);
-  transition:transform .3s cubic-bezier(.2,.7,.2,1), background .3s ease, box-shadow .3s ease, border-color .3s ease;
-}
-.glass-dark::after{
-  content:"";position:absolute;top:0;left:-30%;height:100%;width:30%;
-  background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.32) 50%, transparent 100%);
-  transform:skewX(-18deg);
-  pointer-events:none;opacity:0;
-  transition:transform .9s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    inset 0 -1px 0 rgba(0,0,0,0.18),
+    0 1px 2px rgba(0,0,0,0.10);
+  transition:background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .glass-dark:hover{
-  transform:translateY(-2px);
-  background:
-    radial-gradient(ellipse 110% 75% at 50% 0%, rgba(255,255,255,0.50) 0%, rgba(200,255,61,0.18) 50%, transparent 100%),
-    linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 50%, rgba(0,0,0,0.10) 100%);
-  border-color:rgba(200,255,61,0.65);
-  /* drop shadow + lime halo only on hover, lighter than before */
+  background:linear-gradient(180deg, rgba(200,255,61,0.05) 0%, rgba(0,0,0,0.08) 100%);
+  border-color:rgba(200,255,61,0.32);
+  color:var(--lime);
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,0.85),
-    inset 0 0 24px rgba(200,255,61,0.10),
-    0 0 0 2px rgba(200,255,61,0.14),
-    0 14px 32px rgba(200,255,61,0.18);
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 0 0 1px rgba(200,255,61,0.15),
+    0 0 0 3px rgba(200,255,61,0.07);
 }
-.glass-dark:hover::after{opacity:1;transform:skewX(-18deg) translateX(420%)}
+.glass-dark:active{
+  background:linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.06) 100%);
+  box-shadow:
+    inset 0 1.5px 3px rgba(0,0,0,0.20),
+    inset 0 -1px 0 rgba(255,255,255,0.04);
+}
 
 /* ================ HERO ================ */
 .hero{
@@ -2168,7 +2153,7 @@ html body #tarteaucitronRoot .tarteaucitronCross{display:none !important;}
 
 /* ─── Hiérarchie : 1 bouton par ligne, taille décroissante ─── */
 
-/* 1. "Tout accepter" (primary) — pill blanc lumineux, full width */
+/* 1. "Tout accepter" (primary) — pill flat-inset, full width */
 #tarteaucitronRoot #tarteaucitronAllAllowed,
 #tarteaucitronRoot #tarteaucitronPersonalize2{
   order:1 !important;
@@ -2190,28 +2175,33 @@ html body #tarteaucitronRoot .tarteaucitronCross{display:none !important;}
   box-sizing:border-box !important;
   cursor:pointer;
   position:relative;
-  overflow:hidden;
   text-decoration:none !important;
   white-space:nowrap;
   text-shadow:none !important;
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, rgba(255,255,255,0.98) 0%, rgba(255,253,247,0.85) 50%, rgba(225,219,205,0.78) 100%) !important;
+  background:linear-gradient(180deg, #fbfaf6 0%, #ebe5d6 100%) !important;
   color:#0c0d0a !important;
-  border:1px solid rgba(255,255,255,0.85) !important;
+  border:1px solid rgba(0,0,0,0.10) !important;
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(0,0,0,0.06),
-    inset 0 0 18px rgba(255,255,255,0.4),
-    0 8px 18px rgba(0,0,0,0.22) !important;
-  transition:transform .25s cubic-bezier(.2,.7,.2,1), background .25s ease, box-shadow .25s ease;
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    inset 0 -1px 0 rgba(0,0,0,0.04),
+    0 1px 2px rgba(0,0,0,0.04) !important;
+  transition:background .2s ease, border-color .2s ease, box-shadow .2s ease !important;
 }
 #tarteaucitronRoot #tarteaucitronAllAllowed:hover,
 #tarteaucitronRoot #tarteaucitronPersonalize2:hover{
-  transform:translateY(-2px);
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, #fff 0%, #f1ece0 70%) !important;
+  background:linear-gradient(180deg, #ffffff 0%, #e8e1cf 100%) !important;
+  border-color:rgba(0,0,0,0.16) !important;
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    0 0 0 3px rgba(200,255,61,0.22),
-    0 14px 32px rgba(0,0,0,0.30) !important;
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 0 0 1px rgba(200,255,61,0.18),
+    0 0 0 3px rgba(200,255,61,0.07) !important;
+}
+#tarteaucitronRoot #tarteaucitronAllAllowed:active,
+#tarteaucitronRoot #tarteaucitronPersonalize2:active{
+  background:linear-gradient(180deg, #e8e2d2 0%, #efe9dc 100%) !important;
+  box-shadow:
+    inset 0 1.5px 3px rgba(0,0,0,0.06),
+    inset 0 -1px 0 rgba(255,255,255,0.20) !important;
 }
 
 /* 2. "Tout refuser" (secondary) — pill outline, full width */
@@ -2324,28 +2314,34 @@ html body #tarteaucitronRoot .tarteaucitronCross{display:none !important;}
   transform:none !important;
 }
 
-/* "Accepter tout" — pill blanc lumineux (style .nav-cta).
+/* "Accepter tout" — flat-inset pill (cohérent avec .nav-cta).
    Tarteaucitron émet #tarteaucitronPersonalize2 (rendu Accept) ou #tarteaucitronAllAllowed selon config. */
 #tarteaucitronRoot #tarteaucitronAllAllowed,
 #tarteaucitronRoot #tarteaucitronPersonalize2{
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, rgba(255,255,255,0.98) 0%, rgba(255,253,247,0.85) 50%, rgba(225,219,205,0.78) 100%) !important;
+  background:linear-gradient(180deg, #fbfaf6 0%, #ebe5d6 100%) !important;
   color:#0c0d0a !important;
-  border:1px solid rgba(255,255,255,0.85) !important;
+  border:1px solid rgba(0,0,0,0.10) !important;
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    inset 0 -1px 0 rgba(0,0,0,0.06),
-    inset 0 0 18px rgba(255,255,255,0.4),
-    0 8px 18px rgba(0,0,0,0.22) !important;
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    inset 0 -1px 0 rgba(0,0,0,0.04),
+    0 1px 2px rgba(0,0,0,0.04) !important;
 }
 #tarteaucitronRoot #tarteaucitronAllAllowed:hover,
 #tarteaucitronRoot #tarteaucitronPersonalize2:hover{
-  transform:translateY(-2px);
-  background:radial-gradient(ellipse 100% 70% at 50% 0%, #fff 0%, #f1ece0 70%) !important;
+  background:linear-gradient(180deg, #ffffff 0%, #e8e1cf 100%) !important;
   color:#0c0d0a !important;
+  border-color:rgba(0,0,0,0.16) !important;
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,1),
-    0 0 0 3px rgba(200,255,61,0.22),
-    0 14px 32px rgba(0,0,0,0.30) !important;
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 0 0 1px rgba(200,255,61,0.18),
+    0 0 0 3px rgba(200,255,61,0.07) !important;
+}
+#tarteaucitronRoot #tarteaucitronAllAllowed:active,
+#tarteaucitronRoot #tarteaucitronPersonalize2:active{
+  background:linear-gradient(180deg, #e8e2d2 0%, #efe9dc 100%) !important;
+  box-shadow:
+    inset 0 1.5px 3px rgba(0,0,0,0.06),
+    inset 0 -1px 0 rgba(255,255,255,0.20) !important;
 }
 
 /* "Refuser tout" + "Personnaliser" — outline cream, hover lime */
