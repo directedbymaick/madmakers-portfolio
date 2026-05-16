@@ -16,7 +16,7 @@ window.MM_PROJECTS = {
     stack: ['Vite 5', 'Three.js', 'GSAP + ScrollTrigger', 'Lenis', 'WebGL2', 'JavaScript ESM'],
     cover: {
       type: 'video',
-      src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/fight%20epic%20battles.mp4',
+      src: 'https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/fight%20epic%20battles.mp4',
       poster: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero-poster.jpg'
     },
     intro: 'Site one-pager cinématique + sous-pages CMS-style explorant l\'univers de Runeterra. Direction artistique brutaliste-éditoriale avec interface HUD inspirée des launchers MMO, animations scroll-driven, simulations WebGL et vidéos plein-cadre. 13 régions, 6 races jouables, carte 3D temps réel.',
@@ -50,8 +50,8 @@ window.MM_PROJECTS = {
       { type: 'image', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/section%2007%20-%20features.png', caption: '07 · Features' },
       { type: 'image', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/section%2007%20bis%20-%20features.png', caption: '07 bis, Features detail' },
       { type: 'image', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/section%2008%20-%20contact.png', caption: '08 · CTA · The Journey Begins' },
-      { type: 'video', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/yordle%20race%20lol.mp4', caption: 'Race · Yordle (clip page race)' },
-      { type: 'video', src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/vastayan%20race%20lol.mp4', caption: 'Race · Vastaya (clip page race)' }
+      { type: 'video', src: 'https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/yordle%20race%20lol.mp4', caption: 'Race · Yordle (clip page race)' },
+      { type: 'video', src: 'https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/vastayan%20race%20lol.mp4', caption: 'Race · Vastaya (clip page race)' }
     ],
     quote: {
       text: 'Built with care by Mad Makers - no framework, just the platform.',
