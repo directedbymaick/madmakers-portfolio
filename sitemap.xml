@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
 
   <url>
     <loc>https://www.mad-makers.fr/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.mad-makers.fr/assets/og-home.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mad-makers.fr/assets/sophie-marchand/hero-cabinet.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.mad-makers.fr/riot-mmo-cinematic</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mad-makers.fr/assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero-poster.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.mad-makers.fr/la-papiche-bistrot</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mad-makers.fr/assets/papiche-concept/hero-poster.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.mad-makers.fr/dr-sophie-marchand</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mad-makers.fr/assets/sophie-marchand/hero.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.mad-makers.fr/mentions-legales</loc>

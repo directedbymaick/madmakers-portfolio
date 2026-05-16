@@ -112,19 +112,38 @@ for (const id of ids) {
 }
 
 // --- Rebuild sitemap.xml from PROJECTS data ---
+// Per-project image associated with the URL (used in sitemap to help Google Images).
+// Resolves to a project's cover poster (which we already optimized for the page).
+const projectImage = (id, data) => {
+  if (!data.cover) return null;
+  const src = data.cover.type === 'video'
+    ? data.cover.poster
+    : data.cover.src;
+  if (!src || /^https?:/i.test(src)) return null;
+  return `${SITE_ORIGIN}/${src}`;
+};
+
 const sitemapEntries = [
   {
     loc: `${SITE_ORIGIN}/`,
     lastmod: TODAY,
     changefreq: 'monthly',
-    priority: '1.0'
+    priority: '1.0',
+    images: [
+      { loc: `${SITE_ORIGIN}/assets/og-home.jpg` },
+      { loc: `${SITE_ORIGIN}/assets/sophie-marchand/hero-cabinet.png` }
+    ]
   },
-  ...published.map(({ slug }) => ({
-    loc: `${SITE_ORIGIN}/${slug}`,
-    lastmod: TODAY,
-    changefreq: 'monthly',
-    priority: '0.8'
-  })),
+  ...published.map(({ id, slug }) => {
+    const img = projectImage(id, PROJECTS[id]);
+    return {
+      loc: `${SITE_ORIGIN}/${slug}`,
+      lastmod: TODAY,
+      changefreq: 'monthly',
+      priority: '0.8',
+      images: img ? [{ loc: img }] : []
+    };
+  }),
   {
     loc: `${SITE_ORIGIN}/mentions-legales`,
     lastmod: TODAY,
@@ -139,24 +158,36 @@ const sitemapEntries = [
   }
 ];
 
-const sitemap = [
-  '<?xml version="1.0" encoding="UTF-8"?>',
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  '',
-  ...sitemapEntries.map(e => [
+const renderEntry = (e) => {
+  const lines = [
     '  <url>',
     `    <loc>${e.loc}</loc>`,
     `    <lastmod>${e.lastmod}</lastmod>`,
     `    <changefreq>${e.changefreq}</changefreq>`,
-    `    <priority>${e.priority}</priority>`,
-    '  </url>'
-  ].join('\n')),
+    `    <priority>${e.priority}</priority>`
+  ];
+  if (e.images && e.images.length) {
+    for (const img of e.images) {
+      lines.push('    <image:image>');
+      lines.push(`      <image:loc>${img.loc}</image:loc>`);
+      lines.push('    </image:image>');
+    }
+  }
+  lines.push('  </url>');
+  return lines.join('\n');
+};
+
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">',
+  '',
+  ...sitemapEntries.map(renderEntry),
   '',
   '</urlset>',
   ''
 ].join('\n');
 
 await writeFile(join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
-console.log(`✓ sitemap.xml  (${published.length} project URL${published.length > 1 ? 's' : ''} + 3 static)`);
+console.log(`✓ sitemap.xml  (${published.length} project URL${published.length > 1 ? 's' : ''} + 3 static, images inline)`);
 
 console.log('\nDone.');

@@ -5,6 +5,5 @@ Allow: /
 Disallow: /*?v=
 Disallow: /uploads/
 
-# Sitemaps
+# Sitemap (images inline, conformément aux recos Google 2024)
 Sitemap: https://www.mad-makers.fr/sitemap.xml
-Sitemap: https://www.mad-makers.fr/sitemap-images.xml
