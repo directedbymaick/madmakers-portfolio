@@ -213,9 +213,12 @@
      & badges) + Roboto Mono (sub. Geist Mono, technical data). -->
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
 <link rel="preconnect" href="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev" />
-<!-- Preload des 2 polices critiques pour le H1 (Playfair italic + Inter 400) — accélère le LCP -->
+<!-- Preload des polices critiques above-the-fold (LCP H1 + nav-cta + eyebrows).
+     Montserrat 500/600 sinon = 3 s critical chain. -->
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/playfair-display/files/playfair-display-latin-400-italic.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/montserrat/files/montserrat-latin-500-normal.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/montserrat/files/montserrat-latin-600-normal.woff2" crossorigin />
 <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600&family=Roboto+Mono:wght@400&display=swap" />
 
 <link rel="stylesheet" href="styles.css">
@@ -367,8 +370,8 @@ window.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="orb-wrap">
         <picture>
-          <source type="image/webp" srcset="assets/assets-box-custom-mad-makers-720.webp">
-          <img class="mm-box" src="assets/assets-box-custom-mad-makers-720.png" alt="Box Mad Makers" width="720" height="720" loading="lazy" decoding="async">
+          <source type="image/webp" srcset="assets/assets-box-custom-mad-makers-600.webp">
+          <img class="mm-box" src="assets/assets-box-custom-mad-makers-600.png" alt="Box Mad Makers" width="600" height="600" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -386,42 +389,42 @@ window.addEventListener('DOMContentLoaded', function(){
               <img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark" width="603" height="162" loading="lazy" decoding="async">
             </div>
             <div class="tool" title="CodePen">
-              <img src="assets/CodePen_logo.png" alt="" width="721" height="137" loading="lazy" decoding="async"><span>CodePen</span>
+              <img src="assets/CodePen_logo-80.png" alt="" width="80" height="15" loading="lazy" decoding="async"><span>CodePen</span>
             </div>
             <div class="tool" title="Claude Code">
-              <img src="assets/Claudecode.png" alt="" width="600" height="487" loading="lazy" decoding="async"><span>Claude Code</span>
+              <img src="assets/Claudecode-80.png" alt="" width="80" height="65" loading="lazy" decoding="async"><span>Claude Code</span>
             </div>
             <div class="tool" title="Antigravity">
-              <img src="assets/antigravity-color.png" alt="" width="640" height="640" loading="lazy" decoding="async"><span>Antigravity</span>
+              <img src="assets/antigravity-color-80.png" alt="" width="80" height="80" loading="lazy" decoding="async"><span>Antigravity</span>
             </div>
             <div class="tool tool--lg" title="Figma">
-              <img src="assets/figma_logo_icon_171159.webp" alt="" width="512" height="256" loading="lazy" decoding="async"><span>Figma</span>
+              <img src="assets/figma_logo_icon_171159-80.webp" alt="" width="80" height="40" loading="lazy" decoding="async"><span>Figma</span>
             </div>
             <div class="tool" title="Vercel">
               <img src="assets/Vercel_logo_2025.svg" alt="" width="2048" height="407" loading="lazy" decoding="async"><span>Vercel</span>
             </div>
             <div class="tool tool--lg" title="Spline">
-              <img src="assets/spline.design-AI-1.png" alt="" width="1673" height="493" loading="lazy" decoding="async"><span>Spline</span>
+              <img src="assets/spline.design-AI-1-80.png" alt="" width="80" height="24" loading="lazy" decoding="async"><span>Spline</span>
             </div>
             <div class="tool" title="JavaScript">
-              <img src="assets/JavaScript-logo.png" alt="" width="1052" height="1052" loading="lazy" decoding="async"><span>JavaScript</span>
+              <img src="assets/JavaScript-logo-80.png" alt="" width="80" height="80" loading="lazy" decoding="async"><span>JavaScript</span>
             </div>
             <div class="tool" title="Cloudflare">
-              <img src="assets/Cloudflare_Logo.svg.png" alt="" width="1368" height="638" loading="lazy" decoding="async"><span>Cloudflare</span>
+              <img src="assets/Cloudflare_Logo.svg-80.png" alt="" width="80" height="37" loading="lazy" decoding="async"><span>Cloudflare</span>
             </div>
           </div>
           <!-- copy B: visual duplicate for seamless loop, hidden from a11y -->
           <div class="logos tools" aria-hidden="true">
             <div class="tool tool--sm"><img src="assets/cosmos.svg" alt="" width="90" height="15" loading="lazy" decoding="async"><span>cosmos.so</span></div>
             <div class="tool"><img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark" width="603" height="162" loading="lazy" decoding="async"></div>
-            <div class="tool"><img src="assets/CodePen_logo.png" alt="" width="721" height="137" loading="lazy" decoding="async"><span>CodePen</span></div>
-            <div class="tool"><img src="assets/Claudecode.png" alt="" width="600" height="487" loading="lazy" decoding="async"><span>Claude Code</span></div>
-            <div class="tool"><img src="assets/antigravity-color.png" alt="" width="640" height="640" loading="lazy" decoding="async"><span>Antigravity</span></div>
-            <div class="tool tool--lg"><img src="assets/figma_logo_icon_171159.webp" alt="" width="512" height="256" loading="lazy" decoding="async"><span>Figma</span></div>
+            <div class="tool"><img src="assets/CodePen_logo-80.png" alt="" width="80" height="15" loading="lazy" decoding="async"><span>CodePen</span></div>
+            <div class="tool"><img src="assets/Claudecode-80.png" alt="" width="80" height="65" loading="lazy" decoding="async"><span>Claude Code</span></div>
+            <div class="tool"><img src="assets/antigravity-color-80.png" alt="" width="80" height="80" loading="lazy" decoding="async"><span>Antigravity</span></div>
+            <div class="tool tool--lg"><img src="assets/figma_logo_icon_171159-80.webp" alt="" width="80" height="40" loading="lazy" decoding="async"><span>Figma</span></div>
             <div class="tool"><img src="assets/Vercel_logo_2025.svg" alt="" width="2048" height="407" loading="lazy" decoding="async"><span>Vercel</span></div>
-            <div class="tool tool--lg"><img src="assets/spline.design-AI-1.png" alt="" width="1673" height="493" loading="lazy" decoding="async"><span>Spline</span></div>
-            <div class="tool"><img src="assets/JavaScript-logo.png" alt="" width="1052" height="1052" loading="lazy" decoding="async"><span>JavaScript</span></div>
-            <div class="tool"><img src="assets/Cloudflare_Logo.svg.png" alt="" width="1368" height="638" loading="lazy" decoding="async"><span>Cloudflare</span></div>
+            <div class="tool tool--lg"><img src="assets/spline.design-AI-1-80.png" alt="" width="80" height="24" loading="lazy" decoding="async"><span>Spline</span></div>
+            <div class="tool"><img src="assets/JavaScript-logo-80.png" alt="" width="80" height="80" loading="lazy" decoding="async"><span>JavaScript</span></div>
+            <div class="tool"><img src="assets/Cloudflare_Logo.svg-80.png" alt="" width="80" height="37" loading="lazy" decoding="async"><span>Cloudflare</span></div>
           </div>
         </div>
       </div>
