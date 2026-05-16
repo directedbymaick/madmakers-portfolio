@@ -147,6 +147,24 @@
     .legal-section h2{flex-direction:column;gap:8px}
   }
 </style>
+
+<!-- ============ Bannière cookies (Tarteaucitron) + GA4 ============ -->
+<script src="/assets/vendor/tarteaucitron/tarteaucitron.js"></script>
+<script>
+  tarteaucitron.init({
+    privacyUrl: '/politique-confidentialite.html', bodyPosition: 'bottom', hashtag: '#tarteaucitron',
+    cookieName: 'tarteaucitron', orientation: 'bottom', groupServices: false, showAlertSmall: false,
+    cookieslist: false, showIcon: false, iconPosition: 'BottomRight', adblocker: false,
+    DenyAllCta: true, AcceptAllCta: true, highPrivacy: true, handleBrowserDNTRequest: false,
+    removeCredit: false, moreInfoLink: true, useExternalCss: false,
+    readmoreLink: '/politique-confidentialite.html', mandatory: true, mandatoryCta: true, googleConsentMode: true
+  });
+  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  tarteaucitron.user.gtagUa = 'G-17F52BZ7JL';
+  tarteaucitron.user.gtagMore = function () {
+    gtag('config', tarteaucitron.user.gtagUa, { anonymize_ip: true, cookie_flags: 'SameSite=Strict;Secure' });
+  };
+</script>
 </head>
 <body>
 

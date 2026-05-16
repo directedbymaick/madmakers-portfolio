@@ -48,7 +48,12 @@
       "legalName": "Sara Cankaya",
       "alternateName": "Mad Makers Agence Web Paris",
       "url": "https://www.mad-makers.fr/",
-      "logo": "https://www.mad-makers.fr/assets/og-home.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mad-makers.fr/assets/logo-mad-makers-512.png",
+        "width": 512,
+        "height": 512
+      },
       "image": "https://www.mad-makers.fr/assets/og-home.jpg",
       "description": "Agence web créative à Paris. Création de sites web, SEO et direction artistique pour PME, ETI et marques premium. Livré en 10 à 14 jours, garanti 90 jours.",
       "foundingDate": "2025",
@@ -74,7 +79,7 @@
         "Gestion réseaux sociaux"
       ],
       "knowsLanguage": ["fr", "en"],
-      "priceRange": "€€",
+      "priceRange": "4 500 € – 18 000 €",
       "founder": [
         {"@id": "https://www.mad-makers.fr/#maick"},
         {"@id": "https://www.mad-makers.fr/#goudet"}
@@ -126,6 +131,77 @@
         {"@type": "CollegeOrUniversity", "name": "Johns Hopkins SAIS"}
       ],
       "sameAs": ["https://www.linkedin.com/in/goudet-abalé-329909104/"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.mad-makers.fr/#faq",
+      "inLanguage": "fr-FR",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte un site Mad Makers ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos projets démarrent à 4 500 € HT (one-page premium) et vont jusqu'à 18 000 € HT (site sur-mesure 6-8 pages, animations avancées, intégration analytics et SEO). Devis sur mesure après brief. On ne fait pas de site en dessous de 3 000 €, l'économie d'échelle n'est pas tenable pour le niveau de finition attendu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps faut-il prévoir de votre côté ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "4 à 6 heures réparties sur les 10-14 jours du projet : un kickoff de 90 min, une revue maquettes d'1 h, une revue pré-livraison d'1 h, et un debrief à J+30. On gère tout le reste, y compris la rédaction si vous nous la déléguez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui possède le site à la livraison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous, intégralement. Code source, design files Figma, comptes d'hébergement (Vercel, Cloudflare, OVH), tout est à votre nom à la livraison. Pas de licence cachée, pas de dépendance technique à Mad Makers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Et si je ne suis pas satisfait des maquettes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On présente toujours 3 pistes distinctes en phase 2. Si aucune ne fonctionne, on refait un cycle complet gratuitement. Au-delà, le scope est ré-évalué ensemble avant de continuer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Travaillez-vous à distance ou en présentiel ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "100 % à distance par défaut. Visio, Notion partagé et Loom suffisent à tenir un projet aussi rigoureusement qu'en présentiel. Présentiel possible à Paris pour le kickoff sur devis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence avec une agence classique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un interlocuteur unique du début à la fin, 10-14 jours au lieu de 3-6 mois grâce à un stack moderne (Claude Code, Antigravity, Figma), et un Notion partagé pour suivre le travail en temps réel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faites-vous des sites e-commerce ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, sur Shopify ou Webflow Ecommerce, à partir de 8 000 €. On reste sur des plateformes mainstream pour garantir l'indépendance technique et la portabilité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il après la livraison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trois options : autonomie (formation 90 min, vous reprenez la main), maintenance mensuelle 290 €/mois (hébergement, sécurité, monitoring, évolutions), ou accompagnement SEO à partir de 800 €/mois (4 articles/mois, suivi positions, CRO trimestriel)."
+          }
+        }
+      ]
     }
   ]
 }
@@ -136,9 +212,46 @@
      Inter (sub. Geist, body & UI) + Montserrat (sub. bryant, uppercase CTAs
      & badges) + Roboto Mono (sub. Geist Mono, technical data). -->
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+<link rel="preconnect" href="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev" />
 <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap" />
 
 <link rel="stylesheet" href="styles.css">
+
+<!-- ============ Bannière cookies (Tarteaucitron) + GA4 ============
+     Tarteaucitron gère Consent Mode v2 automatiquement.
+     Tant que l'user n'a pas cliqué "Accepter", gtag est en `denied` et rien n'est collecté. -->
+<script src="/assets/vendor/tarteaucitron/tarteaucitron.js"></script>
+<script>
+  tarteaucitron.init({
+    privacyUrl: '/politique-confidentialite.html',
+    bodyPosition: 'bottom',
+    hashtag: '#tarteaucitron',
+    cookieName: 'tarteaucitron',
+    orientation: 'bottom',
+    groupServices: false,
+    showAlertSmall: false,
+    cookieslist: false,
+    showIcon: false,
+    iconPosition: 'BottomRight',
+    adblocker: false,
+    DenyAllCta: true,
+    AcceptAllCta: true,
+    highPrivacy: true,
+    handleBrowserDNTRequest: false,
+    removeCredit: false,
+    moreInfoLink: true,
+    useExternalCss: false,
+    readmoreLink: '/politique-confidentialite.html',
+    mandatory: true,
+    mandatoryCta: true,
+    googleConsentMode: true
+  });
+  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  tarteaucitron.user.gtagUa = 'G-17F52BZ7JL';
+  tarteaucitron.user.gtagMore = function () {
+    gtag('config', tarteaucitron.user.gtagUa, { anonymize_ip: true, cookie_flags: 'SameSite=Strict;Secure' });
+  };
+</script>
 </head>
 <body>
 
@@ -174,7 +287,7 @@
 <!-- ================ HERO ================ -->
 <section class="hero" data-screen-label="02 Hero">
   <div class="hero-bg">
-    <video class="hero-video" src="assets/hero-video-loop.mp4"
+    <video class="hero-video" src="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/hero-video-loop.mp4"
            autoplay muted loop playsinline preload="metadata"
            aria-hidden="true"></video>
     <div class="hero-tint"></div>
@@ -244,7 +357,10 @@
         </div>
       </div>
       <div class="orb-wrap">
-        <img class="mm-box" src="assets/assets%20box%20custom%20mad%20makers.png" alt="Box Mad Makers" loading="lazy">
+        <picture>
+          <source type="image/webp" srcset="assets/assets-box-custom-mad-makers.webp">
+          <img class="mm-box" src="assets/assets-box-custom-mad-makers.png" alt="Box Mad Makers" width="977" height="977" loading="lazy" decoding="async">
+        </picture>
       </div>
     </div>
 
@@ -255,48 +371,48 @@
           <!-- copy A: visible, kept in DOM accessibility flow -->
           <div class="logos tools">
             <div class="tool tool--sm" title="cosmos.so">
-              <img src="assets/cosmos.svg" alt=""><span>cosmos.so</span>
+              <img src="assets/cosmos.svg" alt="" width="90" height="15" loading="lazy" decoding="async"><span>cosmos.so</span>
             </div>
             <div class="tool" title="Framer">
-              <img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark">
+              <img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark" width="603" height="162" loading="lazy" decoding="async">
             </div>
             <div class="tool" title="CodePen">
-              <img src="assets/CodePen_logo.png" alt=""><span>CodePen</span>
+              <img src="assets/CodePen_logo.png" alt="" width="721" height="137" loading="lazy" decoding="async"><span>CodePen</span>
             </div>
             <div class="tool" title="Claude Code">
-              <img src="assets/Claudecode.png" alt=""><span>Claude Code</span>
+              <img src="assets/Claudecode.png" alt="" width="600" height="487" loading="lazy" decoding="async"><span>Claude Code</span>
             </div>
             <div class="tool" title="Antigravity">
-              <img src="assets/antigravity-color.png" alt=""><span>Antigravity</span>
+              <img src="assets/antigravity-color.png" alt="" width="640" height="640" loading="lazy" decoding="async"><span>Antigravity</span>
             </div>
             <div class="tool tool--lg" title="Figma">
-              <img src="assets/figma_logo_icon_171159.webp" alt=""><span>Figma</span>
+              <img src="assets/figma_logo_icon_171159.webp" alt="" width="512" height="256" loading="lazy" decoding="async"><span>Figma</span>
             </div>
             <div class="tool" title="Vercel">
-              <img src="assets/Vercel_logo_2025.svg" alt=""><span>Vercel</span>
+              <img src="assets/Vercel_logo_2025.svg" alt="" width="2048" height="407" loading="lazy" decoding="async"><span>Vercel</span>
             </div>
             <div class="tool tool--lg" title="Spline">
-              <img src="assets/spline.design-AI-1.png" alt=""><span>Spline</span>
+              <img src="assets/spline.design-AI-1.png" alt="" width="1673" height="493" loading="lazy" decoding="async"><span>Spline</span>
             </div>
             <div class="tool" title="JavaScript">
-              <img src="assets/JavaScript-logo.png" alt=""><span>JavaScript</span>
+              <img src="assets/JavaScript-logo.png" alt="" width="1052" height="1052" loading="lazy" decoding="async"><span>JavaScript</span>
             </div>
             <div class="tool" title="Cloudflare">
-              <img src="assets/Cloudflare_Logo.svg.png" alt=""><span>Cloudflare</span>
+              <img src="assets/Cloudflare_Logo.svg.png" alt="" width="1368" height="638" loading="lazy" decoding="async"><span>Cloudflare</span>
             </div>
           </div>
           <!-- copy B: visual duplicate for seamless loop, hidden from a11y -->
           <div class="logos tools" aria-hidden="true">
-            <div class="tool tool--sm"><img src="assets/cosmos.svg" alt=""><span>cosmos.so</span></div>
-            <div class="tool"><img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark"></div>
-            <div class="tool"><img src="assets/CodePen_logo.png" alt=""><span>CodePen</span></div>
-            <div class="tool"><img src="assets/Claudecode.png" alt=""><span>Claude Code</span></div>
-            <div class="tool"><img src="assets/antigravity-color.png" alt=""><span>Antigravity</span></div>
-            <div class="tool tool--lg"><img src="assets/figma_logo_icon_171159.webp" alt=""><span>Figma</span></div>
-            <div class="tool"><img src="assets/Vercel_logo_2025.svg" alt=""><span>Vercel</span></div>
-            <div class="tool tool--lg"><img src="assets/spline.design-AI-1.png" alt=""><span>Spline</span></div>
-            <div class="tool"><img src="assets/JavaScript-logo.png" alt=""><span>JavaScript</span></div>
-            <div class="tool"><img src="assets/Cloudflare_Logo.svg.png" alt=""><span>Cloudflare</span></div>
+            <div class="tool tool--sm"><img src="assets/cosmos.svg" alt="" width="90" height="15" loading="lazy" decoding="async"><span>cosmos.so</span></div>
+            <div class="tool"><img src="assets/Framer%20Wordmark%20White.svg" alt="" class="wordmark" width="603" height="162" loading="lazy" decoding="async"></div>
+            <div class="tool"><img src="assets/CodePen_logo.png" alt="" width="721" height="137" loading="lazy" decoding="async"><span>CodePen</span></div>
+            <div class="tool"><img src="assets/Claudecode.png" alt="" width="600" height="487" loading="lazy" decoding="async"><span>Claude Code</span></div>
+            <div class="tool"><img src="assets/antigravity-color.png" alt="" width="640" height="640" loading="lazy" decoding="async"><span>Antigravity</span></div>
+            <div class="tool tool--lg"><img src="assets/figma_logo_icon_171159.webp" alt="" width="512" height="256" loading="lazy" decoding="async"><span>Figma</span></div>
+            <div class="tool"><img src="assets/Vercel_logo_2025.svg" alt="" width="2048" height="407" loading="lazy" decoding="async"><span>Vercel</span></div>
+            <div class="tool tool--lg"><img src="assets/spline.design-AI-1.png" alt="" width="1673" height="493" loading="lazy" decoding="async"><span>Spline</span></div>
+            <div class="tool"><img src="assets/JavaScript-logo.png" alt="" width="1052" height="1052" loading="lazy" decoding="async"><span>JavaScript</span></div>
+            <div class="tool"><img src="assets/Cloudflare_Logo.svg.png" alt="" width="1368" height="638" loading="lazy" decoding="async"><span>Cloudflare</span></div>
           </div>
         </div>
       </div>
@@ -565,7 +681,7 @@
 
       <a class="proj-card" href="project-03.html">
         <div class="cover">
-          <img src="assets/sophie-marchand/hero-cabinet.png" alt="Cabinet médical Dr. Sophie Marchand" loading="lazy">
+          <img src="assets/sophie-marchand/hero-cabinet.png" alt="Cabinet médical Dr. Sophie Marchand" width="1039" height="1513" loading="lazy" decoding="async">
         </div>
         <span class="num">R.03</span>
         <span class="live"><span class="pulse"></span> En ligne</span>
@@ -735,7 +851,7 @@
     <div class="faq-head">
       <div>
         <div class="eyebrow"><span class="sq"></span> QUESTIONS FRÉQUENTES</div>
-        <h2 class="big-title" data-reveal style="margin-top:14px">Toutes les objections classiques,<br/><em>traitées avant le call.</em></h2>
+        <h2 class="big-title" data-reveal style="margin-top:14px">Tout ce qu'on nous demande avant de signer.<br/><em>Réponses sans détour.</em></h2>
       </div>
       <div class="faq-right">FAQ · <b>2026</b></div>
     </div>
@@ -839,7 +955,7 @@
 
 <!-- ================ FOOTER CTA ================ -->
 <section class="footer-cta" id="contact" data-screen-label="08 Contact">
-  <video class="footer-video" src="assets/footer%20video%20loop.mp4"
+  <video class="footer-video" src="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/footer%20video%20loop.mp4"
          autoplay muted loop playsinline preload="metadata"
          aria-hidden="true"></video>
   <div class="footer-tint"></div>
@@ -900,6 +1016,7 @@
       <ul>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
         <li><a href="politique-confidentialite.html">Politique</a></li>
+        <li><a href="#tarteaucitron" onclick="tarteaucitron.userInterface.openPanel();return false;">Gestion des cookies</a></li>
         <li><a href="https://share.google/PSeyhdo7m6e7L82Om" target="_blank" rel="noopener">Google Business ↗</a></li>
         <li><a href="https://pro.mad-makers.fr" target="_blank" rel="noopener">Mad Makers Pro ↗</a></li>
       </ul>
