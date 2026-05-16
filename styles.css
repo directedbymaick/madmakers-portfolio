@@ -946,7 +946,7 @@ footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var
 .foot-brand .mk{width:54px;height:54px;border-radius:10px;background:url("assets/logo-mad-makers-512.png") center/contain no-repeat;margin-bottom:24px}
 .foot-brand .addr{font-size:14px;line-height:1.6;color:var(--cream)}
 .foot-brand .tag{margin-top:20px;font-size:13px;color:var(--fg-dim);font-style:italic;font-family:var(--serif)}
-.foot-col h6{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:20px;letter-spacing:0.02em;display:inline-block}
+.foot-col h6,.foot-col h3{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:20px;letter-spacing:0.02em;display:inline-block}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
 /* Footer columns are <details> elements so they can become accordions on
    mobile. On desktop they're forced visually open and the toggle is hidden. */
@@ -958,11 +958,16 @@ details.foot-col > summary{
 details.foot-col > summary::-webkit-details-marker{display:none}
 details.foot-col > summary::marker{display:none}
 .foot-toggle{display:none;color:var(--lime);font-size:18px;font-weight:500;line-height:1;margin-left:auto;flex-shrink:0;transition:transform .25s ease}
-.foot-col ul a{font-size:14px;color:var(--fg-dim);transition:color .2s ease}
+.foot-col ul a{font-size:14px;color:var(--fg-dim);transition:color .2s ease;display:inline-flex;align-items:center;padding:8px 0;min-height:28px}
+.foot-col ul li{margin:0 0 2px 0}
 .foot-col ul a:hover{color:var(--lime)}
+@media (max-width: 720px){
+  .foot-col ul a{padding:10px 0;min-height:44px;font-size:15px}
+  .foot-col ul li{margin:0}
+}
 .foot-col.contact ul a{color:var(--cream);font-weight:500}
 .foot-col.contact ul a:hover{color:var(--lime)}
-.foot-col.contact ul .lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:4px;font-weight:400}
+.foot-col.contact ul .lbl{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:4px;font-weight:500}
 .foot-bottom{max-width:1240px;margin:72px auto 0;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--fg-dim);gap:20px;flex-wrap:wrap}
 .foot-bottom .social{display:flex;gap:10px}
 .foot-bottom .social a{
@@ -1927,7 +1932,7 @@ body.nav-locked{overflow:hidden}
     cursor:pointer;padding:16px 0;
     display:flex;align-items:center;justify-content:space-between;
   }
-  details.foot-col > summary h6{margin-bottom:0;font-size:14px}
+  details.foot-col > summary h6,details.foot-col > summary h3{margin-bottom:0;font-size:14px}
   details.foot-col .foot-toggle{display:inline-block;font-size:20px;color:var(--lime)}
   details.foot-col[open] .foot-toggle{transform:rotate(45deg)}
   details.foot-col > ul{padding:0 0 16px}

@@ -224,9 +224,12 @@
      Tarteaucitron gère Consent Mode v2 automatiquement.
      Tant que l'user n'a pas cliqué "Accepter", gtag est en `denied` et rien n'est collecté.
      CSS chargé en parallèle pour éviter que Tarteaucitron l'injecte après son JS. -->
-<link rel="stylesheet" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0">
-<script src="/assets/vendor/tarteaucitron/tarteaucitron.js"></script>
+<!-- Tarteaucitron CSS: chargé async via media trick puis swap (non bloquant) -->
+<link rel="preload" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0"></noscript>
+<script src="/assets/vendor/tarteaucitron/tarteaucitron.js" defer></script>
 <script>
+window.addEventListener('DOMContentLoaded', function(){
   tarteaucitron.init({
     privacyUrl: '/politique-confidentialite',
     bodyPosition: 'bottom',
@@ -256,6 +259,7 @@
   tarteaucitron.user.gtagMore = function () {
     gtag('config', tarteaucitron.user.gtagUa, { anonymize_ip: true, cookie_flags: 'SameSite=Strict;Secure' });
   };
+});
 </script>
 </head>
 <body>
@@ -363,8 +367,8 @@
       </div>
       <div class="orb-wrap">
         <picture>
-          <source type="image/webp" srcset="assets/assets-box-custom-mad-makers.webp">
-          <img class="mm-box" src="assets/assets-box-custom-mad-makers.png" alt="Box Mad Makers" width="977" height="977" loading="lazy" decoding="async">
+          <source type="image/webp" srcset="assets/assets-box-custom-mad-makers-720.webp">
+          <img class="mm-box" src="assets/assets-box-custom-mad-makers-720.png" alt="Box Mad Makers" width="720" height="720" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -960,8 +964,8 @@
 
 <!-- ================ FOOTER CTA ================ -->
 <section class="footer-cta" id="contact" data-screen-label="08 Contact">
-  <video class="footer-video" src="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/footer%20video%20loop.mp4"
-         autoplay muted loop playsinline preload="metadata"
+  <video class="footer-video" data-src="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev/footer%20video%20loop.mp4"
+         muted loop playsinline preload="none"
          aria-hidden="true"></video>
   <div class="footer-tint"></div>
   <h2>Dream it.<br/><em>We make it.</em></h2>
@@ -981,7 +985,7 @@
       <div class="tag">Dream it. We make it.</div>
     </div>
     <details class="foot-col" open>
-      <summary><h6>Services</h6><span class="foot-toggle" aria-hidden="true">+</span></summary>
+      <summary><h3>Services</h3><span class="foot-toggle" aria-hidden="true">+</span></summary>
       <ul>
         <li><a href="#services">Site one-page</a></li>
         <li><a href="#services">Site vitrine</a></li>
@@ -991,7 +995,7 @@
       </ul>
     </details>
     <details class="foot-col" open>
-      <summary><h6>Agence</h6><span class="foot-toggle" aria-hidden="true">+</span></summary>
+      <summary><h3>Agence</h3><span class="foot-toggle" aria-hidden="true">+</span></summary>
       <ul>
         <li><a href="#manifeste">Notre position</a></li>
         <li><a href="#projets">Projets</a></li>
@@ -1000,7 +1004,7 @@
       </ul>
     </details>
     <details class="foot-col contact" open>
-      <summary><h6>Contact</h6><span class="foot-toggle" aria-hidden="true">+</span></summary>
+      <summary><h3>Contact</h3><span class="foot-toggle" aria-hidden="true">+</span></summary>
       <ul>
         <li>
           <span class="lbl">Email</span>
@@ -1017,7 +1021,7 @@
       </ul>
     </details>
     <details class="foot-col" open>
-      <summary><h6>Légal</h6><span class="foot-toggle" aria-hidden="true">+</span></summary>
+      <summary><h3>Légal</h3><span class="foot-toggle" aria-hidden="true">+</span></summary>
       <ul>
         <li><a href="/mentions-legales">Mentions légales</a></li>
         <li><a href="/politique-confidentialite">Politique</a></li>
@@ -1072,5 +1076,25 @@
 
 <script src="main.js" defer></script>
 <script src="cards-fx.js" defer></script>
+<script>
+// Lazy-load footer video : ne charge que quand la section approche du viewport.
+// Économise 5.2 MB pour les visiteurs qui ne scrollent pas jusqu'au footer.
+(function(){
+  var v = document.querySelector('video.footer-video[data-src]');
+  if (!v) return;
+  var load = function(){
+    v.src = v.dataset.src;
+    v.removeAttribute('data-src');
+    v.preload = 'metadata';
+    v.autoplay = true;
+    v.play().catch(function(){});
+  };
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ load(); io.disconnect(); } });
+  }, { rootMargin: '400px' });  // pré-charge 400px avant que la section soit visible
+  io.observe(v);
+})();
+</script>
 </body>
 </html>

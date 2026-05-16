@@ -543,9 +543,11 @@
 </style>
 
 <!-- ============ Bannière cookies (Tarteaucitron) + GA4 ============ -->
-<link rel="stylesheet" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0">
-<script src="/assets/vendor/tarteaucitron/tarteaucitron.js"></script>
+<link rel="preload" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0"></noscript>
+<script src="/assets/vendor/tarteaucitron/tarteaucitron.js" defer></script>
 <script>
+window.addEventListener('DOMContentLoaded', function(){
   tarteaucitron.init({
     privacyUrl: '/politique-confidentialite', bodyPosition: 'bottom', hashtag: '#tarteaucitron',
     cookieName: 'tarteaucitron', orientation: 'bottom', groupServices: false, showAlertSmall: false,
@@ -559,6 +561,7 @@
   tarteaucitron.user.gtagMore = function () {
     gtag('config', tarteaucitron.user.gtagUa, { anonymize_ip: true, cookie_flags: 'SameSite=Strict;Secure' });
   };
+});
 </script>
 </head>
 <body>
