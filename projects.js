@@ -205,6 +205,65 @@ window.MM_PROJECTS = {
       { lbl: 'Conformité Ordre', val: '✓', unit: '', tone: 'good', note: 'Aucun superlatif, mention secteur 1',
         why: 'Validation conforme aux règles déontologiques de l\'Ordre des médecins : pas de superlatif, pas de comparatif, mention "secteur 1" obligatoire. Site indexable et éthiquement carré.' }
     ],
+    next: '04'
+  },
+  '04': {
+    num: 'R.04',
+    slug: 'frieren-beyond-journeys-end',
+    title: 'Frieren - Beyond Journey\'s End, Concept Website',
+    subtitle: 'Site concept éditorial pour l\'anime Frieren - Beyond Journey\'s End. Pure exploration technique : potion interactive, scroll-driven video, carrousel de personnages, liquid glass UI.',
+    liveUrl: 'https://frierenconcept.netlify.app',
+    client: 'Concept · Madhouse · 2025',
+    year: '2025',
+    scope: ['Direction artistique', 'WebGL · GSAP', 'Motion design', 'Front-end React'],
+    role: 'Concept · Direction artistique · Développement',
+    duration: '4 semaines',
+    stack: ['Vite 5', 'React 18', 'GSAP + ScrollTrigger', 'Lenis', 'Framer Motion', 'Tailwind CSS', 'Fraunces + Inter'],
+    cover: {
+      type: 'video',
+      src: 'https://pub-0e689c2d21c04ec09ccaaeb008d32495.r2.dev/hero-bg.mp4',
+      poster: "assets/Frieren - Beyond Journey's End - concept website/hero-poster.jpg"
+    },
+    intro: "Site éditorial cinématique inspiré de Frieren - Beyond Journey's End (Madhouse, 2023). Aucun brief client : pure exploration de ce qui est techniquement possible en 2025 sur le web. Mélange de codes du launcher de jeu (HUD, liquid glass capsules, dust particles) et d'editorial premium (typographie display Fraunces, photographies pleine taille, pacing slow-cinema). Hover Frieren → choisis lui donner la potion ou non. Petit easter egg.",
+    sections: [
+      {
+        title: 'Concept',
+        body: "Faire ressentir l'univers d'un anime avant de l'expliquer. Direction artistique éditoriale calme, palette cream (#f1ead9) inspirée des manuscrits enluminés, photographies de personnages pleine taille traitées en sépia mat. Chaque section a son propre langage visuel - hero interactif, monde géographique, vidéos cinématiques full-bleed, épilogue silencieux."
+      },
+      {
+        title: 'Stack technique',
+        body: "Vite 5 + React 18 en SPA. GSAP + ScrollTrigger pour toutes les timelines scroll-driven (vidéo qui scrub en realtime avec le scroll position). Lenis pour le smooth scroll inertiel. Framer Motion pour les micro-animations UI (badge, expanders). Tailwind CSS en utility-first. Polices Fraunces (display variable) + Inter (UI). Vidéos hostées sur Cloudflare R2 (3 streams en CDN edge)."
+      },
+      {
+        title: 'Interactions',
+        body: "Hero : Frieren tient une potion - hover sur elle fait apparaître un menu flottant 'Drink / Don't drink'. Cliquer 'Drink' → animation de transition vers la pose 'drinking', puis 2 secondes plus tard la pose 'dizzy' + message flottant 'You poisoned Frieren...'. Section vidéo : scroll-driven scrubbing video en realtime. Section personnages : carousel avec parallax sur chaque carte. Footer : vidéo épilogue + dust particles."
+      },
+      {
+        title: 'Achievements',
+        body: "Premier paint sous 1.2s sur 4G lente malgré la lourdeur des assets photos. Smooth scroll Lenis à 60 FPS constant. Liquid glass capsules CSS-only (backdrop-filter blur + saturate + brightness). Easter egg potion bien planqué - certains utilisateurs ne le découvrent jamais. Hébergement Netlify, build Vite < 8s, bundle JS principal ~180 KB gzipped."
+      }
+    ],
+    gallery: [
+      { type: 'image', src: "assets/Frieren - Beyond Journey's End - concept website/hero.png", caption: "01 · Hero · Frieren and the road of memory" },
+      { type: 'video', src: 'https://pub-0e689c2d21c04ec09ccaaeb008d32495.r2.dev/frieren-opening2.mp4', caption: "02 · Opening · Cinematic scroll intro" },
+      { type: 'video', src: 'https://pub-0e689c2d21c04ec09ccaaeb008d32495.r2.dev/video%20footer%20frieren%20journey.mp4', caption: "03 · Footer · Journey timeline" }
+    ],
+    quote: { text: "Aucun brief, aucun client. Juste l'envie de voir jusqu'où le web peut aller en 2025.", author: "Note d'auteur · Mad Makers" },
+    stats: [
+      { lbl: 'Stack', val: 'React 18', unit: '+ Vite 5', tone: 'good', note: 'SPA moderne',
+        why: 'React 18 avec Vite 5 pour HMR sub-200ms en dev. Bundle final tree-shaké, code splitting automatique par route.' },
+      { lbl: 'Smooth scroll', val: '60', unit: 'FPS', tone: 'good', note: 'Lenis inertiel',
+        why: 'Lenis intercepte le scroll natif et le remplace par une animation interpolée RAF-synced. Aucune perte de frame même sur les sections lourdes en vidéo.' },
+      { lbl: 'Scrub video', val: 'realtime', unit: '', tone: 'good', note: 'GSAP + ScrollTrigger',
+        why: 'La vidéo cinématique se synchronise au scroll position - chaque pixel scrollé fait avancer la timeline vidéo en realtime. Effet "interactive scroll-driven cinema".' },
+      { lbl: 'Vidéos R2', val: '3', unit: '', tone: 'neutral', note: 'Cloudflare edge CDN',
+        why: 'Trois vidéos (hero, opening, épilogue) servies depuis Cloudflare R2 en edge CDN. Bandwidth gratuit illimité, latence faible mondiale.' },
+      { lbl: 'Easter egg', val: '1', unit: '', tone: 'neutral', note: 'Potion interactive',
+        why: 'Une mécanique cachée : hover sur Frieren tenant une potion → menu drink/dont. Drink → 2s plus tard, dizzy + message. Récompense le visiteur curieux.' },
+      { lbl: 'Frameworks UI', val: '0', unit: '', tone: 'good', note: 'Tailwind utility-first',
+        why: "Pas de Material UI, pas d'Ant Design, pas de Chakra. Juste Tailwind en utility-first + composants React custom. Bundle UI ~12 KB gzipped, full control sur le design system."
+      }
+    ],
     next: '01'
   }
 };
