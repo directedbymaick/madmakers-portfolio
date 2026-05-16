@@ -59,7 +59,7 @@ img{max-width:100%;display:block}
 .brand{display:flex;align-items:center;gap:0;font-family:var(--serif);font-size:17px;font-style:italic;letter-spacing:0.2px;line-height:1}
 .brand .mk{
   width:28px;height:28px;border-radius:6px;
-  background:url("assets/logo-mad-makers.png") center/contain no-repeat;
+  background:url("assets/logo-mad-makers-512.png") center/contain no-repeat;
   box-shadow:0 0 0 1px rgba(200,255,61,0.25);
   flex-shrink:0;
   transition:box-shadow .25s ease, transform .25s ease;
@@ -692,7 +692,7 @@ section.duo{background:var(--bg);padding:0 32px 140px;position:relative}
   background:rgba(20,21,17,0.55);border:1px solid var(--line-2);
   border-radius:18px;backdrop-filter:blur(8px);max-width:600px;
 }
-.duo-banner .pill .mk-orb{width:54px;height:54px;margin:0 auto 22px;background:url("assets/logo-mad-makers.png") center/contain no-repeat;filter:drop-shadow(0 0 20px rgba(200,255,61,0.4))}
+.duo-banner .pill .mk-orb{width:54px;height:54px;margin:0 auto 22px;background:url("assets/logo-mad-makers-512.png") center/contain no-repeat;filter:drop-shadow(0 0 20px rgba(200,255,61,0.4))}
 .duo-banner .pill h2{font-family:var(--display);font-weight:400;font-size:34px;line-height:1.15;color:var(--cream);text-wrap:balance}
 .duo-banner .pill .btn{
   margin-top:26px;display:inline-flex;align-items:center;gap:8px;
@@ -943,7 +943,7 @@ section.articles{padding:0 32px 140px;background:var(--bg)}
 /* ================ FOOTER ================ */
 footer.foot{background:var(--bg);padding:80px 32px 32px;border-top:1px solid var(--line)}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1240px;margin:0 auto}
-.foot-brand .mk{width:54px;height:54px;border-radius:10px;background:url("assets/logo-mad-makers.png") center/contain no-repeat;margin-bottom:24px}
+.foot-brand .mk{width:54px;height:54px;border-radius:10px;background:url("assets/logo-mad-makers-512.png") center/contain no-repeat;margin-bottom:24px}
 .foot-brand .addr{font-size:14px;line-height:1.6;color:var(--cream)}
 .foot-brand .tag{margin-top:20px;font-size:13px;color:var(--fg-dim);font-style:italic;font-family:var(--serif)}
 .foot-col h6{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:20px;letter-spacing:0.02em;display:inline-block}

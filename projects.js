@@ -16,7 +16,7 @@ window.MM_PROJECTS = {
     cover: {
       type: 'video',
       src: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/fight%20epic%20battles.mp4',
-      poster: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero.png'
+      poster: 'assets/RIOT%20MMO%20CINEMATIC%20WEB%20EXPERIENCE/hero-poster.jpg'
     },
     intro: 'Site one-pager cinématique + sous-pages CMS-style explorant l\'univers de Runeterra. Direction artistique brutaliste-éditoriale avec interface HUD inspirée des launchers MMO, animations scroll-driven, simulations WebGL et vidéos plein-cadre. 13 régions, 6 races jouables, carte 3D temps réel.',
     sections: [
@@ -88,7 +88,7 @@ window.MM_PROJECTS = {
     cover: {
       type: 'video',
       src: 'assets/papiche-concept/region.mp4',
-      poster: 'assets/papiche-concept/hero.png'
+      poster: 'assets/papiche-concept/hero-poster.jpg'
     },
     intro: 'Une vraie adresse de village en Charente, avec une identité plus nette : graphique, chaleureuse, un peu brute, jamais copiée-collée. La Papiche garde l\'esprit simple d\'une auberge mais assume une personnalité visuelle affirmée - moins de beige convenu, plus de contraste, de matière et de rythme.',
     sections: [

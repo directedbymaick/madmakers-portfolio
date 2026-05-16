@@ -213,13 +213,18 @@
      & badges) + Roboto Mono (sub. Geist Mono, technical data). -->
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
 <link rel="preconnect" href="https://pub-bc273be72ad24aabaf476805d4b58f72.r2.dev" />
-<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap" />
+<!-- Preload des 2 polices critiques pour le H1 (Playfair italic + Inter 400) — accélère le LCP -->
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/playfair-display/files/playfair-display-latin-400-italic.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.bunny.net/inter/files/inter-latin-400-normal.woff2" crossorigin />
+<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600&family=Roboto+Mono:wght@400&display=swap" />
 
 <link rel="stylesheet" href="styles.css">
 
 <!-- ============ Bannière cookies (Tarteaucitron) + GA4 ============
      Tarteaucitron gère Consent Mode v2 automatiquement.
-     Tant que l'user n'a pas cliqué "Accepter", gtag est en `denied` et rien n'est collecté. -->
+     Tant que l'user n'a pas cliqué "Accepter", gtag est en `denied` et rien n'est collecté.
+     CSS chargé en parallèle pour éviter que Tarteaucitron l'injecte après son JS. -->
+<link rel="stylesheet" href="/assets/vendor/tarteaucitron/css/tarteaucitron.css?v=1.32.0">
 <script src="/assets/vendor/tarteaucitron/tarteaucitron.js"></script>
 <script>
   tarteaucitron.init({
@@ -240,7 +245,7 @@
     handleBrowserDNTRequest: false,
     removeCredit: false,
     moreInfoLink: true,
-    useExternalCss: false,
+    useExternalCss: true,  // CSS chargé dans <head>, pas par Tarteaucitron
     readmoreLink: '/politique-confidentialite.html',
     mandatory: true,
     mandatoryCta: true,
@@ -654,7 +659,7 @@
       <a class="proj-card featured" href="project-01.html">
         <div class="cover">
           <video src="assets/riot/fight-epic-battles.mp4"
-                 poster="assets/riot/hero.png"
+                 poster="assets/riot/hero-poster.jpg"
                  muted loop playsinline autoplay preload="metadata"></video>
         </div>
         <span class="num">R.01</span>
@@ -668,7 +673,7 @@
       <a class="proj-card" href="project-02.html">
         <div class="cover">
           <video src="assets/papiche/region.mp4"
-                 poster="assets/papiche/hero.png"
+                 poster="assets/papiche/hero-poster.jpg"
                  muted loop playsinline autoplay preload="metadata"></video>
         </div>
         <span class="num">R.02</span>
