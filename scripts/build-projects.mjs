@@ -36,7 +36,9 @@ const published = [];
 
 for (const id of ids) {
   const data = PROJECTS[id];
-  const url = `${SITE_ORIGIN}/project-${id}.html`;
+  if (!data.slug) throw new Error(`Project ${id} is missing a "slug" field in projects.js`);
+  const slug = data.slug;
+  const url = `${SITE_ORIGIN}/${slug}`;
   const isPlaceholder = data.status === 'Placeholder';
   const title = `${data.title} — Mad Makers`;
   const desc = (data.subtitle || data.intro || '').slice(0, 160);
@@ -103,10 +105,10 @@ for (const id of ids) {
     `<script>window.MM_PROJECT_ID = ${JSON.stringify(id)};</script>\n<script src="projects.js"></script>`
   );
 
-  await writeFile(join(ROOT, `project-${id}.html`), html, 'utf8');
-  console.log(`✓ project-${id}.html  ${isPlaceholder ? '[noindex]' : '[indexed]'}  ${title}`);
+  await writeFile(join(ROOT, `${slug}.html`), html, 'utf8');
+  console.log(`✓ ${slug}.html  ${isPlaceholder ? '[noindex]' : '[indexed]'}  ${title}`);
 
-  if (!isPlaceholder) published.push(id);
+  if (!isPlaceholder) published.push({ id, slug });
 }
 
 // --- Rebuild sitemap.xml from PROJECTS data ---
@@ -117,20 +119,20 @@ const sitemapEntries = [
     changefreq: 'monthly',
     priority: '1.0'
   },
-  ...published.map(id => ({
-    loc: `${SITE_ORIGIN}/project-${id}.html`,
+  ...published.map(({ slug }) => ({
+    loc: `${SITE_ORIGIN}/${slug}`,
     lastmod: TODAY,
     changefreq: 'monthly',
     priority: '0.8'
   })),
   {
-    loc: `${SITE_ORIGIN}/mentions-legales.html`,
+    loc: `${SITE_ORIGIN}/mentions-legales`,
     lastmod: TODAY,
     changefreq: 'yearly',
     priority: '0.3'
   },
   {
-    loc: `${SITE_ORIGIN}/politique-confidentialite.html`,
+    loc: `${SITE_ORIGIN}/politique-confidentialite`,
     lastmod: TODAY,
     changefreq: 'yearly',
     priority: '0.3'

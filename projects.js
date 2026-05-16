@@ -4,6 +4,7 @@
 window.MM_PROJECTS = {
   '01': {
     num: 'R.01',
+    slug: 'riot-mmo-cinematic',
     title: 'Riot MMO, Cinematic Web Experience',
     subtitle: 'Site cinématique concept pour le futur MMO de Riot Games, explorant l\'univers de Runeterra avec un niveau Awwwards.',
     liveUrl: 'https://riot-mmo.mad-makers.fr',
@@ -76,6 +77,7 @@ window.MM_PROJECTS = {
   },
   '02': {
     num: 'R.02',
+    slug: 'la-papiche-bistrot',
     title: 'La Papiche - Bistrot de Saint-Avit',
     subtitle: 'Refonte complète de l\'identité éditoriale et site web pour un bistrot de campagne en Charente. Une adresse qui assume son caractère, sans pastiche rustique.',
     liveUrl: 'https://lapapiche.mad-makers.fr',
@@ -140,6 +142,7 @@ window.MM_PROJECTS = {
   },
   '03': {
     num: 'R.03',
+    slug: 'dr-sophie-marchand',
     title: 'Dr. Sophie Marchand - Cabinet médical à Nantes',
     subtitle: 'Site multi-pages pour un médecin généraliste à Nantes. Une présence digitale claire, rassurante et conforme aux exigences éthiques de l\'Ordre des médecins.',
     liveUrl: 'https://sophiemarchand.mad-makers.fr',

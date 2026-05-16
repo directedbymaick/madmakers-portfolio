@@ -2,11 +2,31 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "node scripts/build-projects.mjs",
   "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
+    { "source": "/project-01.html", "destination": "/riot-mmo-cinematic", "permanent": true },
+    { "source": "/project-01",      "destination": "/riot-mmo-cinematic", "permanent": true },
+    { "source": "/project-02.html", "destination": "/la-papiche-bistrot", "permanent": true },
+    { "source": "/project-02",      "destination": "/la-papiche-bistrot", "permanent": true },
+    { "source": "/project-03.html", "destination": "/dr-sophie-marchand", "permanent": true },
+    { "source": "/project-03",      "destination": "/dr-sophie-marchand", "permanent": true },
     {
       "source": "/project.html",
-      "has": [{ "type": "query", "key": "id", "value": "(?<pid>\\d+)" }],
-      "destination": "/project-:pid.html",
+      "has": [{ "type": "query", "key": "id", "value": "01" }],
+      "destination": "/riot-mmo-cinematic",
+      "permanent": true
+    },
+    {
+      "source": "/project.html",
+      "has": [{ "type": "query", "key": "id", "value": "02" }],
+      "destination": "/la-papiche-bistrot",
+      "permanent": true
+    },
+    {
+      "source": "/project.html",
+      "has": [{ "type": "query", "key": "id", "value": "03" }],
+      "destination": "/dr-sophie-marchand",
       "permanent": true
     }
   ],
